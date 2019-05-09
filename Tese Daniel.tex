@@ -1,0 +1,1546 @@
+%% Customizações do abnTeX2 (http://www.abntex.net.br) para o Instituto de Matemática,
+%% Estatística e Computação Científica da Universidade Estadual de Campinas (IMECC-UNICAMP)
+%%
+%% This work may be distributed and/or modified under the conditions of the LaTeX Project
+%% Public License, either version 1.3 of this license or (at your option) any later version.
+%% The latest version of this license is in http://www.latex-project.org/lppl.txt and version
+%% 1.3 or later is part of all distributions of LaTeX version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is Fábio Rodrigues Silva, gfabinhomat@gmail.com
+%%
+%% Further information about abnTeX2 are available on http://www.abntex.net.br
+%%
+\documentclass[
+	oldfontcommands,
+	% -- opções de customização --
+	%sumario=tradicional,
+	sumario=abnt-6027-2012,
+	% -- opções da classe memoir --
+	12pt,			% tamanho da fonte
+	openright,		% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,		% para impressão em verso e anverso. Oposto a 'oneside'
+	a4paper,		% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,	% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,		% idioma adicional para hifenização
+	brazil			% o último idioma é o principal do documento
+	]{imecc-unicamp}
+% ----------------------------------------------------------
+% PACOTES ESSENCIAIS
+\input{pacotes}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% INFORMAÇÕES E DADOS PARA CAPA E FOLHA DE ROSTO
+\input{dados}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% CONFIGURAÇÕES GERAIS
+\input{configglobal}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% COMPILA O ÍNDICE (OPCIONAL)
+\makeindex
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% CONTÉM TODAS AS ENTRADAS DO GLOSSÁRIO (OPCIONAL)
+\input{glossario}
+% ----------------------------------------------------------
+% -----------------------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -----------------------------------------------------------------------------------------------
+\begin{document}
+% Seleciona o idioma do documento (conforme pacotes do babel)
+\selectlanguage{english}
+% \selectlanguage{english}
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS PRÉ-TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%
+% ---------------------------------------------------------------------------------
+\pretextual
+% ----------------------------------------------------------
+% PRIMEIRA FOLHA (OBRIGATÓRIO)
+\imprimirprimeirafolha
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% FOLHA DE ROSTO (OBRIGATÓRIO)
+% ---
+% Após realizar as correções finais de seu trabalho acadêmico, escaneie a folha de rosto
+% devidamente assinada pelo orientador e salve no formato PDF com o nome 'folha-de-rosto.pdf'
+% no diretório do seu projeto. Daí substitua a linha do comando '\imprimirfolhaderosto'
+% pelas 3 linhas de comando abaixo:
+% ---
+ \begin{folhaderosto}
+     \includepdf{folha-de-rosto.pdf}
+ \end{folhaderosto}
+% ---
+%\imprimirfolhaderosto
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% FICHA CATALOGRÁFICA (OBRIGATÓRIO)
+% ---
+% A biblioteca da UNICAMP lhe fornecerá um PDF com a ficha catalográfica definitiva após a defesa
+% do trabalho {http://hamal.bc.unicamp.br/catalogonline2/}. Quando estiver com o documento, salve-o
+% como PDF no diretório do seu projeto e deixe apenas o comando '\includepdf{ficha-catalografica.pdf}'
+% dentro do ambiente abaixo
+% ---
+%\begin{fichacatalografica}
+%    \begin{center}
+%	{\ABNTEXchapterfont\large A ficha catalográfica será fornecida pela biblioteca}
+%    \end{center}
+\includepdf{ficha-catalografica.pdf}
+%\end{fichacatalografica}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% FOLHA DE APROVAÇÃO (OBRIGATÓRIO)
+% ---
+% A folha de aprovação será fornecida pela secretaria de pós-graduação. Após recebê-la, escaneie a folha
+% salvando em PDF no diretório do seu projeto com o nome 'folhadeaprovacao.pdf' e deixe apenas o comando
+% '\includepdf{folhadeaprovacao.pdf}' dentro do ambiente abaixo
+% ---
+%\begin{folhadeaprovacao}
+%\centering{\ABNTEXchapterfont\large A folha de aprovação será %fornecida pela Secretaria de Pós-Graduação}
+\includepdf{folhadeaprovacao.pdf}
+%\end{folhadeaprovacao}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% DEDICATÓRIA (OPCIONAL)
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{
+A todos aqueles que não puderam seguir a carreira na matemática
+   }
+   \vspace*{\fill}
+\end{dedicatoria}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% AGRADECIMENTOS (OPCIONAL)
+\begin{agradecimentos}
+Gostaria de agradecer a todos que me apoiaram. Em especial meus pais, Marina e Itsuo Futata, que sempre fizeram o máximo possível por qualquer aspecto da minha vida. Minha irmã Beatriz Futata por me receber com uma quantidade absurda de doces e atenção. E minhas outras irmãs Giovanna de Luca e Regiane Matsumoto pelos anos de amizade e por me receber com uma quantidade absurda de suco e nuggets entre outras comidas.
+
+Aos meus amigos Victor Pretti, Renato Silva e Lucas Figueiredo pelos momentos de insanidade, agostos passados juntos e vídeos de gatinhos. Espero muitos funko's pop pela frente. Ao Ricardo Douglas Costa também pelos eventos mais inusitados possíveis, eternamente uma lenda.
+
+Aos amigos Marcus Santos, Gabriel Aranha e André Rodrigues por nunca esquecerem o que temos, mesmo nas condições de distância e até mesmo tempo em reclusão. Estou esperando ainda nossa escola.
+
+Ao Guterman Junior por me ensinar mais do que eu gostaria sobre carros e também por me ensinar como me organizar, coisa que nunca aprendi. À Laryssa Abdala por me mostrar óticas completamente diferentes da vida, muitas delas eu sigo até hoje.
+
+Ao Matheus Gomes, meu eterno vizinho e amigo. Pelos filmes românticos e companhia em um período difícil. Nenhum prato vai superar nosso pão de queijo, mas qualquer coisa supera nossa coxinha frita em azeite. 
+
+Ao meu orientador Simone Marchesi, que me ensinou como andar no meio acadêmico e estava sempre presente para dar suporte. E ao professor Marcos Jardim pelas discussões inestimáveis que foram essenciais para o mestrado.
+
+Um especial agradecimento à secretaria do IMECC pela paciência em me guiar nos processos burocráticos, vocês fazem muito pelos alunos!
+
+Finalizo agradecendo ao CNPq por ter financiado meu projeto de mestrado.
+\end{agradecimentos}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% EPÍGRAFE (OPCIONAL)
+\begin{epigrafe}
+    \vspace*{\fill}
+    \begin{flushright}
+	\textit{"To show or to be shown?" is a question never,
+		even not known by many to exist - The Residents
+	}
+    \end{flushright}
+\end{epigrafe}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% RESUMOS (OBRIGATÓRIO)
+
+\include{resumos}
+
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% SUMÁRIO (OBRIGATÓRIO)
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ----------------------------------------------------------
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%% FIM DOS ELEMENTOS PRÉ-TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%
+% ---------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%
+% ---------------------------------------------------------------------------------
+\textual
+% ----------------------------------------------------------
+% INTRODUÇÃO
+\include{introducao}
+% ----------------------------------------------------------
+% DESENVOLVIMENTO
+% \part{Preparação da pesquisa}
+% \include{capitulo1}
+% \include{capitulo2}
+% \part{Referenciais teóricos}
+% \include{capitulo3}
+% \include{capitulo4}
+% \include{capitulo5}
+% \part{Resultados}
+% \include{capitulo6}
+% \include{capitulo7}
+% --------------------
+% INÍCIO DOS EXEMPLOS
+% --------------------
+% No âmbito do Modelo Canônico, os comandos a seguir apresentam um sucinto resumo de como
+% esta classe pode ser usada. Oriente a construção do seu trabalho com base nestes comandos.
+% ---
+%\include{conteudo} TIRAR % DEPOIS
+\chapter{Preliminaries}
+%\chapter{Definitions and Preliminaries}
+In this chapter we will recall the necessary concepts and results about coherent sheaves, monads, curves and Chern classes, including the Hirzebruch-Riemann-Roch theorem, which we will need throughout this dissertation.
+\section{Basic definitions and results}
+$X$ denotes a scheme, from now on whenever we write $\mathcal{F}^I$ for a sheaf $\mathcal{F}$ we mean the direct sum $\bigoplus_{i \in I} \mathcal{F}_i$ where $\mathcal{F}_i=\mathcal{F}$. If $r \in \mathbb{N}$ we will write $\mathcal{F}^r$ to denote the direct sum of $r$ copies of $\mathcal{F}$.
+The base field $k$ is an algebraically closed field of characteristic 0.
+\begin{definition}
+A sheaf of $\mathcal{O}_X$-modules $\mathcal{F}$ is \\
+(i) finitely generated, or of finite type if every point $x \in X$ has an open neighbourhood such that there is a surjective morphism
+\begin{equation}
+\mathcal{O}_X^n|_U \to \mathcal{F}|_U
+\end{equation}
+with $n$ finite \\
+(ii) coherent if it is finitely generated and for every open $U$, every finite $p \in \mathbb{N}$ and every morphism 
+\begin{equation}
+\mathcal{O}_X^p|_U \to \mathcal{F}|_U
+\end{equation}
+of $\mathcal{O}_X|_U$-modules has a finitely generated kernel. \\
+(iii) finitely presented if there is an exact sequence of the form
+\begin{equation}
+\mathcal{O}_X^p \to \mathcal{O}_X^n \to \mathcal{F} \to 0
+\end{equation}
+with $p$ and $n$ finite. Every finitely presented $\mathcal{O}_X$-module is finitely generated. \\
+(iv) quasi coherent if it is locally presentable, i.e. there is an open cover $\{U_i \}$ of $X$ and for every $i$ an exact sequence
+\begin{equation}
+\mathcal{O}_X^{I_i}|_{U_i} \to \mathcal{O}_X^{J_i}|_{U_i} \to \mathcal{F}|_{U_i} \to 0
+\end{equation}
+where $I_i$ and $J_i$ may be infinite.
+\end{definition}
+
+If $X$ is locally noetherian, those concepts become intertwined :
+\begin{lemma}\cite[Stacks, 29.9.1]{stacks-project}\label{locally noetherian}
+Let $X$ be a locally noetherian scheme. Let $\mathcal{F}$ be an $\mathcal{O}_X$-module. The following are equivalent \\
+(i) $\mathcal{F}$ is coherent, \\
+(ii) $\mathcal{F}$ is a quasi-coherent, finite-type $\mathcal{O}_X$-module, \\
+(iii) $\mathcal{F}$ is a finitely presented $\mathcal{O}_X$-module, \\
+(iv) for any affine open $Spec(A)=U \subset X$ we have $\mathcal{F}|_U = \bar{M}$ with $M$ a finite $A-module$, \\
+(v) there exists an affine open covering $X= \bigcup U_i$, $U_i = Spec(A_i)$ such that each $\mathcal{F}|_{U_i}=\bar{M_i}$ with $M_i$ a finite $A_i$-module.
+\end{lemma}
+We will always deal with locally noetherian ringed spaces. So (\ref{locally noetherian}) could be taken as a definition. \\
+Another useful lemma for locally noetherian schemes is the following:
+\begin{lemma}\cite[Stacks, 29.9.5]{stacks-project}\label{locally noetherian 2}
+Let $X$ be a locally noetherian scheme. Let $\mathcal{F}, \mathcal{G}$ be coherent $\mathcal{O}_X$-modules. Let $\phi : \mathcal{F} \to \mathcal{G}$ be a morphism and $x \in X$. \\
+(i) If $\mathcal{F}_x=0$ then there is an open neighbourhood $U \subset X$ of $x$ such that $\mathcal{F}|_U=0$, \\
+(ii) if $\phi_x:\mathcal{F}_x \to \mathcal{G}_x$ is injective, then there is an open neighbourhood $U \subset X$ of $x$ such that $\phi|_U$ is injective, \\
+(iii) if $\phi_x:\mathcal{F}_x \to \mathcal{G}_x$ is surjective, then there is an open neighbourhood $U \subset X$ of $x$ such that $\phi|_U$ is surjective, \\
+(iv) if $\phi_x : \mathcal{F}_x \to \mathcal{G}_x$ is bijective, then there is an open neighbourhood $U \subset X$ of $x$ such that $\phi|_U$ is an isomorphism.
+\end{lemma}
+\begin{lemma}\label{coerente livre}
+A coherent sheaf $\mathcal{F}$ on a locally noetherian scheme $X$ with free stalks is a locally free sheaf.
+\end{lemma}
+\begin{proof}
+Being locally free is a local concept, so assume $X=Spec(A)$ and $\mathcal{F}=\bar{M}$. By Lemma (\ref{locally noetherian}) $M$ is a finitely generated module over $A$. Then $\bar{M}$ is locally free if and only if $M$ is projective. But a finitely generated module $M$ is projective if and only if all its localizations $M_\mathfrak{p}$ are $A_\mathfrak{p}$ free modules.
+\end{proof}
+From now on every scheme $X$ will be locally noetherian, Lemma (\ref{coerente livre}) gives a proposition which will be frequently used:
+\begin{proposition}\label{kernel locally free}
+Let $\beta : \mathcal{F} \to \mathcal{G}$ be a surjective morphism of locally free sheaves, then $ker \beta$ is a locally free sheaf.
+\end{proposition}
+\begin{proof}
+Let $x \in X$. $\mathcal{G}_x$ is free since $\mathcal{G}$ is locally free. In particular it is a projective module. Then the sequence of modules
+\begin{equation}
+0 \to ker \beta_x \to \mathcal{F}_x \to \mathcal{G}_x \to 0
+\end{equation}
+splits. Hence $\mathcal{F}_x=ker \beta_x \oplus \mathcal{G}_x$, and $ker \beta_x$ is projective since $\mathcal{F}_x$ is free. A projective module over a local ring is free which implies that $ker \beta_x$ is free.
+The kernel of a morphism between coherent sheaves on a locally noetherian scheme is also coherent, and a coherent sheaf with free stalks is locally free by Lemma (\ref{coerente livre}).
+\end{proof}
+\begin{definition}
+	Let $\mathcal{F}$ be a coherent sheaf on a projective variety $X$. We define its support to be the closed set $Supp(\mathcal{F}) = \{ x \in X | \ \mathcal{F}_x \not= 0 \}$ where $\mathcal{F}_x$ denotes the stalk of $\mathcal{F}$ at $x$. The singular locus of $\mathcal{F}$ is the closed set $Sing(\mathcal{F}) = \{x \in X | \ \mathcal{F}_x 	 \ is \ not \ a \ free \ \mathcal{O}_{X,x}-mod \}$.
+\end{definition}
+The next theorem tells us we can look at the sheaves  $\mathcal{E}xt^p(\mathcal{F},\mathcal{O}_X)$ to see where $\mathcal{F}$ fails to be free
+\begin{theorem} The singular locus of $\mathcal{F}$ is
+	$\bigcup\limits_{p=1}^{dimX} Supp \ \mathcal{E}xt^p(\mathcal{F}, \mathcal{O}_X)$
+\end{theorem}
+
+\begin{proof}
+	\cite[Okonek, Schneider \& Spindler, Lemma 1.1.4]{Okonek}
+\end{proof}
+We are going to introduce some essential concepts of nonsingular varieties. They are going to be extensively used through the rest of this dissertation.
+\begin{definition}[Sheaf of relative differentials]
+Let $f:X \to Y$ be a morphism of schemes. Consider the diagonal morphism $\Delta: X \to X \times_Y X$, the diagonal morphism gives an isomorphism between $X$ and $\Delta(X)$ so we can consider $\Delta(X)$ as a locally closed subscheme of $X \times_Y X$, i.e. a closed subscheme of an open set of $X \times_Y X$. Let $\mathcal{I}$ be the ideal sheaf of $\Delta(X)$. We define the sheaf of relative differentials of $X$ over $Y$ to be the sheaf $\Omega_{X/Y}=\Delta^* (\mathcal{I}/\mathcal{I}^2)$ on $X$. It is a quasi-coherent sheaf of $\mathcal{O}_X$-modules and if $Y$ is noetherian and $f$ is of finite type then $\Omega_{X/Y}$ is coherent.
+\end{definition}
+\begin{proposition}[The Euler sequence]
+Let $A$ be a ring, let $Y=Spec(A)$ and $X=\mathbb{P}^n_A$. Then there is an exact sequence of sheaves on $X$.
+\begin{equation}
+0 \to \Omega_{X/Y} \to \mathcal{O}_X(-1)^{n+1} \to \mathcal{O}_X \to 0
+\end{equation}
+\end{proposition}
+\begin{proof}
+\cite[Hartshorne, Theorem II.8.13]{hartshorne_2010}
+\end{proof}
+If $X$ is a nonsingular variety of dimension $n$ over $k$ we define the \textbf{tangent sheaf} $\mathcal{T}_X=\mathcal{H}om_{\mathcal{O}_X}(\Omega_{X/k},\mathcal{O}_X)$ and the \textbf{canonical sheaf} $\omega_X=\bigwedge^n \Omega_{X/k}$. The tangent sheaf is locally free of rank $n$ and the canonical sheaf is invertible. If $Y \overset{i}{\to}X$ is a nonsingular subvariety we define the \textbf{conormal sheaf} of $Y$ on $X$ as $\mathcal{C}_{Y/X}=i^*(\mathcal{I}/\mathcal{I}^2)$ where $\mathcal{I}$ is the ideal sheaf of $Y$ in $X$. Its dual $\mathcal{N}_{Y/X}=\mathcal{H}om_{\mathcal{O}_Y}(\mathcal{C}_{Y,X},\mathcal{O}_Y)$ is the \textbf{normal sheaf} of $Y$ in $X$. Both are locally free.\\
+We need one more theorem from \cite[Hartshorne]{hartshorne_2010}:
+\begin{theorem}\label{nonsing}
+Let $X$ be a nonsingular variety over $k$ and $Y\subset X$ an irreducible closed subscheme defined by a sheaf of ideals $\mathcal{I}$. Then $Y$ is nonsingular if and only if\\
+(i) $\Omega_{Y/X}$ is locally free and\\
+(ii) the sequence $0 \to \mathcal{I}/\mathcal{I}^2 \to \Omega_{X/k} \otimes \mathcal{O}_Y \to \Omega_{Y/k} \to 0$ is exact
+\end{theorem}
+\begin{proof}
+\cite[Hartshorne, theorem II.8.17]{hartshorne_2010}
+\end{proof}
+\begin{proposition}\label{canonico}
+Let $Y$ be a nonsingular variety of codimension $r$ in a nonsingular variety $X$ over $k$. Then $\omega_Y \cong \omega_X|_Y \otimes \bigwedge^r \mathcal{N}_{Y/X}.$
+\end{proposition}
+\begin{proof}
+Since $Y$ is nonsingular \ref{nonsing} gives an exact sequence
+\begin{equation}
+0 \to \mathcal{I}/\mathcal{I}^2 \to \Omega_{X/k} \otimes \mathcal{O}_Y \to \Omega_{Y/k} \to 0
+\end{equation}
+Taking the highest exterior powers gives $\omega_X \otimes \mathcal{O}_Y \cong \omega_Y \otimes \bigwedge^r(\mathcal{I}/\mathcal{I}^2)$. Applying $\otimes \mathcal{N}_{Y/X}$ and commuting the highest exterior power with the dual yields $\omega_Y \cong \omega_X \otimes \bigwedge^r \mathcal{N}_{Y/X}$.
+\end{proof}
+Proposition \ref{canonico} gives a way to compute the canonical sheaf of nonsingular varieties:
+\begin{example}[The canonical sheaf of a hypersurface]\label{canonicosurface}
+Let $X=\mathbb{P}^n_k$ for $n \geq 2$ and $Y$ be a nonsingular hypersurface of degree $d$. Taking the highest exterior power from the Euler sequence gives $\omega_X \cong \mathcal{O}_X(-n-1)$, so by (\ref{canonico}) $\omega_Y \cong \mathcal{O}_X(-n-1) \otimes \mathcal{N}_{Y/X}$. Since $Y$ is a hypersurface of degree $d$ we have the exact sequence $0 \to \mathcal{O}_X(-d) \to \mathcal{O}_X \to \mathcal{O}_Y \to 0$ so $\mathcal{I}/\mathcal{I}^2 \cong \mathcal{I} \otimes \mathcal{O}_Y \cong \mathcal{O}(-d)|_Y$ and hence $\mathcal{N}_{Y/X} \cong \mathcal{O}_Y(d)$ which implies $\omega_Y \cong \mathcal{O}_Y(d-n-1)$.
+\end{example}
+\section{Curves and Chern classes}
+In this section a curve will be an integral scheme of dimension 1, proper over $k$ with regular local rings.
+\begin{definition}
+	Let $X$ be a projective scheme of dimension $r$ over $k$ and $\mathcal{F}$ be a coherent sheaf on $X$. The Euler characteristic of $\mathcal{F}$ is defined by
+	\begin{equation}
+		\chi^e(\mathcal{F}) = \Sigma_{i=0}^{r} (-1)^i h^i(X,\mathcal{F})
+	\end{equation}
+Here $h^i(X,\mathcal{F})$ denotes the dimension of $H^i(X,\mathcal{F})$ as a $k$-vector space
+\end{definition}
+Note that if $0 \to \mathcal{F}_1 \to \mathcal{F}_2 \to \mathcal{F}_3 \to 0$ is an exact sequence of coherent sheaves on $X$, then we have an exact sequence of finite dimensional $k$-vector spaces
+\begin{equation}
+0 \to H^0(X,\mathcal{F}_1) \to H^0(X,\mathcal{F}_2) \to H^0(X,\mathcal{F}_3) \to H^1(X,\mathcal{F}_1) \to ...
+\end{equation}
+which implies $\chi^e(\mathcal{F}_2)=\chi^e(\mathcal{F}_1)+\chi^e(\mathcal{F}_3)$. In other words, $\chi^e$ is additive.
+\begin{definition}
+	Let $X$ be a projective scheme of dimension $r$ over $k$. We define the arithmetic genus $p_a(X)$ of $X$ by:
+	\begin{equation}
+		p_a(X)=(-1)^r(\chi^e(\mathcal{O}_X)-1)
+	\end{equation}
+	If $X$ is a curve we also define the geometric genus $p_g(X)=h^0(X,\omega_X)$, where $\omega_X$ is the canonical sheaf.
+\end{definition}
+If $X$ is a curve then $h^r(\mathcal{O}_X)=0$ for $r \geq 2$ so $p_a(X)=(-1)(h^0(\mathcal{O}_X)-h^1(\mathcal{O}_X)-1)$. Since $X$ is integral it corresponds to a projective variety, hence $H^0(\mathcal{O}_X)=k$ which implies $p_a(X)=h^1(\mathcal{O}_X)$. Serre duality implies $H^0(X,\omega_X) \cong Ext^1(\omega_X,\omega_X)^* \cong Ext^1(\mathcal{O}_X,\mathcal{O}_X)^* \cong H^1(X,\mathcal{O}_X)^*$ because $\omega_X$ is invertible, so $h^0(X,\omega_X)=h^1(X,\mathcal{O}_X)$. This leads to the definition of an important number
+\begin{definition}
+	Let $X$ be a curve, then $p_a(X)=p_g(X)=h^1(X,\mathcal{O}_X)$ is called the genus of $X$. We denote it by $g$.
+\end{definition}
+Since we have only defined those numbers for projective schemes, it is important to notice that a curve $X$ is necessarily projective since $X$ is proper over $k$. \cite[Hartshorne II.6.7]{hartshorne_2010}.\\
+We will briefly recall some basic definitions on divisors.\\
+Let $X$ a notherian integral separated scheme which is regular on codimension one \cite[Hartshorne, p.130]{hartshorne_2010}. A Weil divisor on $X$ is an element of the free abelian group $Div(X)$ generated by prime divisors, in other words generated by closed integral subscheme $Y$ of $X$. We can write a divisor $D=\Sigma_{i=1}^r n_i Y_i$ with $n_i \in \mathbb{Z}$. The degree of the divisor $D$ is defined to be $deg(D)=\Sigma_{i=1}^r n_i$. A divisor $D$ is called effective if $n_i \geq 0$ for every $i$.\\
+Since $X$ is integral it has a generic point $\xi \in X$. The function field of an integral scheme is defined as the stalk at its generic point $K(X)=\mathcal{O}_{X,\xi}$. An element of $K(X)$ is called a rational function. A prime divisor $Y$ is integral so we can consider the stalk at its generic point $\mathcal{O}_{X,\eta}$ which has quotient field $K(X)$ and it is a discrete valuation ring (this comes from the fact that a ring $A$ is a discrete valuation ring if and only if it is noetherian, normal and it has only two prime ideals : $0$ and $m$). So it makes sense to talk about the evaluation $v_Y(f)$ of $f \in K(X)^*=K(X)- \{ 0 \} $ at $Y$. We define the divisor of $f$ to be $div(f)=\Sigma v_Y(f)Y$, where $\Sigma$ runs over all prime divisors. It is well defined because
+any proper closed subset of $X$ can contain only a finite amount of prime divisors. \cite[Hartshorne, II.6.1]{hartshorne_2010}\\
+Given two divisors $D,D'$ we say $D$ is linearly equivalent to $D'$ if $D-D'=div(f)$ for some rational function $f$. The quotient group $Div(X)$ modulo linear equivalence is called the divisor class group $Cl(X)$ and it is isomorphic to the group $Pic(X)$ of invertible sheaves on $X$ modulo isomorphism \cite[Hartshorne, II.6.10]{hartshorne_2010}, the image of $[D] \in Div(X)/ \sim$ in $Pic(X)/ \sim$ is denoted $\mathcal{L}(D)$. A divisor $K$ corresponding to the invertible sheaf $\omega_X$ is said to be a canonical divisor.
+
+The Riemann-Roch theorem was originally proven by Riemann in 1857 \cite[Riemann]{Riemann} and later generalized by Roch in 1865 \cite[Roch]{Roch}, it was first developed in an analytic context. We present here a version of Riemann-Roch concerning curves in algebraic geometry.
+\begin{theorem}\cite[Hartshorne, Riemann-Roch Theorem p.295]{hartshorne_2010}\label{riemannrochcurve}
+	Let $D$ be a divisor on a curve $X$ of genus $g$. Then
+	\begin{equation}
+	h^0(\mathcal{L}(D))-h^0(\mathcal{L}(K-D))=deg(D)+1-g
+	\end{equation}
+	where $K$ is a canonical divisor.
+\end{theorem}
+Theorem (\ref{riemannrochcurve}) is an important tool used to compute cohomology of invertible sheaves. The divisor $K-D$ corresponds to an invertible sheaf $\omega_X \otimes \mathcal{L}(D)^*$, using Serre duality we conclude $H^0(\omega_X \otimes \mathcal{L}(D)^*) \cong H^1(\mathcal{L}(D))^*$. Thus the Riemann-Roch theorem simply states $\chi^e(\mathcal{L}(D))=deg(D)+1-g$.
+
+\begin{example}
+	Let $Y \overset{i}{\to} X=\mathbb{P}^3$ be a conic. It is of the form $V(f_1,f_2)$ where $f_1 \in H^0(\mathcal{O}_{\mathbb{P}^3}(1))$ and $f_2 \in H^0(\mathcal{O}_{\mathbb{P}^3}(2))$ and it has degree $deg(f_1)deg(f_2)=2$. The canonical sheaf $\omega_Y$ is isomorphic to $\mathcal{O}_Y(-1)$ by Proposition (\ref{canonicosurface}) thus $K$ is linearly equivalent to $-L$ where $L$ is the divisor corresponding to $i^*\mathcal{O}_X(1)$, it has degree $deg(L)=2$ because the intersection of a general hyperplane with $Y$ has two points. Apply Theorem (\ref{riemannrochcurve}) we get: $h^0(\omega_Y)-h^0(\mathcal{O}_Y)=deg(K)+1-g$. By definition $h^0(\omega_Y)=g$ so $g=(-deg(H)+2)/2=0$. Now let $r \in \mathbb{Z}$ and let $D=rL$. $\mathcal{L}(D)=\mathcal{O}_Y(r)$ so $h^0(\mathcal{O}_Y(r))-h^1(\mathcal{O}_Y(r))=1+2r$.
+\end{example}
+We won't use theorem (\ref{riemannrochcurve}), but we will use one of the many generalizations, the Hirzebruch-Riemann-Roch. But first we need a few definitions.
+\begin{definition}(Chern class of a vector bundle)\cite[Hartshorne, p.429]{hartshorne_2010}\label{defchern}
+Let $\mathcal{E}$ be a locally free sheaf of rank $r$ on a nonsingular quasi-projecive variety $X$. For each $i=0,...,r$ we define the $i$th Chern class $c_i(\mathcal{E})\in A^i(X)$ ($A^i(X)$ is the ith Chow group) by the requirement $c_0(\mathcal{E})=1$ and
+\begin{equation}
+\Sigma_{i=0}^r (-1)^i \pi^* c_i(\mathcal{E}).\xi^{r-i}=0
+\end{equation}
+in $ A^r(\mathbb{P}(\mathcal{E}))$ where $\pi : \mathbb{P}(\mathcal{E}) \to X$ is the projection from the associated projective bundle of $\mathcal{E}$ and $\xi \in A^1(\mathbb{P}(\mathcal{E}))$ is the class of the divisor corresponding to $\mathcal{O}_{\mathbb{P}(\mathcal{E})}(1)$.
+\end{definition}
+We will be most interested in the case $X=\mathbb{P}^n$. In this case $A^i(X)\cong\mathbb{Z}$ is generated by $H^d$ where $H$ is the hyperplane class associated to $\mathcal{O}_{\mathbb{P}^n}(1)$. So $A(X)=\bigoplus_{i \geq 0}A^i(X)$ is just $\mathbb{Z}[H]/H^{n+1}$ as a group since $A^{n+1}(X)=0$. It is possible to define a product in $A(X)$, making it isomorphic to $\mathbb{Z}[H]/H^{n+1}$ as a ring. The product $A^d(X) \times A^e(X) \to A^{d+e}(X)$ can be seen as the general intersection of varieties. So we can identify $c_i(\mathcal{E})$ with an integer for every $i$ and make computations with them as if they were in $\mathbb{Z}[H]/H^{n+1}$. The Chern polynomial $c_t(\mathcal{E})$ is just $1+c_1(\mathcal{E})t+...+c_r(\mathcal{E})t^r$. The Chern polynomial is multiplicative in the sense that if $0 \to \mathcal{E}' \to \mathcal{E} \to \mathcal{E}'' \to 0$ is exact then $c_t(\mathcal{E})=c_t(\mathcal{E}')c_t(\mathcal{E}'')$
+
+At some point we will be talking about the Chern class of a coherent sheaf, this is possible because since $c_t$ is multiplicative, it can be defined on the Grothendieck group of vector bundles on $X$ \cite[Hartshorne, p.435]{hartshorne_2010} and for a nonsingular variety $X$ the Grothendieck groups of all vector bundles and of all coherent sheaves coincide \cite[Hartshorne, III Ex. 6.9]{hartshorne_2010}. Using this isomorphism we can define the Chern class of a coherent sheaf on $X$.
+
+Let $c_t(\mathcal{E})=\prod_{i=1}^r (1+a_iH)$ considering $c_t$ in $A(X) \otimes \mathbb{Q}$ where $a_i$ are formal symbols, the exponential Chern character of $\mathcal{E}$ is $ch(\mathcal{E})=\Sigma_{i=1}^r e^{a_i}$ where $e^x=1+x+\frac{x^2}{2}+...$  and the Todd class is defined to be $td(\mathcal{E})=\prod_{i=1}^{r} \frac{a_i}{1-e^{-a_i}}$ where $\frac{x}{1-e^{-x}}=1+\frac{x}{2}+\frac{x^2}{12}-\frac{x^4}{720}+...$.
+\begin{theorem}(Hirzebruch-Riemann-Roch)\label{hirzebruchriemannroch}
+	For a locally free sheaf $\mathcal{E}$ of rank $r$ on a nonsingular projective variety $X$ of dimension $n$,
+	\begin{equation}
+	\chi^e(\mathcal{E})=deg(ch(\mathcal{E}).td(\mathcal{T}_X))_n
+	\end{equation}
+	where $()_n$ denotes the component of degree $n$ in $A(X)\otimes \mathbb{Q}$
+\end{theorem}
+The Hirzebruch-Riemann-Roch theorem will be used in chapter 3 to develop the formula (\ref{riemannroch}).
+
+Let $\mathcal{E}$ be a vector bundle of rank 2 on $\mathbb{P}^3$. We have the following formulas: \\
+(i) $c_1(\mathcal{E}(r))=c_1(\mathcal{E})+2r$ \\
+(ii) $c_2(\mathcal{E}(r))=c_2(\mathcal{E})+c_1(\mathcal{E})r+r^2$ \\
+(iii) $c_i(\mathcal{E}^*)=(-1)^i c_i(\mathcal{E})$\\
+If $\mathcal{E}$ has first Chern class $c_1 \in \{-1,0\}$ we say $\mathcal{E}$ is \textbf{normalized}.
+Furthermore we can always normalize a vector bundle $\mathcal{E}$, in other words we can always find a $r \in \mathbb{Z}$ so that $c_1(\mathcal{E}(r)) \in \{-1,0 \}$.
+
+We end this section with the notion of stability of torsion-free sheaves
+\begin{definition}[Stability of torsion-free sheaves]
+	Let $\mathcal{F}$ be a torsion-free coherent sheaf on $X$, a normal projective variety with fixed very ample divisor $H$. We define the slope of $\mathcal{F}$ to be $\mu({\mathcal{F}}):=deg(c_1(\mathcal{F}))/rk(\mathcal{F})$ where we are considering $c_1$ as an element of $Pic(X)$ and $deg$ is the degree with respect to $H$. $\mathcal{F}$ is \textbf{stable} if and only if $\mu({\mathcal{H}})<\mu({\mathcal{F}})$ for all proper non-zero coherent subsheaves $\mathcal{H}$ of $\mathcal{F}$ (and is \textbf{semistable} if $\mu({\mathcal{H}}) \leq \mu({\mathcal{F}})$).
+\end{definition}
+A normalized vector bundle $\mathcal{E}$ of rank 2 on $\mathbb{P}^3$ is stable if and only if $H^0(\mathcal{E})=0$ \cite[Okonek, Schneider \& Spindler, p. 167]{Okonek}.
+\section{Monads}
+In this section we will define one of the main objects of this dissertation.
+\begin{definition}\label{def monad}
+	A monad $\mathcal{V}_\bullet$ on $X$ is a complex of locally free sheaves on X
+	\begin{equation}
+	\mathcal{V}_\bullet : \mathcal{V}_0 \overset{ \alpha }{ \to} \mathcal{V}_1 \overset{ \beta }{ \to} \mathcal{V}_2
+	\end{equation}
+	such that $\alpha$ is injective and $\beta$ is surjective as morphisms of sheaves. The sheaf $\mathcal{E}=ker \beta / im \alpha$ is called the cohomology of $\mathcal{V}_\bullet$.  \\
+	The degeneration locus of $\mathcal{V}_\bullet$ is the set $\Sigma_{\mathcal{V}_\bullet} =\{x \in X | \ \alpha(x) \ is \ not \ injective  \} $
+\end{definition}
+Monads were introduced by Horrocks, who proved that every vector bundle on $\mathbb{P}^n$ is the cohomology of a minimal monad (\cite[Horrocks]{doi:10.1112/plms/s3-14.4.689} or \cite[Barth]{Barth1978}). In fact Horrocks shows that every rank 2 vector bundle on $\mathbb{P}^3$ is the cohomology of a monad $\mathcal{V}_0 \overset{ \alpha }{ \to} \mathcal{V}_1 \overset{ \beta }{ \to} \mathcal{V}_2$ where $\mathcal{V}_i$ are sums of line bundles. We are only interested in this particular situation. But before moving on we need an important theorem given by Beilinson.
+\begin{theorem}\cite[Okonek, Schneider \& Spindler, p. 240]{Okonek}\label{beilinson1}
+For any locally free sheaf $\mathcal{E}$ on $\mathbb{P}^n$ there exists a spectral sequence {$\mathcal{E}^{p,q}_r$} for $\mathcal{E}$ whose $\mathcal{E}_1$-term is given by ($q=0,...,n$ and $p=0,-1,...,-n$):
+\begin{equation}
+\mathcal{E}^{p,q}_1=H^q(\mathcal{E}(p)) \otimes \Omega^{-p}_{\mathbb{P}^n}(-p)
+\end{equation}
+which converges to 
+\begin{equation}
+\mathcal{E}^{i} = \begin{cases} \mathcal{E}, if \ p+q=0 \\ 0 \ otherwise
+\end{cases}
+\end{equation}
+\end{theorem}
+\begin{theorem}\cite[Okonek, Schneider \& Spindler, p. 245]{Okonek}\label{beilinson2}
+For any locally free sheaf $\mathcal{E}$ on $\mathbb{P}^n$ there exists a spectral sequence {$\mathcal{E}^{p,q}_r$} for $\mathcal{E}$ whose $\mathcal{E}_1$-term is given by ($q=0,...,n$ and $p=0,-1,...,-n$):
+\begin{equation}
+\mathcal{E}^{p,q}_1=H^q(\mathcal{E}\otimes\Omega^{-p}_{\mathbb{P}^n}(-p)) \otimes \mathcal{O}_{\mathbb{P}^n}(p)
+\end{equation}
+which converges to 
+\begin{equation}
+\mathcal{E}^{i} = \begin{cases} \mathcal{E}, if \ p+q=0 \\ 0 \ otherwise
+\end{cases}
+\end{equation}
+\end{theorem}
+In addition with theorems such as the Serre duality and Riemann-Roch the Beilinson spectral sequence is an important tool for characterizing vector bundles on $\mathbb{P}^n$.
+
+We conclude the chapter giving an example on how to use the Beilinson spectral sequence. This result will also be used in chapter 2.
+\begin{lemma}\label{lemabeilinson}
+Let $\mathcal{F}$ be a coherent sheaf on $\mathbb{P}^n$ and $\{ \mathcal{F}^{p,q}_r \}$ its Beilinson spectral sequence. If $\mathcal{F}^{p,q}_1=0$ for $q \not=1$ and for $q=1$, $p \leq -3$ then the spectral sequence degenerates at the $\mathcal{F}_2$-term and the monad
+\begin{equation}
+0 \to \mathcal{F}^{-2,1}_\infty \to \mathcal{F}^{-1,1}_\infty \to \mathcal{F}^{0,1}_\infty \to 0
+\end{equation}
+has $\mathcal{F}$ as its cohomology.
+\end{lemma}
+\begin{proof}
+We have the following diagram on $\mathcal{F}_1$ : \\
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,
+    nodes in empty cells,nodes={minimum width=5ex,
+    minimum height=5ex,outer sep=-5pt},
+    column sep=2ex,row sep=3ex]{    
+     &          &            &           &  q    &   \\
+     &     0    &  0         &  0        &   0   &   \\
+     &     0    &\mathcal{F}^{-2,1}_1  & \mathcal{F}^{-1,1}_1 &   \mathcal{F}^{0,1}_1  &   \\
+     &     0    &  0         &  0        &   0   &  p \\ 
+  \quad\strut  &  &    &   &   &  \strut \\};
+  \draw[-stealth] (m-2-2) -- (m-2-3);
+  \draw[-stealth] (m-2-3) -- (m-2-4);
+  \draw[-stealth] (m-2-4) -- (m-2-5);
+  \draw[-stealth] (m-3-2) -- (m-3-3);
+  \draw[-stealth] (m-3-3) -- (m-3-4);
+  \draw[-stealth] (m-3-4) -- (m-3-5);
+  \draw[-stealth] (m-4-2) -- (m-4-3);
+  \draw[-stealth] (m-4-3) -- (m-4-4);
+  \draw[-stealth] (m-4-4) -- (m-4-5);
+\draw[->]  (m-5-5.east) -- (m-1-5.east) ;
+\draw[->] (m-4-1.south) -- (m-4-6.south) ;
+\end{tikzpicture} \\
+The differentials $d^{pq}_1: \mathcal{F}^{p,q}_1 \to \mathcal{F}^{p+1,q}_1$ give the complex 
+\begin{equation}
+\mathcal{F}^{-2,1}_1 \overset{\alpha}{\to} \mathcal{F}^{-1,1}_1 \overset{\beta}{\to} \mathcal{F}^{0,1}_1
+\end{equation}
+Let $\mathcal{K}=ker \ \alpha$, $\mathcal{L}=ker \ \beta / im \ \alpha$, $\mathcal{M}=coker \ \beta$, then the diagram of the $\mathcal{F}_2$-term looks as follows :
+
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,
+    nodes in empty cells,nodes={minimum width=5ex,
+    minimum height=5ex,outer sep=-5pt},
+    column sep=2ex,row sep=3ex]{    
+     &          &            &           &  q    &   \\
+     &     0    &  0         &  0        &   0   &   \\
+          &     0    &\mathcal{K}  & \mathcal{L} &   \mathcal{M}  &   \\ 
+     &     0    &  0         &  0        &   0   &   \\
+  \quad\strut  &  &    &   &   & p \strut \\};
+  \draw[-stealth] (m-2-2) -- (m-3-3);
+  \draw[-stealth] (m-3-3) -- (m-4-4);
+  \draw[-stealth] (m-2-3) -- (m-3-4);
+  \draw[-stealth] (m-3-4) -- (m-4-5);
+  \draw[-stealth] (m-2-4) -- (m-3-5);
+\draw[->]  (m-5-5.east) -- (m-1-5.east) ;
+\draw[->] (m-4-1.south) -- (m-4-6.south) ;
+\end{tikzpicture} \\
+All the differentials $d^{pq}_2 : \mathcal{F}^{p,q}_2 \to \mathcal{F}^{p+2,q-1}_2$ vanish and so  $\mathcal{K}=\mathcal{F}^{-2,1}_\infty$, $\mathcal{L}= \mathcal{F}^{-1,1}_\infty$, $\mathcal{M}=\mathcal{F}^{0,1}_\infty$.
+But by Beilinson's theorem $\mathcal{K}=\mathcal{M}=0$ and $\mathcal{L}=\mathcal{F}$. In particular 
+\begin{equation}
+0 \to \mathcal{F}^{-2,1}_\infty \to \mathcal{F}^{-1,1}_\infty \to \mathcal{F}^{0,1}_\infty \to 0
+\end{equation}
+is a monad whose cohomology is $\mathcal{F}$.
+\end{proof}
+\chapter{Linear and Horrocks monads}
+%\chapter{An introduction to the study of monads}
+This chapter contains the main goal of the first year of the master's degree: to study and understand the demonstrations from the first sections of \cite[Jardim]{jardim} and \cite[Jardim \& Martins]{jardim2} serving as an introduction to the study of monads, vector bundles and cohomology.
+
+In the first section of \cite[Jardim]{jardim} it is studied the cohomology of linear monads, including a theorem that guarantees a given torsion-free sheaf to be linear provided some conditions on its cohomology.\\
+In the first two sections of \cite[Jardim \& Martins]{jardim2} it is given a bijective correspondence between isomorphism classes of monads and collections of homogeneous elements of $H^1_*(\mathcal{E})$ and $H^1_*(\mathcal{E}\otimes\omega_X)$ where $\mathcal{E}$ is locally free and $X$ is an ACM variety. It is also studied the cohomology functor that associates to each Horrocks monad its cohomology sheaf.
+\section{Linear monads}
+Let $\mathcal{V}_\bullet: \mathcal{V}_0 \overset{\alpha}{\to} \mathcal{V}_1 \overset{\beta}{\to} \mathcal{V}_2$ be a monad, it is worth noticing that its cohomology $\mathcal{E}$ is not always locally free, but conditions on $\alpha$ can be set to guarantee it.
+Next proposition states that $\mathcal{E}$ is locally free if and only if $\alpha (x)$ is injective for every $x$.
+\begin{proposition}
+The degeneration locus of $\mathcal{V}_\bullet$ coincides with the singular locus of its cohomology $\mathcal{E}$. In other words $\Sigma_{\mathcal{V}_\bullet} = Sing(\mathcal{E}) = Supp(\mathcal{E}xt^1(\mathcal{E},\mathcal{O}_X))$
+\end{proposition}
+\begin{proof}
+Consider the short exact sequence :
+\begin{equation}
+0 \to \mathcal{V}_0 \to \mathcal{K} \to \mathcal{E} \to 0
+\end{equation}
+where $\mathcal{K} = ker \beta$. Applying the functor $\mathcal{H}om(-,\mathcal{O}_{\mathbb{P}^n})$ the sequence yields:
+\begin{equation}
+0 \to \mathcal{E}^* \to \mathcal{K}^* \overset{\alpha^*}{\to} \mathcal{V}_0^* \to \mathcal{E}xt^1(\mathcal{E},\mathcal{O}_X) \to 0
+\end{equation}
+$\mathcal{K}$ being locally free by \ref{kernel locally free}, and $\mathcal{V}_0$ is locally free by hypothesis which implies $\mathcal{E}xt^p(\mathcal{E},\mathcal{O}_X)=0$ for $p \geq 2$. Thus $Sing(\mathcal{E}) = Supp(\mathcal{E}xt^1(\mathcal{E}, \mathcal{O}_X))$. \\
+The first equality follows from the fact that surjectivity on the stalks happens if and only if the morphism of fibers is surjective. \\
+Then $\alpha (x)$ is injective if and only if $\alpha^* (x)$ is surjective if and only if $\alpha^*_x$ is surjective if and only if $x \not\in \Sigma_{V\bullet}$.
+\end{proof}
+
+In 1977 \cite[Atiyah, Hitchin, Drinfeld \& Manin]{ATIYAH1978185} introduced the notion of a mathematical instanton bundle on $\mathbb{P}^3$. Instantons are self-dual solutions of the Yang-Mills equations in the compactified euclidean 4-space $S^4$ which corresponds to certain real algebraic bundles on $\mathbb{P}^3_{\mathbb{C}}$.
+In 1986 \cite[Okonek \& Spindler]{Spindler} generalized this idea to define mathematical instanton bundles on $\mathbb{P}^{2n+1}$.
+
+Each instanton bundle appears as the cohomology of a monad of the form
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^{2n+1}}(-1)^r \overset{ \alpha}{\to} \mathcal{O}_{\mathbb{P}^{2n+1}}^{2n+2r} \overset{ \beta}{\to}  \mathcal{O}_{\mathbb{P}^{2n+1}}(1)^r
+\end{equation}
+This motivates the following definition
+\begin{definition}\cite[Jardim]{jardim}
+A monad is said to be linear if it is of the form :
+\begin{equation}
+V \otimes \mathcal{O}_{\mathbb{P}^n}(-1) \overset{ \alpha}{\to} W \otimes \mathcal{O}_{\mathbb{P}^n} \overset{ \beta}{\to} U \otimes \mathcal{O}_{\mathbb{P}^n}(1)
+\end{equation}
+Where $V,W,U$ are finite dimensional vector spaces, and the product $V \otimes \mathcal{O}_X$ denotes the locally free sheaf of rank $dim(V)$ with fiber $V$. \\ 
+A coherent sheaf will be called linear if it can be represented as the cohomology of a linear monad.
+\end{definition}
+The next theorem will give some necessary conditions for a sheaf $\mathcal{E}$ to be linear.
+
+\begin{theorem}\label{jardim1}\cite[Jardim]{jardim}
+If $\mathcal{E}$ is a linear sheaf, then: \\
+(i) for $n \geq 2$, $H^0(\mathcal{E}(k))=H^0(\mathcal{E}^*(k))=0$, $\forall k \leq -1$ \\
+(ii) for $n \geq 3$, $H^1(\mathcal{E}(k))=0$, $\forall k \leq -2$ \\
+(iii) for $n \geq 4$, $H^p(\mathcal{E}(k))=0$, $2 \leq p \leq n-2$ and $\forall k$ \\
+(iv) for $n \geq 3$, $H^{n-1}(\mathcal{E}(k))=0$, $\forall k \geq -n+1$ \\
+(v) for $n \geq 2$, $H^n(\mathcal{E}(k))=0$ for $k \geq -n$ \\
+(vi) for $n \geq 2$, $\mathcal{E}xt^1(\mathcal{E},\mathcal{O}_{P^n})=coker \alpha^*$ and $\mathcal{E}xt^p(\mathcal{E}(k),\mathcal{O}_{P^n})=0$ for $p \geq 2$ and all k
+\end{theorem}
+
+\begin{proof}
+Since $\mathcal{E}$ is a linear sheaf, we can write it as the cohomology of a monad:
+\begin{equation}
+V \otimes \mathcal{O}_{\mathbb{P}^n}(-1) \overset{ \alpha}{\to} W \otimes \mathcal{O}_{\mathbb{P}^n} \overset{ \beta}{\to} U \otimes \mathcal{O}_{\mathbb{P}^n}(1)
+\end{equation}
+First note that kernel $\mathcal{K}=ker \beta$ is locally free (\ref{kernel locally free}), and there are two sequences for every integer $k$:
+\begin{equation}
+0 \to \mathcal{K}(k) \to W \otimes \mathcal{O}_{\mathbb{P}^n}(k) \to U \otimes \mathcal{O}_{\mathbb{P}^n}(k+1) \to 0
+\end{equation}
+and
+\begin{equation}
+0 \to V \otimes \mathcal{O}_{\mathbb{P}^n}(k-1) \to \mathcal{K}(k) \to \mathcal{E}(k) \to 0
+\end{equation}
+
+From the first sequence writing the long exact sequence of cohomology:
+\begin{equation}
+0 \to H^0(\mathcal{K}(k)) \to H^0(W \otimes \mathcal{O}_{\mathbb{P}^n}(k)) \to H^0(U \otimes \mathcal{O}_{\mathbb{P}^n}(k+1)) \to ...
+\end{equation}
+If $k \leq -1$ then $H^0(W \otimes \mathcal{O}_{\mathbb{P}^n}(k))=0$ so that $H^0(\mathcal{K}(k))=0$.
+Continuing the long sequence:
+\begin{equation}
+H^0(U \otimes \mathcal{O}_{\mathbb{P}^n}(k+1)) \to H^1(\mathcal{K}(k)) \to H^1(W \otimes \mathcal{O}_{\mathbb{P}^n}(k)) \to ...
+\end{equation} 
+If $k \leq -2$ then $H^0(U \otimes \mathcal{O}_{\mathbb{P}^n}(k+1))=0$. Furthermore if $n \geq 2$ then $H^1 (\mathcal{O}_{\mathbb{P}^n}(k))=0$ and therefore $H^1(W \otimes \mathcal{O}_{\mathbb{P}^n}(k))=0$, implying $H^1(\mathcal{K}(k))=0$. \\
+Consider now $2 \leq p \leq n-1$ and the sequence
+\begin{equation}
+H^{p-1}(U \otimes \mathcal{O}_{\mathbb{P}^n}(k+1)) \to H^{p}(\mathcal{K}(k)) \to H^{p}(W \otimes \mathcal{O}_{\mathbb{P}^n}(k))
+\end{equation}
+If $p-1,p \leq n-1$ then the extremities are $0$, thus $H^p(\mathcal{K}(k))=0$. \\
+Finally if $p=n$, $H^p(\mathcal{O}_{\mathbb{P}^n}(k))=(\frac{1}{T_0 \ldots T_n} \mathbb{C}[\frac{1}{T_0}, \ldots, \frac{1}{T_n}])_k$, if $k \geq -n$ this group is $0$ which implies $H^n(\mathcal{K}(k))=0$. \\
+Now for the second sequence, again looking at the long exact sequence of cohomology:
+\begin{equation}
+H^{p}(V \otimes \mathcal{O}_{\mathbb{P}^n}(k-1)) \to H^{p}(\mathcal{K}(k)) \to H^{p}(\mathcal{E}(k)) \to H^{p+1}(V \otimes \mathcal{O}_{\mathbb{P}^n}(k-1))
+\end{equation}
+The extremities are zero when $p=0$ and $k \leq -1$, $1 \leq p \leq n-2$ $\forall k$, $p=n$ and $k \geq -n$ (because we are on the projective space). Under these conditions we have $H^{p}(\mathcal{K}(k)) \simeq H^{p}(E(k))$. 
+All these results gives the first half of (i) through (v). \\
+Dualizing both sequences yields:
+\begin{equation}
+0 \to U \otimes \mathcal{O}_{\mathbb{P}^n}(-k-1) \to W \otimes \mathcal{O}_{\mathbb{P}^n}(-k) \to \mathcal{K}^*(-k) \to 0
+\end{equation}
+\begin{equation}
+0 \to \mathcal{E}^*(-k) \to \mathcal{K}^*(-k) \to V \otimes \mathcal{O}_{\mathbb{P}^n}(-k+1) \to \mathcal{E}xt^1(\mathcal{E}(k),\mathcal{O}_{\mathbb{P}^n}) \to \mathcal{E}xt^1(\mathcal{K}(k),\mathcal{O}_{\mathbb{P}^n}) \to ...
+\end{equation}
+Writing the long exact sequence for the first sequence :
+\begin{equation}
+H^0( W \otimes \mathcal{O}_{\mathbb{P}^n}(-k)) \to H^0(\mathcal{K}^*(-k)) \to H^1(U \otimes \mathcal{O}_{\mathbb{P}^n}(-k-1))
+\end{equation}
+We conclude that $H^0(\mathcal{K}^*(k))=0$ for $k \leq -1$.
+
+For the second sequence, $\mathcal{K}$ locally free implies $\mathcal{E}xt^1(\mathcal{K}(k),\mathcal{O}_{\mathbb{P}^n})=0$. Thus
+
+\begin{equation}
+0 \to \mathcal{E}^* \to \mathcal{K}^* \overset{ \alpha^*}{\to} V \otimes \mathcal{O}_{\mathbb{P}^n}(1) \to \mathcal{E}xt^1(\mathcal{E},\mathcal{O}_{\mathbb{P}^n}) \to 0
+\end{equation}
+
+So that $coker \alpha^* = \mathcal{E}xt^1(\mathcal{E},\mathcal{O}_{\mathbb{P}^n})$, $H^0(E(k))=0$ for $k \leq -1$ and \\ $\mathcal{E}xt^p(\mathcal{E}(k),\mathcal{O}_{\mathbb{P}^n})=0$ for $p \geq 2$ $\forall k$.
+
+\end{proof}
+
+If $\mathcal{E}$ is a torsion-free sheaf, with some of the conditions on Theorem (\ref{jardim1}) we can guarantee it to be linear. Even further, we can explicitly give its monad:
+\begin{theorem}\cite[Jardim]{jardim}
+If $\mathcal{E}$ is a torsion-free sheaf on $\mathbb{P}^n$ satisfying: \\
+(i) for $n \geq 2$, $H^0(\mathcal{E}(-1))=H^n(\mathcal{E}(-n))=0$; \\
+(ii) for $n \geq 3$, $H^1(\mathcal{E}(-2))=H^{n-1}(\mathcal{E}(1-n))=0$; \\
+(iii) for $n \geq 4$, $H^p(\mathcal{E}(k))=0$, $2 \leq p \leq n-2$ and $\forall k \in \mathbb{Z}$; \\
+then $\mathcal{E}$ is linear and can be represented as the cohomology of the monad:
+\begin{equation}
+H^1(\mathcal{E} \otimes \Omega^{2}_{\mathbb{P}^n}(1)) \otimes \mathcal{O}_{\mathbb{P}^n}(-1) \to H^1(\mathcal{E} \otimes \Omega^{1}_{\mathbb{P}^n}) \otimes \mathcal{O}_{\mathbb{P}^n} \to H^1(\mathcal{E}(-1)) \otimes \mathcal{O}_{\mathbb{P}^n}(1)
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $H \subset \mathbb{P}^n$ be a hyperplane defined by a homogeneous polynomial $f$ of degree 1.
+By a known result \cite[Stacks Project \href{http://stacks.math.columbia.edu/tag/08A0}{Lemma 08A0}]{stacks-project} there is an exact sequence
+\begin{equation}
+0 \to \mathcal{E} \otimes \mathcal{O}_{\mathbb{P}^n}(k-1) \to \mathcal{E} \otimes \mathcal{O}_{\mathbb{P}^n}(k) \to \mathcal{E} \otimes \mathcal{O}_{\mathbb{P}^n}(k)|_H \to 0
+\end{equation}
+By hypothesis $H^0(\mathcal{E}(-1))=0$, so for $k=-1$ the long exact sequence yields
+\begin{equation}
+0 \to H^0(\mathcal{E}(-2)) \to H^0(\mathcal{E}(-1))=0
+\end{equation}
+And thus $H^0(\mathcal{E}(-2))=0$. Using the same process, by induction results \\ $H^0(\mathcal{E}(k))=0$, $k \leq -1$. \\
+For $k=-n+1$ we have
+\begin{equation}
+0=H^n(\mathcal{E}(-n)) \to H^n(\mathcal{E}(-n+1)) \to H^n(\mathcal{E}(-n+1)|_H)
+\end{equation} 
+But $H^n(\mathcal{E}(-n+1)|_H)=0$ because $H^n$ vanishes on any Noetherian topological space of dimension $n-1$, and $H^i(\mathbb{P}^{n-1},\mathcal{E}|_H) = H^i(\mathbb{P}^n,i_{*}\mathcal{E}|_H)$ \cite[Hartshorne, Lemma III.2.10]{hartshorne_2010}, hence $H^n(\mathcal{E}(k))=0$ for $k \geq -n$. \\
+Since $H^0(\mathcal{E}(-1))=H^1(\mathcal{E}(-2))=0$, the long sequence yields
+\begin{equation}
+0=H^0(\mathcal{E}(-1)) \to H^0(\mathcal{E}(-1)_{|p}) \to H^1(\mathcal{E}(-2))=0
+\end{equation}
+So $H^0(\mathcal{E}(-1)|_H)=0$ and therefore $H^0(\mathcal{E}(k)|_H)=0$ for $k \leq -1$ . Then for $k \leq -1$
+\begin{equation}
+0=H^0(\mathcal{E}(k)|_H) \to H^1(\mathcal{E}(k-1)) \to H^1(\mathcal{E}(k))
+\end{equation}
+By induction $H^1(\mathcal{E}(k))=0$ for $k \leq -2$. \\
+By hypothesis $H^n(\mathcal{E}(-n))=H^{n-1}(\mathcal{E}(1-n))=0$ then $H^{n-1}(\mathcal{E}(1-n)|_H)=0$. \\
+We apply the Beilinson spectral sequence on $\mathcal{E}(-1)$ to obtain a spectral sequence with
+$\mathcal{E}^{p,q}_1=H^q(\mathcal{E} \otimes \Omega^{-p}_{\mathbb{P}^n}(-p) \otimes \mathcal{O}_{\mathbb{P}^n}(p) )$ \\
+Now, suppose we had 
+\begin{equation}\label{suporte}
+H^q(\mathcal{E}(-1) \otimes \Omega^{-p}_{\mathbb{P}^n}(-p))=0 \ for \ q \ \not= 1 \ and \ for \ q=1, \ p\leq -3. 
+\end{equation}
+Lemma (\ref{lemabeilinson}) gives a monad
+\begin{multline*}
+0 \to H^1(\mathcal{E}(-1) \otimes \Omega^{2}_{\mathbb{P}^n}(2)) \otimes \mathcal{O}_{\mathbb{P}^n}(-2) \\ \to H^1(\mathcal{E}(-1) \otimes \Omega^{1}_{\mathbb{P}^n}(1)) \otimes \mathcal{O}_{\mathbb{P}^n}(-1) \to H^1(\mathcal{E}(-1)) \otimes \mathcal{O}_{\mathbb{P}^n} \to 0
+\end{multline*}
+With $\mathcal{E}(-1)$ as cohomology. So twisting it by $\mathcal{O}_{\mathbb{P}^n}(1)$ gives a monad with cohomology $\mathcal{E}$.
+The only thing left to do is to prove (\ref{suporte}).
+Consider the Euler sequence for p-forms 
+\begin{equation}
+0 \to  \Omega^{-p}_{\mathbb{P}^n}(-p) \to \mathcal{O}_{\mathbb{P}^n} ^{\oplus m} \to  \Omega^{-p-1}_{\mathbb{P}^n}(-p) \to 0
+\end{equation}
+where  $p=-1,...,-n$ and $m= {n+1\choose -p}$. and twist it by $\mathcal{E}(k)$
+\begin{equation}
+0 \to \mathcal{E}(k) \otimes \Omega^{-p}_{\mathbb{P}^n}(-p) \to \mathcal{E}(k) ^{\oplus m} \to \mathcal{E}(k) \otimes  \Omega^{-p-1}_{\mathbb{P}^n}(-p) \to 0
+\end{equation}
+We have the following vanishings \\
+- $H^0( \mathcal{E}(k) \otimes \Omega^{-p}_{\mathbb{P}^n}(-p) )=0$ for every p and $k \leq -1$ \\
+- $H^q(\mathcal{E}(-1) \otimes \Omega^{n}_{\mathbb{P}^n}(n))=H^q(\mathcal{E}(-2))=0$ for every q\\
+- $H^q(\mathcal{E}(-1))=0$ for every $q\not=1$\\
+$H^n(\mathcal{E}(k) \otimes \Omega^{-p}_{\mathbb{P}^n}(-p)) =0$ for every p and $k \geq -n$. Indeed, by hypothesis $H^0(\mathcal{E}(-1))=0$, hence $H^0( \mathcal{E}(k) \otimes \Omega^{-p}_{\mathbb{P}^n}(-p) )=0$ for every p and $k \leq -1$. The second equation follows from the fact that $\Omega^{n}_{\mathbb{P}^n}(n)\cong\mathcal{O}_{\mathbb{P}^n}(-1)$. 
+\end{proof}
+%\begin{definition}A linear sheaf $\mathcal{E}$ with $c_1(\mathcal{E})=0$ is an \textbf{instanton sheaf}. \\
+%The integer $c=- \chi(\mathcal{E}(-1))$ is called the charge of $\mathcal{E}$
+%\end{definition}
+Now that we have established a characterization of a linear monad, it is natural to ask whether we can guarantee any further property. We already know $\mathcal{E}$ is locally free precisely when its degeneration locus is empty. 
+We will prove that the degeneration locus of a monad is a subvariety. %from there 
+%For instance, we could ask when $E$ is just reflexive, or just torsion free.
+%Next lemma tell us that we can look at the codimension of the degeneration locus.
+
+\begin{definition}\label{homologicaldimension}
+Let $M$ be a $A$-module where $A$ is a ring, if $M$ is finitely generated then it has a projective resolution $0 \to P_n \to ... \to P_0 \to M \to 0$ with $P_n \not= 0$. The homological dimension (or projective dimension) of $M$ is defined to be the smallest number $n$. We can define a similar concept for coherent sheaves:
+let $\mathcal{F}$ be a coherent sheaf over $X=\mathbb{P}^n$ and $x \in X$. The stalk $\mathcal{F}_x$ is a finitely generated module over the local noetherian ring $\mathcal{O}_{X,x}$. Hence we can define the \textbf{homological dimension} $dh(\mathcal{F}_x)$ over $\mathcal{O}_{X,x}$ to be the minimal length of a projective (thus free) resolution of $\mathcal{F}_x$. \\
+Let $M$ be a module over a semi-local ring $A$ and $\mathfrak{J}$ the Jacobson radical of $A$. An $M$-sequence is a sequence $(a_1,...,a_p)$, $a_i \in \mathfrak{J}$ satisfying\\
+- For every integer $i$ with $1 \leq i \leq p$ we have: $a_i$ is not a zero divisor in $M/(a_1,...,a_{i-1})M$.\\
+The cohomological dimension $codh(\mathcal{F}_x)$ is defined as the maximal length of an $\mathcal{F}_x$-sequence in $\mathcal{O}_{X,x}$.The detailed discussion can be found in \cite[Serre, IV-14]{serre_1975}.
+\end{definition}
+The integer $dh(\mathcal{F}_x)$ is the smallest number $k$ so that for all finitely generated $\mathcal{O}_{X,x}$-module $M$ and all $i>k$ we have $Ext^i_{\mathcal{O}_{X,x}}(\mathcal{F}_x,M)=0$. We briefly explain it. \\
+Let $0 \to P_n \overset{d_n}{\to} P_{n-1} \to ... \to P_1 \to P_0 \overset{d_0}{\to} \mathcal{F}_x$ be a minimal free resolution of $\mathcal{F}_x$. Let $M$ be any $\mathcal{O}_{X,x}$-module (it is sufficient to consider $M$ finitely generated). Consider the exact sequences $0 \to K_i \to P_i \to K_{i-1} \to 0$ where $K_i = ker d_i=im d_{i+1}$ and apply the functor $Hom_{\mathcal{O}_{X,x}}(-,M)$. Any $Ext_{\mathcal{O}_{X,x}}^i(P_j,M)$ vanishes for $i>0$, thus setting $i=n-1$ we obtain $Ext_{\mathcal{O}_{X,x}}^1(K_{n-1},M) \cong Ext_{\mathbb{O}_{X,x}}^2(K_{n-2},M)=0$ because $K_{n-1} \cong P_n$. This process implies $Ext_{\mathcal{O}_{X,x}}^i(K_{n-i},M)\cong Ext_{\mathcal{O}_{X,x}}^{i+1}(K_{n-i-1},M)$ until the last sequence $0 \to K_0 \to P_0 \to \mathcal{F}_x$. Hence $Ext_{\mathcal{O}_{X,x}}^{n+1}(\mathcal{F}_x,M)=0$, while $Ext_{\mathcal{O}_{X,x}}^n(\mathcal{F}_x,M) \not = 0$ comes from the minimality of the resolution.
+\begin{lemma}\cite[Okonek, Schneider \& Spindler, Lemma 1.1.1]{Okonek}\label{dhokonek}
+$dh(\mathcal{F}_x) \leq q$ if and only if for all $i>q$ we have $(\mathcal{E}xt^i(\mathcal{F},\mathcal{O}_X))_x=0$ for all $x \in X$
+\end{lemma}
+\begin{lemma}\cite[Jardim]{jardim}
+Let $\mathcal{E}$ be a linear sheaf, then \\
+(i) $\mathcal{E}$ is locally free if and only if its degeneration locus is empty \\
+(ii) $\mathcal{E}$ is reflexive if and only if its degeneration locus is a subvariety of codimension at least 3 \\
+(iii) $\mathcal{E}$ is torsion free if and only if its degeneration locus is a subvariety of codimension at least 2
+\end{lemma}
+\begin{proof}
+Let $\Sigma$ be its degeneration locus.
+We have already proved (i). \\
+To prove (ii) and (iii) we use the concept of the $m$-th singularity set of a coherent sheaf $\mathcal{F}$ : \\
+$S_m (\mathcal{F}) = \{ x \in \mathbb{P}^n | codh \ \mathcal{F}_x \leq m \} = \{ x \in \mathbb{P}^n | dh(\mathcal{F}_x) \geq n-m \} $ where $dh(\mathcal{F}_x)$ denotes the homological dimension of $\mathcal{F}_x$ as an $\mathcal{O}_x$-module. \cite[Okonek, Schneider \& Spindler, Lemma 1.1.3]{Okonek}. Lemma (\ref{dhokonek})  tells us that
+\begin{equation}
+dh(\mathcal{F}_x)=d \iff \begin{cases} Ext^d (\mathcal{F}_x, \mathcal{O}_{X,x}) \not= 0 \\ Ext^p(\mathcal{F}_x,\mathcal{O}_{X,x})=0 \ \forall p >d \end{cases} 
+\end{equation}
+Back to our case, $x \in \Sigma$ implies $dh(\mathcal{E}_x)=1$, and $x \not \in \Sigma$ implies $dh(\mathcal{E}_x)=0$. Then $S_0(\mathcal{E}) = ... = S_{n-2}(\mathcal{E}) = \emptyset$ and $S_{n-1}=\Sigma$.\\
+%\textcolor{red}{não achei a referencia dos dois itens abaixo}\\
+Recall that a coherent sheaf $\mathcal{F}$ is a $k$-th syzygy sheaf if there is an exact sequence
+\begin{equation}
+0 \to \mathcal{F} \to \mathcal{O}_X^{p_1} \to \mathcal{O}_X^{p_2} \to ... \to \mathcal{O}_X^{p_k}
+\end{equation}
+\cite[Siu, Proposition 1.20]{Siu} states that:\\
+(i) if $codim \ \Sigma \geq 2$ then $dim \ S_m(\mathcal{E}) \leq m-1 \ \forall m<n$, hence $\mathcal{E}$ is a locally $1^{st}$-syzygy sheaf \\
+(ii) if $codim \ \Sigma \geq3$ then $dim \ S_m(\mathcal{E}) \leq m-2 \ \forall m<n$, hence $\mathcal{E}$ is a locally $2^{nd}$-syzygy sheaf. \\
+Finally we use that $\mathcal{E}$ is torsion free if and only if it is a locally $1^{st}$-syzygy sheaf, and $\mathcal{E}$ is reflexive if and only if it is a locally $2^{nd}$-syzygy sheaf. \cite[Okonek, Schneider \& Spindler, p.148-149]{Okonek}
+\end{proof}
+
+\section{Horrocks monads}
+In this section $X$ is a projective variety over $k$ with a given very ample invertible sheaf $\mathcal{O}_X(1)$. From this section and until the end of the dissertation a monad will \textbf{always have} cohomology $\mathcal{E}$ with $Sing(\mathcal{E})=\emptyset$ (thus it is always locally free). \\
+It is interesting to notice that if $\mathcal{E}$ is locally free then $\alpha^*$ is surjective, so a monad 
+\begin{equation}
+\mathcal{V}_\bullet : \mathcal{V}_0 \overset{ \alpha }{ \to} \mathcal{V}_1 \overset{ \beta }{ \to} \mathcal{V}_2
+\end{equation}
+gives another monad by dualizing $V_\bullet$ :
+\begin{equation}
+\mathcal{V}_\bullet ^* : \mathcal{V}_2 ^* \overset{ \beta ^* }{ \to} \mathcal{V}_1 ^* \overset{ \alpha ^* }{ \to} \mathcal{V}_0 ^*
+\end{equation}
+Denote $H^1_*(\mathcal{F})=\bigoplus_{k\in \mathbb{Z}}H^1(\mathcal{F}(k))$. We will now define a Horrocks monad as follows
+\begin{definition}\label{horrocksdef1}\cite[Jardim \& Martins]{jardim2}
+A monad is said to be Horrocks if \\
+(i) $\mathcal{V}_0 = \bigoplus\limits_{i=1}^r \omega_X (k_i)$ for $k_i \in \mathbb{Z}$ \\
+(ii) $\mathcal{V}_2 = \bigoplus\limits_{j=1}^s \mathcal{O}_X (l_j)$ for $l_j \in \mathbb{Z}$ \\
+(iii) $H^1_{*}(\mathcal{V}_1)=H^{n-1}_{*}(\mathcal{V}_1)=0$ \\
+\end{definition}
+We will now define an ACM variety
+\begin{definition}\label{ACM}\cite[Eisenbud]{eisenbud}
+A projective variety $X \xhookrightarrow{} \mathbb{P}^r$ of pure dimension $n$ is arithmetically Cohen-Macaulay (ACM) if its homogeneous coordinate ring $S(X)=H^0_{*}(\mathcal{O}_X)$ is a Cohen-Macaulay ring
+\end{definition}
+This is equivalent to saying that $H^1_{*}(\mathbb{P}^r,\mathcal{I}_X)=0$ and $H^p_{*} (\mathcal{O}_X)=0$ for $1 \leq p \leq n-1$ where $\mathcal{I}_X$ is the saturated ideal sheaf of $X$.
+
+%We need to prove one lemma before we are able to prove the next theorem
+%\begin{lemma}\cite[Serre, p.2-08]{serre_2003}
+%	Let $M$ be a $A$-module with $A$ a ring. Suppose $M$ has homological dimension $dh(M) \leq 1$ and let $\xi \in Ext^1_A(M,A)$. Let $E_\xi$ be the corresponding extension of $M$ given by the exact sequence $0 \to A \to E_\xi \to M \to 0$. Then $E_\xi$ is projective if and only if $\xi$ generates $Ext^1_A(M,A)$.
+%\end{lemma}
+%\begin{proof}
+%	Notice that $dh(E_\xi) \leq 1$, by (\ref{homologicaldimension}) we have $Ext^1_A(E_\xi,A)=0$ if and only if $E_\xi$ is projective. Applying the functor $Hom_A(-,A)$ we have $Hom_A(A,A) \to Ext^1_A(M,A) \to Ext^1_A(E_\xi,A) \to 0$. In other words $A \overset{.\xi}{\to} Ext^1_A(M,A) \to Ext^1_A(E_\xi,A) \to 0$ where the map $.\xi$ denotes the multiplication $x \mapsto x\xi$, and such map is surjective if and only if $\xi$ generates $Ext^1_A(M,A)$.
+%\end{proof}
+\begin{theorem}\cite[Jardim \& Martins, Theorem 2.3]{jardim2}\label{Horrocks1}
+Let $X$ be an ACM variety of dimension $n \geq 3$ and let $\mathcal{E}$ be a locally free sheaf on $X$. There exists a bijective correspondence between collections {$h_1,...,h_r,g_1,...,g_s$} with $h_i \in H^1(\mathcal{E}^* \otimes \omega_X (k_i))$ and $g_j \in H^1(\mathcal{E}(-l_j))$, for integers $k_i$ and $l_j$, and isomorphism classes of monads of the form
+\begin{equation}\label{eqhorrocks}
+\mathcal{V}_\bullet : \bigoplus\limits_{i=1}^r \omega_X (k_i) \overset{ \alpha }{ \to} \mathcal{F} \overset{ \beta }{ \to} \bigoplus\limits_{j=1}^s \mathcal{O}_X (l_j)
+\end{equation}
+whose cohomology is isomorphic to $\mathcal{E}$. This correspondence is such that $\mathcal{V}_\bullet$ is Horrocks if and only if the $g_j$ generate $H^1_{*}(\mathcal{E})$ and the $h_i$ generate $H^1_{*}(\mathcal{E}^* \otimes \omega_X)$ as $S(X)$-modules.
+\end{theorem}
+\begin{proof}
+Let $\Sigma_i h_i \in \bigoplus_i H^1 (\mathcal{E}^* \otimes \omega_X (k_i)) \cong H^1(\mathcal{E}^* \otimes (\bigoplus_i \omega_X (k_i)) \cong \\ Ext^1 (\mathcal{O}_X,\mathcal{E}^* \otimes \bigoplus_i \omega_X (k_i)) \cong Ext^1(\mathcal{E},\bigoplus_i \omega_X (h_i))$. This element defines an extension 
+\begin{equation}\label{eqhorrocks1}
+0 \to \bigoplus_{i=1}^r \omega_X (k_i) \overset{\alpha}{\to} \mathcal{K} \to \mathcal{E} \to 0
+\end{equation}
+In particular we have, for every $p$, the following exact sequence in cohomology
+\begin{equation}
+\bigoplus_{i=1}^r H^p( \omega_X (k_i)) \to H^p(\mathcal{K}) \to H^p(\mathcal{E}) \to \bigoplus_{i=1}^r H^{p+1}( \omega_X (k_i))
+\end{equation}
+But $0\overset{ACM}{=}H^{n-p}(\mathcal{O}_X (-k_i)) \cong H^p(\omega_X(k_i))$ hence $H^p (\mathcal{K}(m)) \cong H^p (\mathcal{E}(m))$ \\ for $1 \leq p \leq n-2$ and any $m$. \\
+Let $g_j ' \in H^1 (\mathcal{K}(-l_j))$ be the image through the isomorphism above for every $g_j$. We have the isomorphisms $ \bigoplus_j H^1(\mathcal{K}(-l_j)) \cong H^1(\bigoplus_j \mathcal{K}(-l_j)) \cong Ext^1 (\mathcal{O}_X,\bigoplus_j \mathcal{K}(-l_j) ) \cong Ext^1(\bigoplus_j \mathcal{O}_X (l_j),\mathcal{K})$, so $\Sigma_j g_j' \in \bigoplus_j H^1(\mathcal{K}(-l_j))$ defines an extension :
+\begin{equation}\label{eqhorrocks2}
+0 \to \mathcal{K} \to \mathcal{F} \overset{\beta}{\to} \bigoplus_{j=1}^{s} \mathcal{O}_X (l_j) \to 0
+\end{equation}
+Putting (\ref{eqhorrocks1}) and (\ref{eqhorrocks2}) together gives the monad :
+\begin{equation}\label{eqhorrocks3}
+\bigoplus_{i=1}^r \omega_X (k_i) \overset{\alpha}{\to} \mathcal{F} \overset{\beta}{\to} \bigoplus_{j=1}^{s} \mathcal{O}_X (l_j)
+\end{equation}
+Since $\mathcal{K}=ker \ \beta$ and $coker \ \alpha = \mathcal{E}$ we have $\mathcal{E}$ as the cohomology of (\ref{eqhorrocks3}).
+Now, conversely if we have an isomorphism class as in (\ref{eqhorrocks}), then there are two exact sequences 
+\begin{equation}
+0 \to \bigoplus\limits_{i=1}^r \omega_X (k_i) \to \mathcal{K} \to \mathcal{E} \to 0
+\end{equation}
+and
+\begin{equation}\label{auxiliar}
+0 \to \mathcal{K} \to \mathcal{F} \to \bigoplus\limits_{j=1}^s \mathcal{O}_X (l_j) \to 0
+\end{equation}
+with $\mathcal{K} = ker \beta$. The first one corresponds to an element $h \in Ext^1(\mathcal{E}, \bigoplus_i \omega_X (k_i) ) \cong Ext^1 (\mathcal{O}_X,\mathcal{E}^* \otimes \bigoplus_i \omega_X (k_i)) \cong H^1(\mathcal{E}^* \otimes \bigoplus_i \omega_X (k_i) )$, while the second sequence corresponds to an element $g \in Ext^1(\bigoplus\limits_{j=1}^s \mathcal{O}_X (l_j),\mathcal{K}) \cong \bigoplus_j H^1( \mathcal{K}(-l_j)) \cong \bigoplus_j H^1(\mathcal{E}(-l_j))$. Set $h = \Sigma_i h_i$ and $g = \Sigma_j g_j$, we still need to prove the last statement. \\
+First notice that conditions (i) and (ii) of (\ref{horrocksdef1}) are satisfied automatically.
+Since $X$ is ACM, $H^{1}_* (\bigoplus_j \mathcal{O}_X (l_j))=0$. But then using the exact sequence (\ref{auxiliar}) we have the following exact sequence :
+\begin{equation}
+H^0(\bigoplus_j \mathcal{O}_X (l_j +k)) \overset{\delta_k}{\to} H^1(\mathcal{K}(k)) \twoheadrightarrow H^1 (\mathcal{F}(k)) \to 0
+\end{equation} 
+Hence $\delta_k$ is surjective for every $k$ if and only if $H^{1}_* (\mathcal{F})=0$.
+Those morphisms are defined by construction taking $\Sigma f_j$ to $\Sigma  f_j g_j'$, each $f_j\in \mathcal{O}_X (l_j +k)$ has degree $l_j+k$, this is because given an element $\xi \in Ext^1(\mathcal{O}_X,\mathcal{K})$ corresponding to an extension 
+\begin{equation}
+0 \to \mathcal{K} \to \mathcal{F} \to \mathcal{O}_X \to 0
+\end{equation}
+And an element $g \in H^1(\mathcal{K}) \cong Ext^1(\mathcal{O}_X,\mathcal{K})$. 
+Then the morphism $H^0(\mathcal{O}_X) \to H^1(\mathcal{K})$ has to send $1$ to $g$.\\
+Surjectivity of each $\delta_k$ is equivalent to saying that $g_j'$ generates $H^1_*(\mathcal{K})$ as $H^0_*(\mathcal{O}_X)$-module. \\
+Finally, using Serre duality $H^{n-1}(\mathcal{F}(k)) \cong Ext^1(\mathcal{F}(k),\omega_X)^* \cong Ext^1(\mathcal{O}_X,\mathcal{F}^* \otimes \omega_X (-k))^* \cong H^1(\mathcal{F}^* \otimes \omega_X (-k))^*$ hence $H^{n-1}_*(\mathcal{F})=0$ if and only if $H^1_*(\mathcal{F}^* \otimes \omega_X)=0$.
+Since $\mathcal{E}$ is locally free the dual of $\mathcal{V}_\bullet$ is a monad, tensoring it by $\omega_X$ gives
+\begin{equation}
+\mathcal{V}_\bullet ^* :\bigoplus\limits_{j=1}^s \omega_X (-l_j) \to \mathcal{F}^* \otimes \omega_X \to \bigoplus\limits_{i=1}^r \mathcal{O}_X (-k_i)
+\end{equation}
+Which gives
+\begin{equation}
+H^0(\bigoplus\limits_{i=1}^r \mathcal{O}_X (-k_i+k)) \overset{\delta_k}{\to} H^1(\bigoplus\limits_{j=1}^s \omega_X (-l_j+k)) \to H^1(\mathcal{F}^* \otimes \omega_X(k)) \to 0
+\end{equation}
+The same argument shows that $H^{n-1}_* (\mathcal{F})=0$ if and only if $h_i$ generate $H^1 _* (\mathcal{E}^* \otimes \omega_X)$ as $H^0 _* (\mathcal{O}_X)$-module.
+\end{proof}
+The theorem leads to an interesting result not only concerning the case $X=\mathbb{P}^n$, but this time considering $X$ as an ACM variety of dimension $\geq 3$.
+\begin{corollary}\cite[Jardim \& Martins]{jardim2}
+Every locally free sheaf $\mathcal{E}$ on an ACM variety of dimension $n \geq 3$ is the cohomology of a monad
+\begin{equation}
+\mathcal{V}_\bullet : \bigoplus\limits_{i=1}^r \omega_X (k_i) \overset{ \alpha }{ \to} \mathcal{F} \overset{ \beta }{ \to} \bigoplus\limits_{j=1}^s \mathcal{O}_X (l_j)
+\end{equation}
+such that \\
+(i) $H^1_*(\mathcal{F}) = H^{n-1}_*(\mathcal{F})=0$ \\
+(ii) for $n \geq 4$, $H^p_* (\mathcal{F}(k)) \cong H^p_*(\mathcal{E}(k))$ for $2 \leq p \leq n-2$
+\end{corollary}
+\begin{proof}
+$\mathcal{E}$ is locally free so $H^1_*(\mathcal{E})$ and $H^1_*(\mathcal{E}^* \otimes \omega_X)$ are finitely generated as $H^0_*(\mathcal{O}_X)$-modules. Then we can pick any set of generators and apply last theorem to generate the desired monad.
+\end{proof}
+Since every Horrocks monad is a complex, and every morphism of Horrocks monads is a morphism of complexes it is immediate to see that Horrocks monads on $X$ form a full subcategory $\mathcal{H}(X)$ of $Ch_\bullet(X)$ the abelian category of complexes of sheaves on $X$. Since $\mathcal{H}(X)$ is a full subcategory of an abelian category, we also have that $\mathcal{H}(X)$ is additive.
+
+
+
+\begin{remark}
+Let $\mathcal{V}_\bullet$ and $\mathcal{W}_\bullet$ be two monads and $\phi_\bullet : \mathcal{V}_\bullet \to \mathcal{W}_\bullet$ be a morphism of monads. Then $\phi_\bullet$ defines a morphism of sheaves between the cohomologies of $\mathcal{V}_\bullet$ and $\mathcal{W}_\bullet$. \\
+Moreover, this defines a functor $\textbf{C}:\mathcal{H}(X) \to \mathcal{V}(X)$ from the category of Horrocks monads to the category of locally free sheaves on $X$.
+\end{remark}
+\begin{proof}
+Let $\mathcal{E}$ and $\mathcal{F}$ be the cohomology of $V_\bullet$ and $W_\bullet$ respectively. Considering both monads as complexes over $\mathcal{V}(X)$ we obtain a morphism which we call $\textbf{C}(\phi):\mathcal{E} \to \mathcal{F}$. Any composition of morphisms of complexes $\phi_\bullet \circ \psi_\bullet$ goes to $\textbf{C}(\phi_\bullet \circ \psi_\bullet)=\textbf{C}(\phi)\circ \textbf{C}(\psi)$ since everything is done in $Ch_\bullet(X)$.
+\end{proof}
+Theorem (\ref{Horrocks1}) states that $\textbf{C}$ is surjective on objects, but more can be asked of it.
+\begin{theorem}\cite[Jardim \& Martins, Theorem 2.5]{jardim2}\label{Horrocks2}
+Let $X$ be an ACM projective variety and
+\begin{align}
+\mathcal{M}_\bullet : \mathcal{M}_0 \overset{\alpha}{\to} \mathcal{M}_1 \overset{\beta}{\to} \mathcal{M}_2  \\
+\mathcal{N}_\bullet : \mathcal{N}_0 \overset{\alpha'}{\to} \mathcal{N}_1 \overset{\beta'}{\to} \mathcal{N}_2
+\end{align}
+be Horrocks monads. Consider the morphism
+\begin{align*}
+\rho : Hom(\mathcal{M}_1,\mathcal{N}_0) \oplus Hom(\mathcal{M}_2,\mathcal{N}_1) \to Hom(\mathcal{M}_\bullet,\mathcal{N}_\bullet) \\
+(\psi_1,\psi_2) \mapsto (\psi_1 \alpha, \alpha' \psi_1 + \psi_2 \beta, \beta' \psi_2)
+\end{align*}
+Then the sequence
+\begin{equation}
+0 \to Im (\rho) \overset{i}{\to} Hom(\mathcal{M}_\bullet, \mathcal{N}_\bullet) \overset{\pi}{\to} Hom(\textbf{C}(\mathcal{M}_\bullet), \textbf{C}(\mathcal{N}_\bullet)) \to 0
+\end{equation}
+is exact, where $i$ is the inclusion and $\pi$ the natural morphism.
+\end{theorem}
+\begin{proof}
+
+First we need to prove that $\rho$ is well defined. Denote $\gamma_0 =\psi_1 \alpha $, $\gamma_1 = \alpha' \psi_1 + \psi_2 \beta$ and $\gamma_2 = \beta' \psi_2$.
+\begin{center}
+\begin{tikzcd}
+\mathcal{M}_0 \arrow[r, "\alpha"] \arrow[d, "\gamma_0"]
+& \mathcal{M}_1 \arrow[r, "\beta"] \arrow[d, "\gamma_1"]
+& \mathcal{M}_2 \arrow[d, "\gamma"] \\
+\mathcal{N}_0 \arrow[r, "\alpha '"]
+& \mathcal{N}_1 \arrow[r, "\beta '"]
+& \mathcal{N}_2
+\end{tikzcd}
+\end{center}
+But then $\gamma_1 \alpha = \alpha' \psi_1 \alpha + \psi_2 \beta \alpha \overset{\beta \alpha=0}{=} \alpha' \psi_1 \alpha = \alpha ' \gamma_0$ and $\beta' \gamma_1 = \beta' \alpha' \psi_1 + \beta' \psi_2 \beta \overset{\beta' \alpha'=0}{=} \gamma_2 \beta$, hence $\rho$ is well defined. \\
+The map $i$ is injective by definition of image. To show $\pi i =0$ we can apply diagram chasing because the category of sheaves on an abelian category is an abelian category: Let $\mathcal{E}$ and $\mathcal{F}$ be the cohomology of $\mathcal{M}_\bullet$ and $\mathcal{N}_\bullet$ respectively, let $x + Im \alpha \in \mathcal{E}=ker \beta / Im \alpha$. \\ If $\gamma=(\gamma_0,\gamma_1,\gamma_2)=\rho(\psi_1,\psi_2)$ then $H(\gamma)(x+Im \alpha)=\gamma_1 (x) + Im \alpha' = \alpha' \psi_1 (x) + \psi_2 \beta (x) + Im \alpha'=0$ because $\alpha' (\psi_1(x)) \in Im\alpha'$ and $x \in ker \beta$ hence $\beta(x)=0$. \\
+To establish the surjectivity of $\pi$, consider the exact sequences :
+\begin{align*}
+(i) \ 0 \to ker \beta \overset{j}{\to} \mathcal{M}_1 \overset{\beta}{\to} \mathcal{M}_2 \to 0 \\
+(ii) \ 0 \to ker \beta' \overset{j'}{\to} \mathcal{N}_1 \overset{\beta'}{\to} \mathcal{N}_2 \to 0 \\
+(iii) \ 0 \to \mathcal{M}_0 \overset{\alpha}{\to} ker \beta \overset{p}{\to} \mathcal{E} \to 0 \\
+(iv) \ 0 \to \mathcal{N}_0 \overset{\alpha'}{\to} ker \beta' \overset{p'}{\to} \mathcal{F} \to 0
+\end{align*}
+Let $\phi : \mathcal{E} \to \mathcal{F}$, define $\tilde{\phi} =\phi \circ p : ker \beta \to \mathcal{F}$. Applying the functor $Hom (ker \beta, -)$ to the sequence (iv) results
+\begin{equation}
+Hom(ker \beta, ker \beta') \to Hom (ker \beta , \mathcal{F}) \to Ext^1(ker \beta, \mathcal{N}_0)
+\end{equation}
+Now, $Ext^1(ker \beta, \mathcal{N}_0)=0$, indeed applying $Hom(-,\mathcal{N}_0)$ to the sequence (i) we get
+\begin{equation}
+Ext^1(\mathcal{M}_1,\mathcal{N}_0) \to Ext^1(ker \beta, \mathcal{N}_0) \to Ext^2(\mathcal{M}_2, \mathcal{N}_0) 
+\end{equation} But $Ext^2(\mathcal{M}_2,\mathcal{N}_0) \cong Ext^2(\mathcal{O}_X,\mathcal{M}_2^* \otimes \mathcal{N}_0)\cong H^2(\mathcal{M}_2^* \otimes \mathcal{N}_0)=0$ because $\mathcal{M}_2$ is a sum of line bundles, $\mathcal{N}_0$ is a sum of twists of the canonical bundle, so we would have a sum of terms $H^2(\omega_X(k_j))$ which are zero since $X$ is ACM. The same goes for $Ext^1(\mathcal{M}_1,\mathcal{N}_0)\cong H^1(\mathcal{M}_1^* \otimes \mathcal{N}_0)=0$ by definition of a Horrocks monad. But then $Ext^1(ker \beta, \mathcal{N}_0)=0$ and hence $Hom(ker \beta, ker \beta') \to Hom(ker \beta,\mathcal{F})$ is surjective so there is a map $\Phi \in Hom(ker \beta, ker \beta')$ with $\tilde{\phi}=p' \circ \Phi$, in other words the right square in the diagram below is commutative :
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r]
+& \mathcal{M}_0 \arrow[r, "\alpha"]
+& ker \beta \arrow[r] \arrow[d, "\Phi"] \arrow[rd, dashrightarrow , "\tilde{\phi}"]
+& \mathcal{E} \arrow[r] \arrow[d, "\phi"]
+& 0 \\
+0 \arrow[r]
+& \mathcal{N}_0 \arrow[r, "\alpha '"]
+& ker \beta ' \arrow[r]
+& \mathcal{F} \arrow[r]
+& 0
+\end{tikzcd}
+\end{center}
+Applying $Hom(\mathcal{M}_0,-)$ to the sequence (iv) results in 
+\begin{equation}
+0 \to Hom(\mathcal{M}_0,\mathcal{N}_0) \to Hom(\mathcal{M}_0, ker \beta') \to Hom(\mathcal{M}_0,\mathcal{F}) \to Ext^1(\mathcal{M}_0,\mathcal{N}_0) = 0
+\end{equation}
+exact since since $X$ is $ACM$. But $p' \circ \Phi \circ \alpha =\tilde{\phi} \circ \alpha = \phi \circ p \circ \alpha=0$ because $p \circ \alpha =0$ so $\Phi \circ \alpha$ is in the kernel of the second morphism. Therefore there exists a map $g \in Hom(\mathcal{M}_0,\mathcal{N}_0)$ such that $\alpha ' g = \Phi \alpha$ hence making the following diagram commutative.
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r]
+& \mathcal{M}_0 \arrow[r, "\alpha"] \arrow[d,"g"]
+& ker \beta \arrow[r] \arrow[d, "\Phi"] \arrow[rd, dashrightarrow , "\tilde{\phi}"]
+& \mathcal{E} \arrow[r] \arrow[d, "\phi"]
+& 0 \\
+0 \arrow[r]
+& \mathcal{N}_0 \arrow[r, "\alpha '"]
+& ker \beta ' \arrow[r]
+& \mathcal{F} \arrow[r]
+& 0
+\end{tikzcd}
+\end{center}
+The composition of $\Phi$ with the first map in (ii) gives a map $\tilde{\Phi}:ker \beta \to \mathcal{N}_1$. Applying the functor $Hom(-,\mathcal{N}_1)$ to the sequence (i) yields
+\begin{equation}
+Hom(\mathcal{M}_1,\mathcal{N}_1) \to Hom(ker \beta, \mathcal{N}_1) \to Ext^1(\mathcal{M}_2,\mathcal{N}_1)=0
+\end{equation}
+So there is a $h : \mathcal{M}_1 \to \mathcal{N}_1$ such that the left square in the diagram below commutes :
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r]
+& ker \beta \arrow[r] \arrow[d,"\Phi"] \arrow[rd, dashrightarrow, "\tilde{\Phi}"]
+& \mathcal{M}_1 \arrow[r, "\beta"] \arrow[d, "h"] 
+& \mathcal{M}_2 \arrow[r]
+& 0 \\
+0 \arrow[r]
+& ker \beta' \arrow[r]
+& \mathcal{N}_1 ' \arrow[r, "\beta '"]
+& \mathcal{N}_2 \arrow[r]
+& 0
+\end{tikzcd}
+\end{center}
+Applying the functor $Hom(-,\mathcal{N}_2)$ to (i)
+\begin{equation}
+0 \to Hom(\mathcal{M}_2, \mathcal{N}_2) \to Hom(\mathcal{M}_1,\mathcal{N}_2) \to Hom(ker \beta, \mathcal{N}_2) \to Ext^1(\mathcal{M}_2, \mathcal{N}_2) = 0
+\end{equation}
+Using the same argument as before we have that $\beta ' \circ h$ is in the kernel of the second map, so there is a map $l : \mathcal{M}_2 \to \mathcal{N}_2$ with $\beta ' \circ h = l \circ \beta$. Thus making the diagram commute
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r]
+& ker \beta \arrow[r] \arrow[d,"\Phi"] \arrow[rd, dashrightarrow, "\tilde{\Phi}"]
+& \mathcal{M}_1 \arrow[r, "\beta"] \arrow[d, "h"] 
+& \mathcal{M}_2 \arrow[r] \arrow[d,dashrightarrow, "l"]
+& 0 \\
+0 \arrow[r]
+& ker \beta' \arrow[r]
+& \mathcal{N}_1 ' \arrow[r, "\beta '"]
+& \mathcal{N}_2 \arrow[r]
+& 0
+\end{tikzcd}
+\end{center}
+By construction $(g,h,l)$  is a morphism of complexes from $\mathcal{M}_\bullet$ to $\mathcal{N}_\bullet$.  \\ Notice that $\pi (g,h,l)=\phi$ :  if $x \in \mathcal{E}$ then $\pi(g,h,l)(x+Im \alpha)=h(x)+Im \alpha '=p' \circ h(x)=p' \circ h \circ j(x)=p' \circ \tilde{\Phi}(x)=p' \circ j' \circ \Phi (x) = p' \circ \Phi (x) = \phi \circ p(x) = \phi (x + Im \alpha)$,
+in which we are considering $j(x)=x$ and $j'(y)=y$ since $j,j'$ are inclusions. \\
+Therefore $\pi$ is surjective. To prove exactness suppose $(g,h,l) \in ker \pi$, then we get the following diagram :
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r]
+& \mathcal{M}_0 \arrow[r, "\alpha"] \arrow[d,"g"]
+& ker \beta \arrow[r, "p"] \arrow[d, "h'"]
+& \mathcal{E} \arrow[r] \arrow[d, "0"]
+& 0 \\
+0 \arrow[r]
+& \mathcal{N}_0 \arrow[r, "\alpha '"]
+& ker \beta ' \arrow[r, "p'"]
+& \mathcal{F} \arrow[r]
+& 0
+\end{tikzcd}
+\end{center}
+where we consider the restriction of $h$ as $h': ker \beta \to ker \beta '$.
+Applying the functor $Hom(ker \beta , -)$ on the sequence (iv) yields
+\begin{equation}
+0 \to Hom(ker \beta, \mathcal{N}_0) \to Hom(ker \beta , ker \beta ') \to Hom(ker \beta , \mathcal{F}) \to Ext^1(ker \beta , \mathcal{N}_0)=0
+\end{equation}
+But the diagram above states that $p' \circ h'=0$ so $h' \in ker (Hom(ker \beta,\mathcal{N}_0) \to Hom(ker \beta , ker \beta '))$ hence there exists a map $\psi_1: ker \beta \to \mathcal{N}_0$ with $\alpha ' \psi_1 = h'$.
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r]
+& \mathcal{M}_0 \arrow[r, "\alpha"] \arrow[d,"g"]
+& ker \beta \arrow[r, "p"] \arrow[d, "h'"] \arrow[ld,dashrightarrow,"\psi_1"]
+& \mathcal{E} \arrow[r] \arrow[d, "0"]
+& 0 \\
+0 \arrow[r]
+& \mathcal{N}_0 \arrow[r, "\alpha '"]
+& ker \beta ' \arrow[r, "p'"]
+& \mathcal{F} \arrow[r]
+& 0
+\end{tikzcd}
+\end{center}
+Applying the functor $Hom(-,\mathcal{N}_0)$ to (i)
+\begin{equation}
+0 \to Hom(\mathcal{M}_2,\mathcal{N}_0) \to Hom(\mathcal{M}_1,\mathcal{N}_0) \to Hom(ker \beta, \mathcal{N}_0) \to Ext^1(\mathcal{M}_2,\mathcal{N}_0)=0
+\end{equation}
+Then there is a map $\Psi_1:\mathcal{M}_1 \to \mathcal{N}_0$ extending $\psi_1$. \\ Since $Im \alpha \subset ker \beta$, $\Psi \circ \alpha = \psi \circ \alpha$, by the last diagram $h' \circ \alpha=\alpha' \circ g$ hence $\alpha' \circ \psi_1 \circ \alpha=h' \circ \alpha = \alpha' \circ g$ which by injectivity implies $\psi_1 \circ \alpha = g$ hence $\Psi_1 \circ \alpha = g$ (so $g$ is the image of $\rho$ on the first coordinate). \\
+Consider the map $H=h-\alpha'\circ\Psi_1:\mathcal{M}_1 \to \mathcal{N}_1$, the restriction of $H$ on $ker \beta$ is $h'-\alpha'\circ\psi_1=0$ so $H$ lies in the kernel of the second map in the exact sequence
+\begin{equation}
+Hom(\mathcal{M}_2,\mathcal{N}_1) \to Hom(\mathcal{M}_1,\mathcal{N}_1) \to Hom(ker \beta, \mathcal{N}_1)
+\end{equation}
+obtained from (i). But then there is $\Psi_2:\mathcal{M}_2 \to \mathcal{N}_1$ such that $H=\Psi_2 \circ \beta$ hence $h=\Psi_2 \beta + \alpha' \Psi_1$ (so $h$ is the image of $\rho$ on the second coordinate). \\
+Finally, $l \beta = \beta' h = \beta'\Psi_2 \beta + \beta' \alpha' \Psi_1= \beta' \Psi_2 \beta$ where the first equality comes from the fact that $(g,h,l)$ is a morphism of complexes, and the third is due to $\beta' \alpha'=0$. But this implies $l=\beta' \Psi_2$ because $\beta$ is surjective (so $l$ is the image of $\rho$ on the third coordinate). \\
+Those three equalities prove $(g,h,l)=(\Psi_1 \alpha, \alpha'\Psi_1 + \Psi_2 \beta, \beta' \Psi_2) \in Im \ \rho$ so the sequence is exact.
+\end{proof}
+\begin{theorem}\cite[Jardim \& Martins, Theorem 2.6]{jardim2}
+Let $X$ be an ACM variety of dimension $n \geq 3$. The functor $\textbf{C}$ is additive, essentially surjective, full and exact.
+\end{theorem}
+
+\begin{proof}
+It is essentialy surjective by Theorem (\ref{Horrocks1}), full by Theorem (\ref{Horrocks2}) and additive because $\pi(f+g)=\pi(f)+\pi(g)$ (the same $\pi$ in the last theorem). \\
+Consider the following exact sequence of monads:
+\begin{center}
+\begin{tikzcd}
+0 \arrow[d]
+& 0 \arrow[d]
+& 0 \arrow[d] \\
+\mathcal{L}_0 \arrow[d,"g_1"] \arrow[r,"\alpha_L"]
+& \mathcal{L}_1 \arrow[d,"h_1"] \arrow[r,"\beta_L"]
+& \mathcal{L}_2 \arrow[d,"l_1"] \\
+\mathcal{M}_0 \arrow[d,"g_2"] \arrow[r,"\alpha_M"]
+& \mathcal{M}_1 \arrow[d,"h_2"] \arrow[r,"\beta_M"]
+& \mathcal{M}_2 \arrow[d,"l_2"] \\
+\mathcal{N}_0 \arrow[d] \arrow[r,"\alpha_N"]
+& \mathcal{N}_1 \arrow[d] \arrow[r,"\beta_N"]
+& \mathcal{N}_2 \arrow[d] \\
+0
+& 0
+& 0
+\end{tikzcd}
+\end{center}
+with $\mathcal{E}$, $\mathcal{F}$ and $\mathcal{G}$ the cohomology of the first, second and third rows. Let $\bar{h_1}:\mathcal{E} \to \mathcal{F}$ and $\bar{h_2}:\mathcal{F} \to \mathcal{G}$ be the induced maps. We have $\bar{h_2} \bar{h_1}=0$ because $\textbf{C}(\beta \alpha)=\textbf{C}(0)=0$. \\
+Using the same argument from the proof of Theorem (\ref{Horrocks2}), we can verify the injectivity and surjectivity of $\bar{h_1}, \bar{h_2}$ respectively using diagram chasing : Let $\bar{x}=x+im \alpha_L \in \mathcal{E}$ and suppose $\bar{h_1}(\bar{x})=h_1(x)+im\alpha_M=0$. Then $h_1(x) \in im \alpha_M$ implies the existence of an unique $y \in \mathcal{M}_0$ with $\alpha_M(y)=x$ because $\alpha_M$ is injective. Using injectivity of $g_1$ gives another unique $z \in \mathcal{L}_0$ with $g_1(z)=y$. Since the diagram is commutative and $\alpha_L$ is injective we have $\alpha_L(z)=x$ hence $\bar{x}=0$. \\
+Let $\bar{y}=y+im\alpha_N \in \mathcal{F}$.Being the map $h_2$ surjective, there is an element $x \in \mathcal{M}_1$ with $h_2(x)=y \in ker \beta_N$. Since every square is commutative, $l_2 \circ \beta_M(x)=0$ so $\beta_M(x) \in ker l_2$, but then $\beta_M(x) \in im l_1$ and thus there is an unique $z \in \mathcal{L}_2$ with $l_1(z)=\beta_M(x)$. Since $\beta_L$ is surjective there is a (non unique) $z' \in \mathcal{L}_1$ such that $\beta_L(z')=z$ which implies $\beta_M \circ h_1(z')=\beta_M(x)$.\\ Now the fact that $\alpha_L$ is a monomorphism implies there is an unique $z''$ with $\alpha_L(z'')=z'$ hence $\alpha_M \circ g_1(z'')=h_1(z')$. But then $h_1(z') \in ker \beta_M$ implies that $0 = l_1 \circ\beta_L(z')=l_1(z)$ which implies $0 = l_1(z)=\beta_M(x)$ hence $x \in ker \beta_M$ so the element $\bar{x}=x+im \alpha_M$ is well defined and $\bar{h_2}(\bar{x})=\bar{y}$. \\
+Finally if $\bar{x} \in ker \bar{h_2}$ we have $h_2(x) \in im \alpha_N$ so there is an element $y \in \mathcal{N}_0$ with $\alpha_N(y)=h_2(x)$. But since $g_2$ is an epimorphism so there exists $ z \in \mathcal{M}_0$ such that $g_2(z)=y$ and $h_2 \circ \alpha_M(z)=\alpha_N \circ g_2(z)=\alpha_N(y)=h_2(x)$. So $h_2(\alpha_M(z)-x)=0$. \\ It is known \cite[MacLane, Theorem 3 (vi), p.201]{maclane} that implies $\alpha_M(z)-x \in im h_1$, which implies the existence of an element $z' \in \mathcal{L}_1$ with $h_1(z')=\alpha_M(z)-x$. Then $l_1 \circ \beta_L(z') =\beta_M(\alpha_M(z)-x)=0$ because $\beta_M \circ \alpha_M=0$ and $x \in ker \beta_M$. So $\beta_L(z') \in ker l_1$ implies $ \beta_L(z')=0$ hence $z' \in ker \beta_L$ and finally $\bar{z'}=z+im \alpha_L$ is well defined with $h_1(\bar{z'})=\bar{x}$ as desired.
+\end{proof}
+\begin{corollary}
+If $X$ is an ACM variety of dimension $n \geq 3$ then the category $\mathcal{V}(X)$ of locally free sheaves on $X$ is equivalent to a quotient of the category $\mathcal{H}(X)$ of Horrocks monads on $X$.
+\end{corollary}
+With Theorem (\ref{Horrocks1}) in hands we are ready to begin the study of the classification of vector bundles.
+\chapter{Toward the classification}
+In this chapter we will introduce the spectrum of a reflexive sheaf and the Hartshorne-Serre correspondence. Then we will give a few families of curves which we can use the correspondence to obtain families of vector bundles of rank 2 with $c_1=-1$, each vector bundle has an spectrum and a monad associated.
+%\chapter{Classification of stable rank 2 bundles with \texorpdfstring{$c_1=-1$}{texto}}
+\section{Spectrum and its properties}
+In \cite[Barth \& Elencwajg]{10.1007/BFb0063170} Barth and Elencwajg introduced the concept of the spectrum of a stable vector bundle $\mathcal{E}$ of rank 2 on $\mathbb{P}^3$ with $c_1=0$, we recall their construction. Let $L$ be a general line on $\mathbb{P}^3$, $p:X \to \mathbb{P}^3$ the blowing-up of $\mathbb{P}^3$ along $L$ and $q:X \to \mathbb{P}^1$ the morphism determined by the pencil of planes through $L$. The sheaf $\mathcal{H}:=R^1q_*p^*\mathcal{E}(-1)$ is locally free of rank $c_2$ on $\mathbb{P}^1$ \cite[Barth \& Elencwajg, Proposition 2.2.1 p.9]{10.1007/BFb0063170}. Grothendieck's theorem states that $\mathcal{H}$ is a finite sum of line bundles $\mathcal{O}_{\mathbb{P}^1}(k_1) \oplus ... \oplus \mathcal{O}_{\mathbb{P}^1}(k_{c_2})$ for suitable integers $k_i$. The sequence $\xi = \{k_i\}_{i=1,...,c_2}$ is called the \textbf{spectrum of $\mathcal{E}$}.
+
+In \cite[Hartshorne, Theorem 7.1 p.151]{Hartshorne1980} Hartshorne generalized the concept of spectrum for any reflexive sheaf $\mathcal{F}$ of rank 2 with $c_1=0$ or $-1$ and $H^0(\mathcal{F}(-1))$ on $\mathbb{P}^3$.
+\\In this chapter we won't be interested in the case $c_1=0$ since it has already been studied in \cite[Hartshorne \& Rao]{hartshorne1991}, but almost every result in this chapter is based on \cite[Hartshorne \& Rao]{hartshorne1991}. We start with some fundamental facts and definitions from Hartshorne's paper, starting from an equivalent definition for spectrum.
+\begin{theorem}\cite[Hartshorne, Theorem 7.1]{Hartshorne1980}\label{alpinista1}
+Let $\mathcal{F}$ be a rank 2 reflexive on $X$ with $c_1=0$ or $-1$. Assume $H^0(\mathcal{F}(-1))=0$. Then there is an unique sequence of integers (up to ordering) $\chi = \{k_i \}$, $i=1,...,c_2$ satisfying the following properties: \\
+(1) $h^1(\mathbb{P}^3,\mathcal{F}(l))=h^0(\mathbb{P}^1,\mathcal{H}(l+1))$ for $l \leq -1$ \\
+(2) $h^2(\mathbb{P}^3,\mathcal{F}(l))=h^1(\mathbb{P}^1,\mathcal{H}(l+1))$ for $l \geq -3$ if $c_1=0$ or $l \geq -2$ if $c_1=-1$ \\
+Where $\mathcal{H}= \oplus \mathcal{O}_{\mathbb{P}^1}(k_i)$.
+This set of integers is called the spectrum of $\mathcal{F}$.
+\end{theorem}
+In his proof Hartshorne gives a method on how to compute $\chi$.
+Define  $n_l=h^1(\mathcal{F}(-l)) - h^1(\mathcal{F}(-l-1))$ for $l \geq 1$, then $n_l= \# \{ k_j \in \chi | k_j \geq l-1 \}$,
+which results $n_l - n_{l-1}= \# \{k_j = l-1   \}$. In other words
+\begin{equation}\label{spectrum}
+\# \{k_j = l \}= h^1(\mathcal{F}(-l-1))-2h^1(\mathcal{F}(-l-2))+h^1(\mathcal{F}(-l-3)), \ l \geq 0
+\end{equation}
+We present some results which will help us in the computation of the spectrum
+\begin{proposition}\cite[Hartshorne, Proposition 7.2]{Hartshorne1980}\label{alpinista2}
+If $\mathcal{F}$ is locally free, then
+\begin{align}
+\{-k_i \}= \{k_i \} \ if \ c_1=0 \\
+\{-k_i \} = \{k_i +1 \} \ if \ c_1=-1
+\end{align}
+\end{proposition}
+\begin{theorem}\cite[Hartshorne, Theorem 7.5]{Hartshorne1980}\label{alpinista3}
+Let $\mathcal{F}$ be as in the previous theorem and $\chi = \{k_j \}$ its spectrum. \\
+(a) Assume $H^0 (\mathcal{F}(-1))=0$ \\
+1) If there is a $k \geq 1$ in $\chi$, then 1,2,...,k also occur in $\chi$ \\
+2) If there is a $k \leq -2$ then -1,-2,..,k also occur if $c_1=0$ and -2,-3,...,k also occur if $c_1=-1$ \\
+(b) Assume $\mathcal{F}$ is stable. \\
+1) If there is a $k \geq 1$ then 0,1,...,k also occur. \\
+2) If there is a $k \leq -1$ then -1,-2,...,k also occur. Furthermore, if $c_1 =0$, then either 0 also occurs, or -1 occurs at least twice. 
+\end{theorem}
+\begin{proposition}\cite[Hartshorne, Proposition 5.1]{Hartshorne1980}\label{alpinista4}
+Let $\mathcal{F}$ be a semistable rank 2 reflexive sheaf on $\mathbb{P}^3$ with $c_1=0$ or $-1$. Let $k= max \{-k_i \}$ as $k_i$ runs over the spectrum of $\mathcal{F}$. Assume there is a $r_0$ with $-k < r_0 \leq -2$ which occurs only once in the spectrum. Then each $k_i$ with $-k \leq k_i \leq r_0$ occurs exactly once in the spectrum
+\end{proposition}
+Now, let $\mathcal{F}$ be a rank 2 locally free sheaf with $c_1=-1$, $H^0(\mathcal{F}(-1))=0$ and $\chi$ its spectrum. If $k_j \in \chi$, by symmetry $-k_j -1 $ occurs in $\chi$. \\
+Define $p_j=\{-j-1,j\}$ for each integer. We will say that $p_j$ occurs in $\chi$ if $-j-1$ and $j$ are in $\chi$. Note that $p_j = p_{-j-1}$ so we will only deal with $j \geq 0$. \\
+For example, $p_0 p_1^2$ denotes the spectrum $\{-2^2,-1,0,1^2  \}$.\\
+By Theorem (\ref{alpinista3}), if $p_j$ occurs in $\chi$ and $j \geq 1$ then every $p_l$ with $1 \leq l \leq j$ also occurs, if $\mathcal{F}$ is stable then every $p_l$ with $0 \leq l \leq j$ occurs. \\
+With this in mind, given an integer $c_2$ we can write a list of possible spectra a stable bundle satisfying the hypothesis of (\ref{alpinista1}) can have:
+\begin{center}
+ \begin{tabular}{||c | c||} 
+ \hline
+ $c_2$ & $\chi$ \\ [0.5ex] 
+ \hline\hline
+ \\[-1em]
+ 1 & $\emptyset$ \\ 
+ \hline
+ 2 & $p_0$ \\
+ \hline
+ 3 & $\emptyset$ \\
+ \hline
+ 4 & $p_0 ^2,p_0 p_1$ \\
+ \hline
+ 5 & $\emptyset$  \\
+ \hline
+ 6 & $p_0^3,p_1p_0^2,p_1^2 p_0, p_2 p_1 p_0$ \\
+ \hline
+ 7 & $\emptyset$ \\
+ \hline
+ 8 & $p_0^4,p_1p_0^3,p_1^2p_0^2,p_1^3p_0,p_2p_1^2p_0,p_2p_1p_0^2,p_3p_2p_1p_0$ \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+Notice that we don't have $p_2^2p_1p_0$ in the line $c_2=8$, because Proposition (\ref{alpinista4}) tells us this case cannot happen. To see this notice that $max \{-k_i\}_{i=1,...,8}=3$ and take $r_0=-2$, we have $-3=max \{k_i\}_{i=1,...,8} <r_0=-2$ and $-2$ occurs only once in the spectrum, so Proposition (\ref{alpinista4}) states that any $k_i$ such that $-3=-k \leq k_i \leq -2$ must occur only once in the spectrum, this includes $-3$. But $-3$ appears twice in $\chi =p_2^2 p_1 p_0$ so $\chi$ can't happen.
+Since any integer in $\chi$ must have another different integer associated with it we see there is no rank 2 locally free sheaf with $c_1=-1$ satisfying $H^0(\mathcal{F}(-1))=0$ with odd $c_2$. \\
+It is interesting to notice this is not the case for $c_1=0$. In this case 0 is not associated with any other integer, so for instance it is possible to have a spectrum $\chi = \{-1,0^3,1 \}$. \\
+A general formula for any $c_2$ is given by $\prod_{i=1}^{\frac{c_2}{2}} \ p_i^{k_i}$ with: \\
+(i) $\Sigma_{i=1}^{\frac{c_2}{2}} \ k_i=c_2$ \\
+(ii) If $p_k \in \chi$ then $p_j \in \chi$ for every $0\leq j \leq k$ \\
+(iii) If $p_k \in \chi$ is such that $k= max \{l \ | \ p_l \in \chi \}$ and $p_j$ occurs only once with $p_1 \leq p_j < p_k$ then any $p_{j'}$ with $p_j \leq p_{j'} \leq p_k$ occurs only once
+
+Theorem (\ref{Horrocks1}) tells us that every locally free sheaf of rank 2 in $\mathbb{P}^3$ is the cohomology of a monad of the form
+\begin{equation}
+\mathcal{V}_0 \to \mathcal{V}_1 \to \mathcal{V}_2
+\end{equation}
+where $\mathcal{V}_0, \mathcal{V}_1, \mathcal{V}_2$ are sums of line bundles. Such monad can be chosen to be minimal in the sense that it is built from a minimal resolution of the first cohomology module \cite[Rao]{RAO198423} and \cite[Decker]{Decker1990}.\\
+\iffalse
+If $\mathcal{E}$ is a bundle of rank 2 with $c_1=-1$ then $\mathcal{E}^* \cong \mathcal{E}(1)$ \cite[Hartshorne, Proposition 1.10]{Hartshorne1980}. \\
+
+Suppose 
+\begin{equation}\label{monad1}
+\bigoplus_{i=1}^{r} \mathcal{O}_{\mathbb{P}^3}(a_i) \to \bigoplus_{i=1}^{s} \mathcal{O}_{\mathbb{P}^3}(b_i) \to \bigoplus_{i=1}^{t} \mathcal{O}_{\mathbb{P}^3}(c_i)
+\end{equation}
+is a monad for $\mathcal{E}$. Dualize and twist it by -1 to get a monad
+\begin{equation}
+\bigoplus_{i=1}^{t} \mathcal{O}_{\mathbb{P}^3}(-c_i-1) \to \bigoplus_{i=1}^{s} \mathcal{O}_{\mathbb{P}^3}(-b_i-1) \to \bigoplus_{i=1}^{s} \mathcal{O}_{\mathbb{P}^3}(-a_i-1)
+\end{equation}
+which has $\mathcal{E}^* (-1) \cong \mathcal{E}$ as its cohomology. Using \cite[Okonek, Schneider \& Spindler, Corollary 1 p.279]{Okonek} we can write (\ref{monad1}) as
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Let $\mathcal{E}$ be a vector bundle of rank 2 on $X=\mathbb{P}^3$ with $c_1=-1$ and $\{g_i \}_{i \in \Lambda}$ be a minimal set of generators of $H^1_*(\mathcal{E})$ where $g_i \in H^1(\mathcal{E}(-l_i))$. Note that $\omega_X\cong\mathcal{O}_{\mathbb{P}^3}(-4)$, then $H^1_*(\mathcal{E}^* \otimes \omega_X) \cong H^1_*(\mathcal{E})$ since $\mathcal{E}^* \cong \mathcal{E}(1)$. Now, taking $h_i:=g_i$ and using Theorem (\ref{Horrocks1}) we obtain a Horrocks monad of the form
+\begin{equation}
+\mathcal{V}_\bullet : \bigoplus\limits_{i=1}^r \omega_X (k_i) \overset{ \alpha }{ \to} \mathcal{F} \overset{ \beta }{ \to} \bigoplus\limits_{j=1}^s \mathcal{O}_X (l_j)
+\end{equation}
+To compute $k_i$ we just need to see that $g_i \in H^1(\mathcal{E}(-l_i)) \cong H^1(\mathcal{E}^* \otimes \omega_X (-l_i+3))$ so $k_i=-l_i+3$. Finally we use Horrocks criterion to show that $\mathcal{F}$ is a sum of line bundles since $H^1_*(\mathcal{F})=H^2_*(\mathcal{F})=0$ \cite[Horrocks]{doi:10.1112/plms/s3-14.4.689}.
+\fi
+In \cite[Decker, Proposition 1]{Decker1990}, Decker shows that $\mathcal{E}$ is the cohomology of a monad of the form
+\begin{equation}\label{finalhorrocks}
+\bigoplus_{i=1}^{r} \mathcal{O}_{\mathbb{P}^3}(-c_i-1) \to \bigoplus_{i=1}^{r+1} (\mathcal{O}_{\mathbb{P}^3}(-b_i-1) \oplus \mathcal{O}_{\mathbb{P}^3}(b_i)) \to \bigoplus_{i=1}^{r} \mathcal{O}_{\mathbb{P}^3}(c_i)
+\end{equation}
+Note that (\ref{finalhorrocks}) is Horrocks, hence by Theorem (\ref{Horrocks1}) $r$ coincides with the number of generators of $H^1_* (\mathcal{E})$ as a graded module over the ring of polynomials in four variables, while $-c_i$ are the degrees of these generators.
+\section{The Hartshorne-Serre correspondence}
+In \cite[Hartshorne]{hartshorne1974}, Hartshorne, following the ideas of previous works of Horrocks \cite[Horrocks, 1968]{HORROCKS1968117} and Serre \cite[Serre, 1960]{serre_2003} proved that a nonsingular subvariety $Y$ of codimension $2$ in $\mathbb{P}^n$ with $n \geq 3$ occurs as the zero-set of a section of a bundle $\mathcal{E}$ of rank 2 on $\mathbb{P}^n$ if and only if its canonical sheaf $\omega_Y$ is a multiple of the hyperplane sheaf $\mathcal{O}_Y(1)$ (if this last condition is satisfied we say $Y$ is \textbf{subcanonical}). \\
+In \cite[Hartshorne]{Hartshorne1980} Hartshorne provided a version of the correspondence between rank 2 reflexive sheaves on $\mathbb{P}^3$ and arbitrary curves in $\mathbb{P}^3$.
+
+%Recall that a projective scheme $Y \to \mathbb{P}^n$ of codimension $r$ in $\mathbb{P}^n$ is a complete intersection if and only if (equivalently there are $r$ hypersurfaces $H_1,...,H_r$ such that $Y=H_1 \cap ... \cap H_r$ as schemes).
+Recall that a projective variety $Y \to \mathbb{P}^n$ of codimension $r$ is a local complete intersection if the ideal sheaf can be locally generated by $r$ elements at every point.
+\begin{theorem}\cite[Hartshorne, Theorem 1.1]{Hartshorne1978}\label{hartshorneserre}
+Fix a line bundle $\mathcal{L}$ on $\mathbb{P}^3$, there is a bijective correspondence between \\
+(i) the set of triples $(\mathcal{E},s,\phi)$ modulo equivalence relation $\sim$, where $\mathcal{E}$ is a vector bundle of rank 2 on $\mathbb{P}^3$, $s \in H^0(\mathcal{E})$ is a global section whose scheme of zeros $Y$ has codimension 2, $\phi : \wedge^2 \mathcal{E} \to \mathcal{L}$ is an isomorphism and $(\mathcal{E},s,\phi) \sim (\mathcal{E}', s', \phi ')$ if and only if there is an isomorphism $\psi:\mathcal{E}\to \mathcal{E}'$ and an element $\lambda \in k-\{0\}$ such that $s'=\lambda\psi(s)$ and $\phi'=\lambda^2 \phi \circ (\wedge^2 \psi)^{-1}$. \\
+(ii) the set of pairs $(Y,\xi)$ where $Y$ is a locally complete intersection curve in $\mathbb{P}^3$ and $\xi : \mathcal{L} \otimes \omega_{\mathbb{P}^3} \otimes \mathcal{O}_Y \to \omega_Y$ is an isomorphism.
+\end{theorem}
+%\textcolor{red}{professor, esqueci de mencionar: tentei incluir a demonstração da correspondencia, mas tive problema em umas partes. Então por enquanto deixei por fora, só enunciando mesmo o teorema, mas de qualquer jeito vou deixar aparecendo nesse pdf para ficar claro  onde tive problema}\\
+%----------------------------- \\
+%\textcolor{red}{aqui começa a parte que deixei por fora}:\\
+\iffalse
+Before proving the theorem, we present an important lemma
+\begin{lemma}\cite[Serre, p.2-08]{serre_2003}
+Let $M$ be a $A$-module with $A$ a ring. Suppose $M$ has homological dimension $dh(M) \leq 1$ and let $\xi \in Ext^1_A(M,A)$. Let $E_\xi$ be the corresponding extension of $M$ given by the exact sequence $0 \to A \to E_\xi \to M \to 0$. Then $E_\xi$ is projective if and only if $\xi$ generates $Ext^1_A(M,A)$.
+\end{lemma}
+\begin{proof}
+Notice that $dh(E_\xi) \leq 1$, by (\ref{homologicaldimension}) we have $Ext^1_A(E_\xi,A)=0$ if and only if $E_\xi$ is projective. Applying the functor $Hom_A(-,A)$ we have $Hom_A(A,A) \to Ext^1_A(M,A) \to Ext^1_A(E_\xi,A) \to 0$. In other words $A \overset{.\xi}{\to} Ext^1_A(M,A) \to Ext^1_A(E_\xi,A) \to 0$ where the map $.\xi$ denotes the multiplication $x \mapsto x\xi$, and such map is surjective if and only if $\xi$ generates $Ext^1_A(M,A)$.
+\end{proof}
+We will now prove theorem (\ref{hartshorneserre}). \textcolor{red}{professor, esqueci de mencionar, tive problema para entender as seguintes sentenças em vermelho na demonstração}
+\begin{proof}
+Let $(\mathcal{E},s,\phi)$ be such triple and $Y$ the scheme of zeros of $s$. Since $Y$ has codimension $2$, locally $2$ generators of $\mathcal{I}_Y$ form a regular sequence, so the local Koszul complexes gives a resolution of $\mathcal{I}_Y$ (\cite[Hartshorne, proof of II.7.11]{hartshorne_2010}):
+\begin{equation}\label{koszulhartshorneserreeq}
+0 \to \bigwedge^2\mathcal{E}^* \to \mathcal{E}^* \overset{s}{\to} \mathcal{I}_Y \to 0
+\end{equation}
+Using the isomorphism $\phi$ we can rewrite the sequence
+\begin{equation}
+0 \to \mathcal{L}^* \to \mathcal{E}^* \overset{s}{\to} \mathcal{I}_Y \to 0
+\end{equation}
+Which determines an element $\xi \in Ext^1(\mathcal{I}_Y,\mathcal{L}^*)$. Now consider
+\begin{equation}
+0 \to \mathcal{I}_Y \to \mathcal{O}_{\mathbb{P}^3} \to \mathcal{O}_Y \to 0
+\end{equation}
+Apply the functor $Hom(-,\mathcal{L}^*)$:
+\begin{equation}
+H^1(\mathcal{L}^*)=Ext^1(\mathcal{O}_{\mathbb{P}^3},\mathcal{L}^*) \to Ext^1(\mathcal{I}_Y,\mathcal{L}^*) \to Ext^2(\mathcal{O}_Y, \mathcal{L}^*) \to Ext^2(\mathcal{O}_{\mathbb{P}^3},\mathcal{L}^*)=H^2(\mathcal{L}^*)
+\end{equation}
+Using that \textcolor{red}{$H^i(\mathcal{L}^*)=0$ for $i=1,2$} yields the isomorphism $Ext^1(\mathcal{I}_Y,\mathcal{L}^*) \cong Ext^2(\mathcal{O}_Y,\mathcal{L}^*)$. The local to global spectral sequence \textcolor{red}{gives the isomorphism $Ext^2(\mathcal{O}_Y,\mathcal{L}^*)\cong H^0(\mathcal{E}xt^2(\mathcal{O}_Y,\mathcal{L}^*))$}. By definition $\omega_{Y}=\mathcal{E}xt^2_{\mathbb{P}^3}(\mathcal{O}_Y,\omega_{\mathbb{P}^3})$ so $H^0(\mathcal{E}xt^2(\mathcal{O}_Y,\mathcal{L}^*)) \cong H^0(Y,\omega_{Y} \otimes \omega_{\mathbb{P}^3}^* \otimes \mathcal{L}^*) \cong Hom(\omega_{\mathbb{P}^3} \otimes \mathcal{L} \otimes \mathcal{O}_Y, \omega_{Y})$. Hence $\xi$ can be interpreted as a morphism $\xi : \omega_{\mathbb{P}^3}\otimes\mathcal{L} \otimes \mathcal{O}_Y \to \omega_Y$, we want to show this morphism is an isomorphism. Let $U$ be an open affine subset of $\mathbb{P}^3$ such that $\mathcal{E}|_U$ is free. \textcolor{red}{$Y \cap U$ is a complete intersection} and the corresponding sequence (\ref{koszulhartshorneserreeq}) is a Koszul complex. Using the preceding lemma and the fact that $\mathcal{E}^*$ is free on $U$ we get that $\xi$ is an isomorphism \textcolor{red}{preciso terminar a volta, mas como fiquei travado nos problemas em vermelho não fiz ainda}.
+\end{proof}
+------------------
+\textcolor{red}{aqui termina a parte que deixei por fora}
+\fi
+If $Y$ is a subcanonical curve with $\omega_Y \cong \mathcal{O}_Y(a)$ we can take $\mathcal{L}=\mathcal{O}_{\mathbb{P}^3}(a+4)$, thus $\omega_Y \cong \mathcal{L}\otimes\omega_{\mathbb{P}^3}\otimes \mathcal{O}_Y$. The theorem then gives a bundle $\mathcal{E}$, a section $s$ and an isomorphism $det(\mathcal{E}) \cong \mathcal{L}$. Since $c_1(det(\mathcal{E}))=c_1(\mathcal{E})$ \cite[Hartshorne, p.430]{hartshorne_2010} we get $c_1(\mathcal{E})=a+4$. We also have $c_2(\mathcal{E})=[Y]=deg(Y)[H]^2$  \cite[Hartshorne, C6 p.431]{hartshorne_2010} so the second Chern class corresponds to the degree of $Y$.
+From the proof of theorem \ref{hartshorneserre} we get an exact sequence:
+\begin{equation}
+0 \to \mathcal{L}^* \to \mathcal{E}^* \to \mathcal{I}_Y \to 0
+\end{equation}
+Tensor it by $\mathcal{O}_{\mathbb{P}^3}(a+4)$ and define $\mathcal{F}=\mathcal{E}^* (a+4)$.
+\begin{equation}\label{hartshorneserreeq}
+0 \to \mathcal{O}_{\mathbb{P}^n} \to \mathcal{F} \to \mathcal{I}_Y(a+4) \to 0
+\end{equation}
+The Chern classes of $\mathcal{F}$ are $c_1(\mathcal{F})=-(a+4)+2(a+4)=c_1(\mathcal{E})$ and $c_2(\mathcal{F})=c_2(\mathcal{E})-(a+4)c_1(\mathcal{E})+(a+4)^2=c_2(\mathcal{E})$.\\So from now on the \textbf{vector bundle $\mathcal{E}$ corresponding to a subcanonical curve $Y$} will be the vector bundle satisfying sequence (\ref{hartshorneserreeq}).\\
+%\begin{theorem}[\textcolor{red}{ref stable vector bund of rank 2 on P3 thm 1.5}]
+%Let $X$ be a locally complete intersection curve in $\mathbb{P}^3$ with $H^0(\mathcal{O}_X)=k$. Let $L$ be an invertible sheaf on $X$, let $u: I_X \to L \to 0$ be a surjective map, and let $Y$ be the scheme defined by $I_Y = ker \ u$. Let $m$ be an integer. Then the following conditions are equivalent: \\
+%(i) $\omega_Y \cong \mathcal{O}_Y (-m)$ \\
+%(ii) $L \cong \omega_X(m)$ and the map \\
+%$\bar{u}:H^1(I_X (-m)) \to H^1(\omega_X)$\\
+%induced by $u$ is the zero map. \\
+%Furthermore, if $m \geq 0$ and $\omega_X \otimes (I_X/I_X^2)^* (m)\\
+%$ is generated by global sections, then there is a map $u : I_X \to \omega_X(m) \to 0$ satisfying the condition (ii). In particular, the corresponding $Y$ satisfies (i).
+%\end{theorem}
+%Both theorems combined give 
+%\begin{corollary}[\textcolor{red}{ref stable vect bund of rank 2 on P3 cor 1.6}]
+%For any locally complete intersection curve $Y$ in $\mathbb{P}^3$ with $H^0(\mathcal{O}_X)=k$, there is a scheme $Y$ with support equal to $X$, which corresponds to a vector bundle of rank 2 on $\mathbb{P}^3$.
+%\end{corollary}
+Now, let $\mathcal{T}$ be the tangent bundle of $\mathbb{P}^3$. From the sequence $0 \to \mathcal{O}_{\mathbb{P}^3} \to \mathcal{O}_{\mathbb{P}^3}(1)^{4} \to \mathcal{T} \to 0$ we obtain $td(\mathcal{T})=td(\mathcal{O}_{\mathbb{P}^3}(1)^{4})$ where $td$ is the Todd class, so $td(\mathcal{T})=1+2H+\frac{11}{6}H^2+H^3$. Let $\mathcal{F}$ be a rank $2$ bundle on $\mathbb{P}^3$ with Chern classes $c_1(\mathcal{F})=c_1$ and $c_2(\mathcal{F})=c_2$. The Chern character $ch(\mathcal{F})$ is $2+c_1H+\frac{c_1^2-2c_2}{2}+\frac{c_1^3-3c_1 c_2}{6}$. Multiplying $td(\mathcal{T})$ with $ch(\mathcal{F})$ and summing the degree $3$ terms gives $2+\frac{11c_1}{6}+(c_1^2-2c_2)+\frac{c_1^3-3c_1c_2}{6}$. Rearranging terms and using the Riemann-Roch theorem gives
+\begin{equation}\label{riemannroch}
+\chi^e(\mathcal{F})={{c_1+3}\choose{3}}-2c_2-\frac{c_1c_2}{2}+1
+\end{equation}
+We will give a few examples of bundles corresponding to curves
+\begin{example}[Disjoint union of conics]\label{exemplobeilinson}
+Let $Y=\bigsqcup_{i=1}^r C_i$ be a disjoint union of r conics in $\mathbb{P}^3$ and $i$ the inclusion morphism. We have $deg(Y)=2r$ and $ \omega_Y \cong  \mathcal{O}_Y(-1)$. Let $\mathcal{E}'$ be the vector bundle corresponding to $Y$. We have an exact sequence $0 \to \mathcal{O}_{\mathbb{P}^3} \to \mathcal{E'} \to \mathcal{I}_Y(3) \to 0$ with $c_1(\mathcal{E'})=3$ and $c_2(\mathcal{E'})=2r$. Let $\mathcal{E}=\mathcal{E'}(-2)$, then $c_1(\mathcal{E})=-1$ and $c_2(\mathcal{E})=2r-2$. The sequence
+\begin{equation}\label{seqconica}
+0 \to \mathcal{O}_{\mathbb{P}^3}(-2) \to \mathcal{E} \to \mathcal{I}_Y(1) \to 0
+\end{equation}
+shows that if $r \geq 2$ then $H^0(\mathcal{E})=0$ since $Y$ is not contained in any hyperplane (this implies $H^0(\mathcal{I}_Y(1))=0$ ). Since $\mathcal{E}$ is normalized it means $\mathcal{E}$ is stable. Notice $\mathcal{E}^* \cong \mathcal{E}(1)$ because $c_1(\mathcal{E})=-1$.\\
+Now, since $H^0(\mathcal{E}(k))=0$ for every $k \leq 0$ using Serre duality we have $H^3(\mathcal{E}(-k-3))=0$ for $k \leq 0$. In other words $H^3(\mathcal{E}(k))=0$ for $k \geq -3$.\\
+From sequence (\ref{seqconica}) twisted by $k \in \mathbb{Z}$ we get $H^1(\mathcal{E}(k)) \cong H^1(\mathcal{I}_Y(k+1))$. From $$0 \to \mathcal{I}_Y(k) \to \mathcal{O}_{\mathbb{P}^n}(k) \to \mathcal{O}_Y(k) \to 0$$ since $H^0(\mathcal{O}_Y(k))=\bigoplus_{i=1}^r H^0(\mathcal{O}_{C_i}(k))=0$ for $k \leq -1$ we get $H^1(\mathcal{I}_Y(k))=0$ for $k \leq -1$, hence $H^1(\mathcal{E}(k))=0$ for $k \leq -2$. By Serre duality $H^1(\mathcal{E}(k)) \cong H^2(\mathcal{E}(-k-3))^*$ so $H^2(\mathcal{E}(k))=0$ for $k \geq -1$.\\
+\iffalse
+Using theorem \ref{beilinson1} on $\mathcal{E}(-1)$ gives a spectral sequence with first sheet
+\begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,
+    nodes in empty cells,nodes={minimum width=5ex,
+    minimum height=5ex,outer sep=-5pt},
+    column sep=2ex,row sep=3ex]{    
+    &            &             &            & q     &   \\
+     &     \mathcal{E}^{-3,3}_1   &     0     &    0       &  0    &   \\
+     &  0  & \mathcal{E}^{-2,2}_1  & \mathcal{E}^{-1,2}_1  &   0   &   \\
+     &     0     & 0 &  0  & \mathcal{E}^{0,1}_1  \\
+     &     0    &  0         &  0        &   0   &  p \\ 
+  \quad\strut  &  &    &   &   &  \strut \\};
+\draw[->]  (m-6-5.east) -- (m-1-5.east) ;
+\draw[->] (m-5-1.south) -- (m-5-6.south) ;
+\end{tikzpicture}
+\end{center}
+Where $\mathcal{E}^{p,q}_1=H^q(\mathcal{E}(p-1))\otimes\Omega_{\mathbb{P}^3}^{-p}(-p)$
+\textcolor{red}{Professor, a gente tava discutindo sobre o termo $E^{-2,2}$ ser 0 argumentando sobre $H^1(\mathcal{I}_Y(2))$ mas não precisa fazer isso pois $E^{-2,2}$ tem o feixe $\Omega^4(4)$ que é 0 certo? Aí acho que não precisa argumentar de pegar a união disjunta de conicas fora de uma quádrica.}\\
+The second sheet is
+\begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,
+    nodes in empty cells,nodes={minimum width=5ex,
+    minimum height=5ex,outer sep=-5pt},
+    column sep=2ex,row sep=3ex]{    
+    &            &             &            & q     &   \\
+     &     \mathcal{E}^{-3,3}_1     &     0       &    0       &  0    &   \\
+     &  0  & ker(d^{-2,2}_1)  & coker(d^{-2,2}_1)  &   0   &   \\
+     &     0     & 0 &  0  & \mathcal{E}^{0,1}_1  \\
+     &     0    &  0         &  0        &   0   &  p \\ 
+  \quad\strut  &  &    &   &   &  \strut \\};
+\draw[->]  (m-6-5.east) -- (m-1-5.east) ;
+\draw[->] (m-5-1.south) -- (m-5-6.south) ;
+\end{tikzpicture}
+\end{center}
+And the third sheet
+\begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,
+    nodes in empty cells,nodes={minimum width=5ex,
+    minimum height=5ex,outer sep=-5pt},
+    column sep=2ex,row sep=3ex]{    
+    &            &             &            & q     &   \\
+     &     ker(d^{-3,3}_2)     &     0       &    0       &  0    &   \\
+     &  0  & ker(d^{-2,2}_2)  & coker(d^{-2,2}_1)  &   0   &   \\
+     &     0     & 0 &  0  & coker(d^{-2,2}_2)  \\
+     &     0    &  0         &  0        &   0   &  p \\ 
+  \quad\strut  &  &    &   &   &  \strut \\};
+\draw[->]  (m-6-5.east) -- (m-1-5.east) ;
+\draw[->] (m-5-1.south) -- (m-5-6.south) ;
+\end{tikzpicture}
+\end{center}
+Finally the fourth sheet
+\begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,
+    nodes in empty cells,nodes={minimum width=5ex,
+    minimum height=5ex,outer sep=-5pt},
+    column sep=2ex,row sep=3ex]{    
+    &            &             &            & q     &   \\
+     &     ker(d^{-3,3}_3)     &     0       &    0       &  0    &   \\
+     &  0  & ker(d^{-2,2}_2)  & coker(d^{-2,2}_1)  &   0   &   \\
+     &     0     & 0 &  0  & coker(d^{-3,3}_3)  \\
+     &     0    &  0         &  0        &   0   &  p \\ 
+  \quad\strut  &  &    &   &   &  \strut \\};
+\draw[->]  (m-6-5.east) -- (m-1-5.east) ;
+\draw[->] (m-5-1.south) -- (m-5-6.south) ;
+\end{tikzpicture}
+\end{center}
+Every morphism is zero, so we see that $E^{p,q}_4=E^\infty$. By theorem \ref{beilinson1} we have $coker(d^{-3,3}_3)=coker(d^{-2,2}_1)=0$ and $ker(d^{-2,2}_2)=\mathcal{E}(-1)$. But if $E^{0,1}_1=0$ we have $E^{p,q}_2=E^\infty$ so $ker(d^{-2,2}_1)=\mathcal{E}(-1)$, thus yielding an exact sequence:
+\begin{equation}
+ 0 \to \mathcal{E}(-1) \to H^2(\mathcal{E}(-3)) \otimes \Omega^2(2) \to H^2(\mathcal{E}(-2)) \otimes \Omega(1) \to 0
+\end{equation}
+%We can use this to compute $h^2(\mathcal{E}(-3))$ and $h^2(\mathcal{E}(-2))$:\\
+%$c_1(\mathcal{E}(k))=c_1(\mathcal{E})+2k$ and $c_2(\mathcal{E}(k))=c_2(\mathcal{E})+c_1(\mathcal{E})k+k^2$ thus $c_1(\mathcal{E}(-3))=-7$, $c_2(\mathcal{E}(-3))=2r+10$, $c_1(\mathcal{E}(-2))=-5$ and $c_2(\mathcal{E}(-2))=2r+4$. Applying (\ref{riemannroch}) we obtain $h^2(\mathcal{E}(-3))=3r+16$ and $h^2(\mathcal{E}(-2))=r+3$. Thus exact sequence becomes
+%\begin{equation}
+%0 \to \mathcal{E}(-1) \to\Omega^2(2)^{\oplus (3r+16)} \to \Omega(1)^{\oplus (r+3)} \to 0
+%\end{equation}
+\fi
+We wish to compute the spectrum of $\mathcal{E}$. Notice that the number of $p_i$ in the spectrum where $i \geq 1$ is zero since $\# p_i=h^1(\mathcal{E}(-1-i))-2h^1(\mathcal{E}(-2-i))+h^1(\mathcal{E}(-3-i))$ for $i \geq 1$. So $\chi(\mathcal{E})$ can only have $p_0$'s, which implies $\chi(\mathcal{E})=p_0^{\frac{2r-2}{2}}=p_0^{r-1}$.\\
+We could also use formula (\ref{spectrum}): Since
+$H^i(\mathcal{E}(-1))=0$ for $i \not= 1$ we can use equation (\ref{riemannroch}) to compute $h^1(\mathcal{E}(-1))$. 
+Since $c_1(\mathcal{E}(-1))=-1-2=-3$ and $c_2(\mathcal{E}(-1))=2r-2+(-1)(-1)+1=2r$, using formula (\ref{riemannroch}) we get $h^1(\mathcal{E}(-1))=r-1$, hence $\# p_0=r-1$, in other words $\chi(\mathcal{E})=p_0^{r-1}$.
+\end{example}
+\begin{example}\label{exemplobeilinson2}
+Let $m \geq 2$ be an integer, $Y_1$ a plane curve of degree $2m-2$ and $Y_2$ a complete intersection of surfaces of degree $m$ and $m-1$. Let $Y=Y_1 \bigsqcup Y_2$. Since $\omega_{Y_i} \cong \mathcal{O}_{Y_i}(2m-5)$ we have $\omega_{Y} \cong \mathcal{O}_Y(2m-5)$ with $deg(Y)=m(m-1)+2m-2=m^2+m-2$.\\
+The correspondence gives a vector bundle $\mathcal{E'}$ satisfying
+\begin{equation}
+0 \to \mathcal{O}_{\mathbb{P}^n} \to \mathcal{E'} \to \mathcal{I}_Y(2m-1) \to 0
+\end{equation}
+We wish to normalize $\mathcal{E}'$, so consider $\mathcal{E}=\mathcal{E}'(-m)$. Then $c_1(\mathcal{E})=2m-1+2(-m)=-1$ and $c_2(\mathcal{E})=deg(Y)+(2m-1)(-m)+m^2=2m-2$. So the new exact sequence is
+\begin{equation}
+0 \to \mathcal{O}_{\mathbb{P}^n}(-m) \to \mathcal{E} \to \mathcal{I}_Y(m-1) \to 0
+\end{equation}
+$\mathcal{E}$ is stable because $Y$ is not contained in any surface of degree $m-1$. $Y$ has two components so from the exact sequence $0 \to H^0(\mathcal{O}_{\mathbb{P}^n}) \to H^0(\mathcal{O}_Y) \to H^1(\mathcal{I}_Y) \to 0$ we get $h^1(\mathcal{I}_Y)=1$, which implies $H^1(\mathcal{E}(-m+1)) \not=0$. But $c_2=2m-2$ so $H^1(\mathcal{E}(-\frac{c_2}{2})) \not=0$ which implies $\chi(\mathcal{E})=p_0p_1...p_{\frac{c_2-2}{2}}$.
+\end{example}
+%Next example gives us a monad for $\mathcal{E}$
+%\begin{example}
+%Consider the same setup as in example (\ref{exemplobeilinson}). This time we are going to use theorem (\ref{beilinson2}). For $1 \leq p \leq 3$ we have an exact sequence
+%\begin{equation}
+%0 \to \Omega^p(p) \to \mathcal{O}_{\mathbb{P}^n}^{\oplus{{4}\choose{p}}} \to \Omega^{p-1}(p) \to 0
+%\end{equation}
+%Applying $\otimes \mathcal{E}$ gives
+%\begin{equation}
+%0 \to \mathcal{E}\otimes\Omega^p(p) \to \mathcal{E}^{\oplus{{4}\choose{p}}} \to \mathcal{E}\otimes\Omega^{p-1}(p) \to 0
+%\end{equation}
+%Since $H^0(\mathcal{E}(k))=0$ for $k \leq 0$ we have $H^0(\mathcal{E}\otimes\Omega^p(p+k))=0$ for $k \leq 0$
+%\end{example}
+\begin{example}\label{exemplobeilinson3}
+Let $Y_1$ be the disjoint union of two plane curves of degree 4 and $Y_2$ be a curve from the intersection of two surfaces of degree 3 and 2. We have $\omega_{Y_i}=\mathcal{O}_{Y_i}(1)$. Let $\mathcal{E}_i'$ be the vector bundle corresponding to $Y_i$. 
+\begin{equation}
+0 \to \mathcal{O}_{\mathbb{P}^n} \to \mathcal{E}_i' \to \mathcal{I}_{Y_i}(5) \to 0
+\end{equation}
+$c_1(\mathcal{E}_i')=5$ and $c_2(\mathcal{E}_i')=deg(Y_i)$. Set $\mathcal{E}_i=\mathcal{E}_i'(-3)$ so that $c_1(\mathcal{E}_i)=-1$, $c_2(\mathcal{E}_1)=2$ and $c_2(\mathcal{E}_2)=0$.
+\begin{equation}\label{ex6}
+0 \to \mathcal{O}_{\mathbb{P}^n}(-3) \to \mathcal{E}_i \to \mathcal{I}_{Y_i}(2) \to 0
+\end{equation}
+It only makes sense to talk about the spectrum of $\mathcal{E}_1$ since the spectrum is defined only if $c_2 > 0$:\\
+The number of ones in the spectrum is given by $\# 1 = h^1(\mathcal{E}_1(-2))-2h^1(\mathcal{E}_1(-3))+h^1(\mathcal{E}_1(-4))$. From (\ref{ex6}) we have $H^1(\mathcal{E}_1(k)) \cong H^1(\mathcal{I}_{Y_1}(k+2))$. We already know that $H^1(\mathcal{I}_{Y_1}(k))=0$ for $k<0$ since $Y_1$ is a disjoint union of complete intersections, indeed if $Z$ is a complete intersection curve of surfaces of degree $d_1$ and $d_2$ then using the exact sequence $$0 \to \mathcal{O}_{\mathbb{P}^n}(-d_1-d_2) \to \mathcal{O}_{\mathbb{P}^n}(-d_2) \oplus \mathcal{O}_{\mathbb{P}^n}(-d_1) \to \mathcal{I}_Z \to 0$$ we conclude $H^1(\mathcal{I}_{Z}(k))=0$ for $k<0$. Looking at the exact sequence $$0 \to \mathcal{I}_{Y_1} \to \mathcal{O}_{\mathbb{P}^n} \to \mathcal{O}_{Y_1} \to 0$$ and noticing that $H^0(\mathcal{I}_{Y_1})=0$ and $h^0(\mathcal{O}_{Y_1})$ is the number of connected components, we get $h^1(\mathcal{I}_{Y_1})=1$. So the spectrum of $Y_1$ is $\chi(\mathcal{E}_1)=p_1$. In particular this implies that $\mathcal{E}_1$ is not stable (Theorem \ref{alpinista3}), hence $Y_1$ is contained in a surface of degree 2.\\
+Now consider $Y=Y_1 \bigsqcup Y_2$. Let $\mathcal{E}$ be the normalized vector bundle corresponding to $Y$.$Y$ is not contained in any surface of degree $2$ so $\mathcal{E}$ is stable. We have $c_1(\mathcal{E})=-1$ and $c_2(\mathcal{E})=10$ Using the same argument as before $\# 1 = 2$ so $p_1^2$ appears in $\chi(\mathcal{E})$. We can only complete the spectrum with $p_0$ because $h^1(\mathcal{E}(k))=0$ for $k \leq -3$ so $\chi(\mathcal{E})=p_0^3p_1^2$. We could keep on adding those curves in order to generate other stable vector bundles with only $p_1$ and $p_0$.
+\end{example}
+We now have three families of curves, each generating a family of vector bundles with a specific spectrum, it is natural to ask what kind of monad we can get from each family. We would like to use Theorem (\ref{Horrocks1}), but first we need to find the amount of minimal generators of $H^1_*(\mathcal{E})$ and their respective degrees.\\
+Let $\mathcal{E}$ be a rank 2 stable vector bundle on $\mathbb{P}^3$ with $c_1=-1$ and call $M:=H^1_*(\mathcal{E})$ the first cohomology module over $S=k[x_0,x_1,x_2,x_3]$ with $M_j$ being the degree $j$th submodule of $M$. Given $l\in \mathbb{Z}$ define $\rho(l)$ to be amount of minimal generators for $M$ in degree $l$ and let $m_j:=h^1(\mathcal{E}(j))=dim(M_j)$. It has a spectrum of the form $\chi(\mathcal{E})= \{(-k-1)^{s(k)},...,-1^{s(0)},0^{s(0)},...,k^{s(k)} \}$, since $s(k+1) = 0$, $s(k) \not=0$ and $s(l) =h^1(\mathcal{E}(-l-1))-2h^1(\mathcal{E}(-l-2))+h^1(\mathcal{E}(-l-3)) $ we have that $M_{-k-1}$ is the lowest degree part of $M$ such that it is nonzero. In particular this implies $\rho(-k-1)=m_{-k-1}$, using the fact that $m_l=\# \{k_j \in \chi(\mathcal{E}) | k_j \geq l-1 \}$ gives:
+\begin{equation}\label{maxmod}
+\rho(-k-1)=s(k)
+\end{equation}
+In other words, if we know how many times the greatest integer $k$ appears in $\chi(\mathcal{E})$, then we know the amount of minimal generators in degree $-k-1$ for $M$, which gives a summand of our monad. Following the notation of equation (\ref{finalhorrocks}) the number $k+1$ will be the largest number between the $c_i$'s.\\
+We still need to find the other $c_i < k+1$, the following proposition given by Hartshorne is useful
+\begin{proposition}\cite[Hartshorne \& Rao, p.796]{hartshorne1991}\label{desigualdade}
+For $0 \leq i < k$
+\begin{equation}
+s(i)-2\Sigma_{j\geq i+1}s(j) \leq \rho(-i-1) \leq s(i)-1
+\end{equation}
+\end{proposition}
+\begin{proof}
+Since we are in the case $c_1=-1$, the restriction of $\mathcal{E}$ to the general plane is stable (\cite[Barth, Theorem 3]{Barth1977}). So the map $M_{-l-1} \to M_{-l}$ is injective for every $l \geq 0$. Define $N_{-l}$ by the exact sequence $0 \to M_{-l-1} \to M_{-l} \to N_{-l} \to 0$ and call $n_{-l}$ the dimension of $N_{-l}$. Let $x \in H^0(\mathcal{O}_{\mathbb{P}^2}(1))$, we have a natural map $N_{-l-1} \overset{x}{\to} N_{-l}$, consider then the map $N_{-l-1} \otimes H^0(\mathcal{O}_{\mathbb{P}^2}(1)) {\to} N_{-l}$. From the proof of \cite[Hartshorne, Theorem 5.3]{Hartshorne1980} we have that this map has image of dimension $ > n_{-l-1}$. Let $N=\bigoplus_{k\in \mathbb{Z}}N_k$, then $\rho(-l)$ is also the number of generators for $N$ in degree $-l$ which results for $l \geq 1$
+\begin{equation}
+\rho(-l)=n_{-l}-n_{-l-1}-1
+\end{equation}
+But $n_{-l}-n_{-l-1}=s(l-1)$, hence
+\begin{equation}
+\rho(-l) \leq s(l-1)-1
+\end{equation}
+Notice that $N_{-l-1} \otimes H^0(\mathcal{O}_{\mathbb{P}^2}(1)) {\to} N_{-l}$ has image $\leq 3n_{-l-1}$ since $h^0(\mathcal{O}_{\mathbb{P}^2}(1))=3$. Hence $N_{-l}$ must contain at least $n_{-l}-3n_{-l-1}$ minimal generators for $N$, equation (\ref{spectrum}) gives the inequality.
+\end{proof}
+We have seen that the a monad for $\mathcal{E}$ must be of the form
+\begin{equation}
+\bigoplus_{i=1}^{r} \mathcal{O}_{\mathbb{P}^3}(-c_i-1) \to \bigoplus_{i=1}^{r+1} (\mathcal{O}_{\mathbb{P}^3}(-b_i-1) \oplus \mathcal{O}_{\mathbb{P}^3}(b_i)) \to \bigoplus_{i=1}^{r} \mathcal{O}_{\mathbb{P}^3}(c_i)
+\end{equation}
+For the sake of simplicity denote it by
+\begin{equation}
+\mathcal{V}_0^*(-1) \to \mathcal{V}_1 \to \mathcal{V}_0
+\end{equation}
+Next proposition gives us a tool to limit the negative degrees appearing in the summands of $\mathcal{V}_0$:
+\begin{proposition}
+Suppose $\mathcal{V}_0$ has $r$ summands with degrees $\leq l$. Then $\mathcal{V}_1$ must contain at least $r+3$ summands with degrees $\geq -l$
+\end{proposition}
+\begin{proof}
+$\mathcal{V}_0^*(-1)$ has $r$ summands with degrees $\geq -l-1$, and since the monad is minimal these must embed into the summand of $\mathcal{V}_1$ consisting of terms with degrees $\geq -l$. The quotient of this embedding has rank 3 or more
+%\textcolor{red}{não achei a ref que foi passada pra essa conclusão}
+\end{proof}
+With equation (\ref{maxmod}) we can construct a monad for the first three examples:
+\begin{example}(Disjoint union of conics)
+Let $Y$ and $\mathcal{E}$ be the curve and the vector bundle of example (\ref{exemplobeilinson}). We already know that $\chi(\mathcal{E})=p_0^{r-1}$ so using the notation from equation (\ref{maxmod}) we have $k=0$ and $s(k)=r-1$. Then $\rho(-1)=r-1$ and hence we know that there is a $c_i=1$ which appears $r-1$ times in $\mathcal{V}_0$. Since $0$ was the largest integer in the spectrum, there can be no integer greater than $1$ in $\mathcal{V}_0$, so we can only complete it with $\mathcal{O}_{\mathbb{P}^3}$'s. But if we had any summand $\mathcal{O}_{\mathbb{P}^3}$ in $\mathcal{V}_0$ the monad wouldn't be minimal, hence we have an unique monad
+\begin{equation}
+ \mathcal{O}_{\mathbb{P}^3}(-2)^{r-1} \to \mathcal{O}_{\mathbb{P}^3}(-1)^{r} \oplus \mathcal{O}_{\mathbb{P}^3}^{r} \to \mathcal{O}_{\mathbb{P}^3}(1)^{r-1}
+\end{equation}
+\end{example}
+\begin{example}
+Let $\mathcal{E}$ be the vector bundle of example $\ref{exemplobeilinson2}$. We already have $\chi(\mathcal{E})=p_0p_1...p_{m-2}$ where $c_2=2m-2$ and $m \geq 2$. Then $k=m-2$ and $\rho(-m+1)=s(k)=1$, so $\mathcal{O}_{\mathbb{P}^3}(m-1)$ appears only once in $\mathcal{V}_0$. Using proposition (\ref{desigualdade}) we get that $\mathcal{V}_0=\mathcal{O}_{\mathbb{P}^3}(m-1)$.
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-m) \to \mathcal{O}_{\mathbb{P}^3}(a)\oplus\mathcal{O}_{\mathbb{P}^3}(-a-1)\oplus\mathcal{O}_{\mathbb{P}^3}(b)\oplus\mathcal{O}_{\mathbb{P}^3}(-b-1) \to \mathcal{O}_{\mathbb{P}^3}(m-1)
+\end{equation}
+We can compute $a$ and $b$ using the Chern polynomial $c_t$:
+If $\mathcal{V}_0 \to \mathcal{V}_1 \to \mathcal{V}_2$ is a monad, using the associated exact sequences
+\begin{equation}
+0 \to \mathcal{K} \to \mathcal{V}_1 \to \mathcal{V}_2 \to 0
+\end{equation}
+and
+\begin{equation}
+0 \to \mathcal{V}_0 \to \mathcal{K} \to \mathcal{E} \to 0
+\end{equation}
+and using the fact that $c_t$ is multiplicative, we get $c_t(\mathcal{E})=\frac{c_t(\mathcal{V}_1)}{c_t(\mathcal{V}_0)c_t(\mathcal{V}_2)}$, we can then compare each coefficient since $c_1(\mathcal{E})=-1$, $c_2(\mathcal{E})=2m-2$. In our case the denominator will be $1-t-m(m-1)t^2$, and its inverse is $1+t+(1+m(m-1))t^2+(1+2m(m-1))t^3$. Multiplying this last polynomial with the numerator gives the polynomial $1-t+(m^2-m-b-b^2-a-a^2)t^2$, using again that $c_2=2m-2$ we are left with a diophantine equation
+\begin{equation}\label{diophantine}
+(m-1)(m-2)=b+b^2+a+a^2
+\end{equation}
+We already know the case $m=2$, so let $m=3$ $(c_2=4)$
+\begin{equation}
+2=b+b^2+a+a^2
+\end{equation}
+has 5 solutions, all of them give the same monad
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-3) \to \mathcal{O}_{\mathbb{P}^3}(-2)\oplus\mathcal{O}_{\mathbb{P}^3}(-1)\oplus\mathcal{O}_{\mathbb{P}^3}\oplus\mathcal{O}_{\mathbb{P}^3}(1) \to \mathcal{O}_{\mathbb{P}^3}(2)
+\end{equation}
+The case $m=4$ $(c_2=6)$ gives
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-4) \to \mathcal{O}_{\mathbb{P}^3}(-3)\oplus\mathcal{O}_{\mathbb{P}^3}(-1)\oplus\mathcal{O}_{\mathbb{P}^3}\oplus\mathcal{O}_{\mathbb{P}^3}(2) \to \mathcal{O}_{\mathbb{P}^3}(3)
+\end{equation}
+which suggests that a general solution is given by
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-m) \to \mathcal{O}_{\mathbb{P}^3}(-m+1)\oplus\mathcal{O}_{\mathbb{P}^3}(-1)\oplus\mathcal{O}_{\mathbb{P}^3}\oplus\mathcal{O}_{\mathbb{P}^3}(m-2) \to \mathcal{O}_{\mathbb{P}^3}(m-1)
+\end{equation}
+In order to verify it just take $a=-1$ and $b=-m+1$.
+\end{example}
+\begin{example}
+Let $\mathcal{E}$ be the vector bundle from example (\ref{exemplobeilinson3}). $\chi(\mathcal{E})=p_0^3p_1^2$, $c_2(\mathcal{E})=10$ and $\rho(-2)=s(1)=2$. Using proposition (\ref{desigualdade}) we get $\rho(-1) \leq 2$, so we need to analyze three different cases.\\
+Case 1: if $\rho(-1)=0$ the monad will be
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-3)^{2} \to \mathcal{O}_{\mathbb{P}^3}(a)\oplus\mathcal{O}_{\mathbb{P}^3}(-a-1)\oplus\mathcal{O}_{\mathbb{P}^3}(b)\oplus\mathcal{O}_{\mathbb{P}^3}(-b-1)\oplus \mathcal{O}_{\mathbb{P}^3}(c) \oplus \mathcal{O}_{\mathbb{P}^3}(-c-1) \to \mathcal{O}_{\mathbb{P}^3}(2)^{2}
+\end{equation}
+The same computation gives the diophantine equation
+\begin{equation}
+a+a^2+b+b^2+c+c^2=2
+\end{equation}
+Which has 24 solutions, all of them giving the same monad
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-3)^{2} \to \mathcal{O}_{\mathbb{P}^3}(-2)\oplus\mathcal{O}_{\mathbb{P}^3}(-1)^2\oplus\mathcal{O}_{\mathbb{P}^3}^2\oplus \mathcal{O}_{\mathbb{P}^3}(1) \to \mathcal{O}_{\mathbb{P}^3}(2)^{2}
+\end{equation}
+Case 2: if $\rho(-1)=1$ we have
+\begin{equation}
+\begin{split}
+\mathcal{O}_{\mathbb{P}^3}(-3)^{2} \oplus \mathcal{O}_{\mathbb{P}^3}(-2) \to  \mathcal{O}_{\mathbb{P}^3}(a)\oplus\mathcal{O}_{\mathbb{P}^3}(-a-1)\oplus\mathcal{O}_{\mathbb{P}^3}(b)\oplus\mathcal{O}_{\mathbb{P}^3}(-b-1)\oplus \mathcal{O}_{\mathbb{P}^3}(c) \oplus \mathcal{O}_{\mathbb{P}^3}(-c-1) \\ \oplus \mathcal{O}_{\mathbb{P}^3}(d) \oplus \mathcal{O}_{\mathbb{P}^3}(-d-1) \to  \mathcal{O}_{\mathbb{P}^3}(1) \oplus \mathcal{O}_{\mathbb{P}^3}(2)^{2}
+\end{split}
+\end{equation}
+which gives the diophantine equation
+\begin{equation}
+a+a^2+b+b^2+c+c^2+d+d^2=4
+\end{equation}
+it has 96 solutions giving the monad
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-3)^{2} \oplus \mathcal{O}_{\mathbb{P}^3}(-2) \to  \mathcal{O}_{\mathbb{P}^3}(-2)^2\oplus\mathcal{O}_{\mathbb{P}^3}(-1)^2\oplus \mathcal{O}_{\mathbb{P}^3}^2\oplus \mathcal{O}_{\mathbb{P}^3}(1)^2\to  \mathcal{O}_{\mathbb{P}^3}(1) \oplus \mathcal{O}_{\mathbb{P}^3}(2)^{2}
+\end{equation}
+Case 3: if $\rho(-1)=2$ we have
+\begin{equation}
+\begin{split}
+\mathcal{O}_{\mathbb{P}^3}(-3)^{2} \oplus \mathcal{O}_{\mathbb{P}^3}(-2)^2 \to  \mathcal{O}_{\mathbb{P}^3}(a)\oplus\mathcal{O}_{\mathbb{P}^3}(-a-1)\oplus\mathcal{O}_{\mathbb{P}^3}(b)\oplus\mathcal{O}_{\mathbb{P}^3}(-b-1)\oplus \mathcal{O}_{\mathbb{P}^3}(c) \oplus \mathcal{O}_{\mathbb{P}^3}(-c-1) \\ \oplus \mathcal{O}_{\mathbb{P}^3}(d) \oplus \mathcal{O}_{\mathbb{P}^3}(-d-1) \oplus \mathcal{O}_{\mathbb{P}^3}(e) \oplus \mathcal{O}_{\mathbb{P}^3}(-e-1) \to  \mathcal{O}_{\mathbb{P}^3}(1)^2 \oplus \mathcal{O}_{\mathbb{P}^3}(2)^{2}
+\end{split}
+\end{equation}
+gives the diophantine equation
+\begin{equation}
+a+a^2+b+b^2+c+c^2+d+d^2+e+e^2=6
+\end{equation}
+there are two monads satisfying the equation:
+\begin{equation}
+\begin{split}
+\mathcal{O}_{\mathbb{P}^3}(-3)^{2} \oplus \mathcal{O}_{\mathbb{P}^3}(-2)^2 \to  \mathcal{O}_{\mathbb{P}^3}(-3)\oplus\mathcal{O}_{\mathbb{P}^3}(-1)^4\oplus\mathcal{O}_{\mathbb{P}^3}^4\oplus\mathcal{O}_{\mathbb{P}^3}(2)\to  \mathcal{O}_{\mathbb{P}^3}(1)^2 \oplus \mathcal{O}_{\mathbb{P}^3}(2)^{2}
+\end{split}
+\end{equation}
+which cannot occur, since we are assuming the monad to be minimal, and
+\begin{equation}
+\mathcal{O}_{\mathbb{P}^3}(-3)^{2} \oplus \mathcal{O}_{\mathbb{P}^3}(-2)^2 \to  \mathcal{O}_{\mathbb{P}^3}(-2)^3\oplus\mathcal{O}_{\mathbb{P}^3}(-1)^2\oplus\mathcal{O}_{\mathbb{P}^3}^2\oplus\mathcal{O}_{\mathbb{P}^3}(1)^3\to  \mathcal{O}_{\mathbb{P}^3}(1)^2 \oplus \mathcal{O}_{\mathbb{P}^3}(2)^{2}
+\end{equation}
+\end{example}
+%\begin{example}
+%	Let $Y$ be the projection of a canonical curve of genus $g$ in $\mathbb{P}^{g-1}$ into $\mathbb{P}^3$. Then $deg(Y)=2g-2$ and $\omega_{Y} \cong \mathcal{O}_Y(1)$ so as before $Y$ corresponds to a bundle $\mathcal{E}'$ with $c_1=5$ and $c_2=2g-2$. The normalized bundle $\mathcal{E}$ has Chern classes $c_1=-1$ and $c_2=2g-8$. We will have an exact sequence
+%	\begin{equation}
+%	0 \to \mathcal{O}_Y(-3) \to \mathcal{E} \to \mathcal{I}_Y(2) \to 0
+%	\end{equation}
+%	So $\mathcal{E}$ is stable if and only if $Y$ is not contained in a quadric surface, which is the case for $g \geq 5$ \textcolor{red}{como mostrar?}.
+%\end{example}
+% ---
+% --------------------
+% FIM DOS EXEMPLOS
+% --------------------
+% ----------------------------------------------------------
+% CONSIDERAÇÕES FINAIS
+% Finaliza a parte no bookmark do PDF para que se inicie o
+% bookmark na raiz e adiciona espaço de parte no Sumário
+%\phantompart
+% ----------------------------------------------------------
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%% FIM DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%%
+% ---------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS PÓS-TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%
+% ---------------------------------------------------------------------------------
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% REFERÊNCIAS
+\bibliographystyle{plain}
+\bibliography{bibliografia}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% GLOSSÁRIO
+% ----------------------------------------------------------
+%\phantompart
+%\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{\glossaryname}
+%\printglossaries
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% APÊNDICES
+%\begin{apendicesenv}
+% Imprime uma página indicando o início dos apêndices
+%\partapendices
+%\include{apendices}
+%\end{apendicesenv}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ANEXOS
+%\begin{anexosenv}
+% Imprime uma página indicando o início dos anexos
+%\partanexos
+%\include{anexos}
+%\end{anexosenv}
+% ----------------------------------------------------------
+%-----------------------------------------------------------
+% INDICE REMISSIVO
+%-----------------------------------------------------------
+\phantompart
+\printindex
+%-----------------------------------------------------------
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%% FIM DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIM DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -----------------------------------------------------------------------------------------------
+\end{document}

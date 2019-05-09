@@ -1,0 +1,29 @@
+% ----------------------------------------------------------
+% Exemplo de capítulo sem numeração, mas presente no Sumário
+\chapter*[Introdução]{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+% ----------------------------------------------------------
+
+Polynomial interpolation is an interesting problem in mathematics, as it has several applications to pure and applied math, we can cite as examples the aproximation of complicated functions by a polynomials, like the Taylor's expansion $$
+f(x)=\sum_{n=0}^{r}\frac{f^{(n)}(a)}{n!}(x-a)^n+E_n(x),
+$$ or the numerical quadrature. The classical problem is how to find a polynomial passing through a given set of points and its solution in $\mathbb R^2$ is quite simple, given points $(x_1,y_1),\dots,(x_n,y_n)$ the polynomial $$
+p(x)=\sum_{i=0}^n\bigg[\prod_{\substack{0\le j\le n\\j\neq i}}\frac{x-x_j}{x_i-x_j}\bigg]y_i,
+$$ sattisfies the propety, i.e., $p(x_i)=y_i$. In algebraic geometry such problem can be described in terms of cohomology, given a set of points, namely $Z$, when is it possible to find a line bundle such that $H^i(I_Z)=0$ for all $i\geq 0$. This natural problem can be extended to higher-rank bundles, i.e., when one can find a vector bundle $E$ with $H^i(I_Z=0)$ for all $i\geq 0$. 
+
+Stability conditions on triangulated categories were introduced in \cite{Bridgeland} by Tom Bridgeland, inspired by the work done in \cite{Douglas:2002fj} by Michael R. Douglas of $2002$ on string theory. The main result proved by Bridgland in this first paper is that on a fixed category $\mathcal D$ one can associate a complex manifold $Stab(\mathcal D)$ parametrizing the set of stability conditions on $\mathcal D$. One of the first reasons that motivated the study of the space of stability conditions was that they define a new invariant for triangulated categories. Also, it is shown in \cite{bridgeland2008} the profound connection between geometrical ideas and homological algebra. 
+
+Calculating cohomologies is not an easy task in general, so Coskun and Huizenga shows in \cite{COSKUN} that there is a deep connection between the interpolation problem and Bridgeland stability. In the light of the work done in \cite{ARCARA2013580}, where it is shown that the moduli space of Bridgland semi-stable objects are isomorphic to moduli space of quiver representations, furthermore this shows the finiteness of Bridgeland walls. Not only that, but it is also studied what is the destabilizing object of a zero-dimensional $Z$, and the relation between Bridgeland walls and the walls in the stable base locus decomposition. 
+
+These results leads to the Proposition \ref{prop 4}, that gives the correspondence between the geometry of a Bridgeland potential wall defined by two Chern characters $\xi_1,\xi_2$ and the numerical invariants of a vector bundle $\zeta$ orthogonal to the objects defining the wall, where it is shown that the center and the radius of such potential wall will be the respectively the slope and the discriminant of $\zeta$. Considering this, Coskun and Huizenga proposes that finding the destabilizing sequence of a zero-dimensional scheme, also means finding an exact sequence that has acyclic side terms when tensored by $\zeta$ (or the general element $E$ of the stack of prioritary sheaves with Chern character equals to $\zeta$), therefore solving $H^i(E\otimes I_Z)=0$.
+
+Furthermore, \ref{bigger slope theorem} shows that if we find a general bundle $E$ with slope $\mu$ that satisfies interpolation for $Z$, then the general bundle of the stack of prioritary bundles with Chern character $\xi$, that has slope $\mu'\geq\mu$ also satisfies interpolation for $Z$, therefore the question is not only finding bundles that satisfies interpolation, but also finding the smaller slope such that a general bundle of some Chern character with that slope satisfies interpolation. 
+
+
+
+Again, the destabilizing sequence gives the answer. In \cite{COSKUN} it is shown that for $Z$ a complete intersection scheme or a monomial scheme, the orthogonal Chern character to both the ideal sheaf of the scheme and the destabilizing object not only gives an acyclical sequences when tensorizing the destabilizing sequence, but also the general element of the stack of prioritary sheaves of such Chern character is the one having minimal slope satisfying interpolation for $Z$.
+
+The dissertation is structured in two parts.
+
+The first chapter is an introduction to the tools necessaries to follow the text. The first section introduces the notion of sheaves and schemes, the notion of divisors and Chern classes, we finish it with the \textit{Hizerbuch-Riemman-Roch} theorem. The second section is an introduction to derived categories. In the third section is presented the notion of cohomology for a sheave and the \textit{Serre duality} theorem. The last section is an introduction to stacks.
+
+In the second chapter is presented the study of \cite{COSKUN}. On the first section it is defined the notion of a Bridgeland stability, we also define a Bridgeland stability suitable for the interpolation problem and calculate the behavior of the potential Bridgeland walls. We also prove Theorem \ref{bigger slope theorem} and give the candidate for the minimal slope that satisfies interpolation. The second section is dedicated to prove the interpolation problem for complete intersection schemes. The next section is an introduction to monomial schemes, where we introduce its representation as a block diagram, calculate invariants of the potential Bridgeland walls of such schemes and its destabilizing walls. The last section we prove interpolation problem for monomial schemes.

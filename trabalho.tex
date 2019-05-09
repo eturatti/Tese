@@ -1,0 +1,1421 @@
+%% Customizações do abnTeX2 (http://www.abntex.net.br) para o Instituto de Matemática,
+%% Estatística e Computação Científica da Universidade Estadual de Campinas (IMECC-UNICAMP)
+%%
+%% This work may be distributed and/or modified under the conditions of the LaTeX Project
+%% Public License, either version 1.3 of this license or (at your option) any later version.
+%% The latest version of this license is in http://www.latex-project.org/lppl.txt and version
+%% 1.3 or later is part of all distributions of LaTeX version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is Fábio Rodrigues Silva, gfabinhomat@gmail.com
+%%
+%% Further information about abnTeX2 are available on http://www.abntex.net.br
+%%
+\documentclass[
+	oldfontcommands,
+	% -- opções de customização --
+	%sumario=tradicional,
+	sumario=abnt-6027-2012,
+	% -- opções da classe memoir --
+	12pt,			% tamanho da fonte
+	openright,		% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,		% para impressão em verso e anverso. Oposto a 'oneside'
+	a4paper,		% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,	% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,		% idioma adicional para hifenização
+	brazil			% o último idioma é o principal do documento
+	]{imecc-unicamp}
+% ----------------------------------------------------------
+% PACOTES ESSENCIAIS
+\input{pacotes}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% INFORMAÇÕES E DADOS PARA CAPA E FOLHA DE ROSTO
+\input{dados}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% CONFIGURAÇÕES GERAIS
+\input{configglobal}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% COMPILA O ÍNDICE (OPCIONAL)
+\makeindex
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% CONTÉM TODAS AS ENTRADAS DO GLOSSÁRIO (OPCIONAL)
+\input{glossario}
+% ----------------------------------------------------------
+% -----------------------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -----------------------------------------------------------------------------------------------
+\begin{document}
+% Seleciona o idioma do documento (conforme pacotes do babel)
+\selectlanguage{english}
+% \selectlanguage{english}
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS PRÉ-TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%
+% ---------------------------------------------------------------------------------
+\pretextual
+% ----------------------------------------------------------
+% PRIMEIRA FOLHA (OBRIGATÓRIO)
+\imprimirprimeirafolha
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% FOLHA DE ROSTO (OBRIGATÓRIO)
+% ---
+% Após realizar as correções finais de seu trabalho acadêmico, escaneie a folha de rosto
+% devidamente assinada pelo orientador e salve no formato PDF com o nome 'folha-de-rosto.pdf'
+% no diretório do seu projeto. Daí substitua a linha do comando '\imprimirfolhaderosto'
+% pelas 3 linhas de comando abaixo:
+% ---
+% \begin{folhaderosto}
+%     \includepdf{folha-de-rosto.pdf}
+% \end{folhaderosto}
+% ---
+\imprimirfolhaderosto
+
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% FICHA CATALOGRÁFICA (OBRIGATÓRIO)
+% ---
+% A biblioteca da UNICAMP lhe fornecerá um PDF com a ficha catalográfica definitiva após a defesa
+% do trabalho {http://hamal.bc.unicamp.br/catalogonline2/}. Quando estiver com o documento, salve-o
+% como PDF no diretório do seu projeto e deixe apenas o comando '\includepdf{ficha-catalografica.pdf}'
+% dentro do ambiente abaixo
+% ---
+\begin{fichacatalografica}
+    \begin{center}
+	 A ficha catalográfica será fornecida pela biblioteca
+    \end{center}
+%     \includepdf{ficha-catalografica.pdf}
+\end{fichacatalografica}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% FOLHA DE APROVAÇÃO (OBRIGATÓRIO)
+% ---
+% A folha de aprovação será fornecida pela secretaria de pós-graduação. Após recebê-la, escaneie a folha
+% salvando em PDF no diretório do seu projeto com o nome 'folhadeaprovacao.pdf' e deixe apenas o comando
+% '\includepdf{folhadeaprovacao.pdf}' dentro do ambiente abaixo
+% ---
+\begin{folhadeaprovacao}
+    \centering A folha de aprovação será fornecida pela Secretaria de Pós-Graduação}
+%     \includepdf{folhadeaprovacao.pdf}
+\end{folhadeaprovacao}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% DEDICATÓRIA (OPCIONAL)
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{
+      Este trabalho é dedicado às crianças adultas que,\\
+      quando pequenas, sonharam em se tornar cientistas.
+   }
+   \vspace*{\fill}
+\end{dedicatoria}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% AGRADECIMENTOS (OPCIONAL)
+\begin{agradecimentos}
+Inserir os agradecimentos, sem esquecer dos órgãos de fomento!
+\end{agradecimentos}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% EPÍGRAFE (OPCIONAL)
+\begin{epigrafe}
+    \vspace*{\fill}
+    \begin{flushright}
+	\textit{``Não vos amoldeis às estruturas deste mundo, \\
+	    mas transformai-vos pela renovação da mente, \\
+	    a fim de distinguir qual é a vontade de Deus: \\
+	    o que é bom, o que Lhe é agradável, o que é perfeito.\\
+	    (Bíblia Sagrada, Romanos 12, 2)
+	}
+    \end{flushright}
+\end{epigrafe}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% RESUMOS (OBRIGATÓRIO)
+\include{resumos}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+
+	% SUMÁRIO (OBRIGATÓRIO)
+	\pdfbookmark[0]{\contentsname}{toc}
+	\tableofcontents*
+	\cleardoublepage
+	% ----------------------------------------------------------
+	% ---------------------------------------------------------------------------------
+	% %%%%%%%%%%%%%%%%%%%%%%%% FIM DOS ELEMENTOS PRÉ-TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%
+	% ---------------------------------------------------------------------------------
+	% ---------------------------------------------------------------------------------
+	% %%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%
+	% ---------------------------------------------------------------------------------
+\textual
+% ----------------------------------------------------------
+% INTRODUÇÃO
+\include{introducao}
+% ----------------------------------------------------------
+% DESENVOLVIMENTO
+% \part{Preparação da pesquisa}
+% \include{capitulo1}
+% \include{capitulo2}
+% \part{Referenciais teóricos}
+% \include{capitulo3}
+% \include{capitulo4}
+% \include{capitulo5}
+% \part{Resultados}
+% \include{capitulo6}
+% \include{capitulo7}
+% --------------------
+% INÍCIO DOS EXEMPLOS
+% --------------------
+% No âmbito do Modelo Canônico, os comandos a seguir apresentam um sucinto resumo de como
+% esta classe pode ser usada. Oriente a construção do seu trabalho com base nestes comandos.
+% ---\section{Preliminars}
+\section{Schemes and Chern Classes}
+We will present the basic concepts of algebraic geometry that will be used along the text.
+\begin{definition}
+	Let $X$ be a topological space and $\mathcal A$ a category, a \textit{pre-sheaf} $\mathcal F$ on $X$ with values in $\mathcal A$ consists of the following data
+	\begin{enumerate}
+		\item For each open sets $U\subset X$, $\mathcal F(U)$ is an object of $\mathcal A$.
+		\item For each inclusion of open set $V\hookrightarrow U$ in $X$, we have a morphism $\rho_{UV}:\mathcal F(U)\rightarrow \mathcal F(V)$ in $\mathcal A$, called restriction morphism, satisfying:
+		\begin{enumerate}
+			\item for every open set $U\subset X$, the restriction morphism $\rho_{UU}$ is the identity morphism in $\mathcal F(U)$,
+			\item if we have three open sets $W\subset U\subset V$, then $
+			\rho_{W,V}\circ\rho_{V,U}=\rho_{W,U}.
+			$
+		\end{enumerate}
+		The elements of $\mathcal F(U)$ will be named sections of $\mathcal F$ over $U$, and occasionally we will denote $\Gamma(\mathcal F,U)=\mathcal F(U)$. Also if $s\in \mathcal F(U)$, we denote $s|_V=\rho_{UV}$.
+		
+		If the pre-sheaf $\mathcal F$ satisfies the next two conditions, it is called a \textit{sheaf}.
+		\item (Identity Axiom) Let $U\subset X$ be an open set, and let $\{V_i\}_{i\in I}$ be an open covering of $U$, if $s,t\in \mathcal F(U)$ are sections such that $s|_{V_i}=t|_{V_i}$ for each $i\in I$, then $s=t$.  
+		\item (Gluing Axiom) Let $U\subset X$ be an open set and $\{V_i\}_{i\in I}$ be an open cover of $U$, and suppose that there are sections $s_i\in\mathcal F(V_i)$ such that $s_i|_{V_i\cap V_j}=s_j|_{V_i\cap V_j}$ for all $i,j\in I$, then there exists a section $s\in\mathcal F(U)$ satisfying $s|_{V_i}=s_i$. 
+	\end{enumerate}
+\end{definition}
+
+Working with sheaves of rings, and introducing the Zariski topology leads us to the definition of schemes.
+
+\begin{definition}
+	Let $A$ be a ring, we define the set $\spec A$ as the set of all prime ideals of $A$. We define the subset $V(\mathfrak a)\subset \spec A$ as the set of all prime ideals of $A$ that contains the ideal $\mathfrak a$.
+\end{definition}
+Note that $$V(\mathfrak {ab})=V(\mathfrak{a})\cup V(\mathfrak{b}) \text{ and } \sum_{i\in I}\mathfrak a_i=\bigcap_{i\in I}\mathfrak a_i,$$
+it follows that the sets of the form $V(\mathfrak a)$ is a base of a closed sets of a topology in $\spec A$, namely the Zariski topology.
+
+Now consider $\spec A$ with the Zariski topology, for each prime ideal $\mathfrak p \subset A$, let $A_\mathfrak p$ be the localization by $A\setminus \mathfrak p$. For each open subset $U\subset \spec A$, let $\OO(U)$ be the set of functions $ s:U\rightarrow \bigsqcup_{\mathfrak{p}\in U}A_\mathfrak p$, such that each $s(\mathfrak p)\in A_\mathfrak{p}$ for each $\mathfrak p \in U$, and $s$ is locally the quotient of elements in $A$, more precisely, for each $\mathfrak p\in U$, there is a neighborhood $V$ of $\mathfrak p$, and $a,f\neq 0\in A$, such that for each $\mathfrak q\in V$, we have $f\notin \mathfrak q$ and $s(\mathfrak q)=\frac{a}{f}\in A_\mathfrak q$. Then $\OO$ is a sheaf of rings over $\spec A$ named structure sheaf. We define $\Spec~A=(\spec A,\OO)$.
+
+Now we can define the concept of scheme.
+
+\begin{definition}
+	A ringed space is a pair $(X,\OO_X)$ consisting of a topological space $X$ and a sheaf of rings $\OO_X$ over $X$. A morphism of ringed spaces $(f,f^\#):(X,\OO_X)\rightarrow (Y,\OO_Y)$ such that $f:X\rightarrow Y$ is continuous and $f^\#:\OO_Y\rightarrow f_*\OO_X$ is a morphism of sheaves of rings. We say that a ringed space is a scheme if $(X,\OO_X)$ is isomorphic to $\Spec~A$ for some ring $A$.
+\end{definition}
+
+We define some special kinds of schemes by putting conditions over its topological space or over its structure sheaf.
+
+Let $X=(X,\OO_X)$ be a scheme, $X$ is integral if its structure sheaf $\OO_X(U)$ is an integral domain for every open subset $U$ of $X$.
+
+Let $X$ and $Y$ be schemes. A morphism $f: X\rightarrow Y$ is of finite type if there exists a covering of $Y$ by open affine subsets $V_i=\Spec B_i$, such that for each $i$, $f^{-1}(V_i)$ can be covered by finite open affine subsets $U_{ij}=\Spec A_{ij}$, where each $A_{ij}$ is a finitely generated $B_i$-algebra. We say that a scheme $X$ is of finite type over a fiel $k$ (or only finite type), if the morphism $X\rightarrow \Spec k$ is of finite type.
+
+Let $f:X\rightarrow Y$ be a morphism of schemes, we say that $f$ is separated over $Y$ if the diagonal morphism $\Delta:X\rightarrow X\times_Y X$ is a closed immersion. A scheme $X$ is separated if it is separated over $\Spec \ZZ$.
+
+\begin{definition}
+	A variety is an integral separated scheme of finite type over an algebraically closed field.
+\end{definition}
+
+We now define the sheaf of $\OO$-modules, with whom we can describe the rank of a sheaf and also define the concept of coherent sheaf.
+
+\begin{definition}
+	Let $(X,\OO_X)$ be a ringed space. A sheaf of $\OO_X$-modules is a sheaf $\mathcal F$ of groups on $X$, such that for each open subset $U$ of $X$, the group $\mathcal F(U)$ is an $\OO_X(U)$-module, and for each restriction $V\subset U$, the restriction morphism $\mathcal F(U)\rightarrow \mathcal F(V)$ is compatible with the module structure via the ring homomorphism $\OO_X(U)\rightarrow \OO_X(V)$.
+	
+	Similar to a module, an $\OO_X$-module $\mathcal F$ is free if it is isomorphic to a direct sum of copies of $\OO_X$. It is locally free if $X$ can be covered by open sets $U$ for wich $\mathcal F|_U$ is a free $\OO_X|_U$-module. In this case, the rank of $\mathcal F$ in $U$ is the number of copies in each open set. If $X$ is connected, then it is the same everywhere.
+	
+	A sheaf of ideals in on $X$ is a sheaf of modules $\mathcal I$, such that $\mathcal I(U)$ is an ideal in $\OO_X(U)$.
+\end{definition}
+
+\begin{definition}
+	Let $(X,\OO_X)$ be a ringed space, a quasi-coherent sheaf $\mathcal F$ is a sheaf of $\OO_X$-modules which has local presentation, i.e. every point in $X$ has an open neighborhood $U$ where there is an exact sequence 
+	$$
+	\bigoplus_I\OO_X|_U\rightarrow \bigoplus_J \OO_X|_U\rightarrow \mathcal F|_U\rightarrow 0,
+	$$
+	for some sets $I$ and $J$.
+	
+	A quasi-coherent sheaf $\mathcal F$ on the ringed space $(X,\OO_X) $ is coherent if satisfies another two conditions: \begin{enumerate}
+		\item $\mathcal F$ is of finite type over $\OO_X$.
+		\item For each open set $U$ of $X$ and every finite collection $s_i\in \mathcal F(U),~i=1,\dots,n$, the kernel of the associated map $ \oplus_{i=1}^n\OO_X|_U\rightarrow \mathcal F|_U$ is of finite type.
+	\end{enumerate} 
+	
+\end{definition}
+
+We now recall the concept of divisor.
+
+\begin{definition}
+	Let $X$ be a Noetherian variety such that every local ring $\OO_x$ of $X$ of dimension $1$ is regular. A prime divisor on $X$ is a closed integral subscheme $Y$ of codimension one. A Weil divisor is an element of the free abelian group $Div~X$ generated by the prime divisors. We say that a divisor $D=\sum n_iY_i$ is effective if all $n_i\geq0$.
+	
+	Let $K$ be the function field of $X$, and let $f\in K^*$ be a non zero rational function on $X$. Let $\nu_Y$ be the evaluation on the prime divisor $Y$ of $X$, a principal divisor is a divisor of the form $(f)=\sum_{Y} \nu_Y(f)Y$.
+	
+	Two divisor $D$ and $D'$ are said to be linearly equivalent, written $D\sim D'$, if $D-D'$ is a principal divisor. We can then define the class group of $X$ as the quotient $Cl~X=Div~X/Pr~X$ of the divisor of $X$ by its principal divisors. 
+	
+	Furthermore, we define the Picard group of $X$ as the group of isomorphism classes of invertible sheaves on $X$.
+	
+	
+\end{definition}
+
+We want to extend the notion of divisors to arbitrary schemes. The idea will be that divisors is something that locally looks like the divisor of a rational function.
+
+\begin{definition}
+	Let $X$ be a scheme. For each open affine subset $U=\Spec A$ let $S$ be the set of elements of $A$ which are not zero divisors, and let $K(U)$ be the localization of $A$ by the multiplicative system $S$. We call $K(U)$ the total quotient ring of $A$. For each open set $U$, let $S(U)$ denote the set of elements of $\Gamma(U,\OO_X)$ which are not zero divisors in each local ring $\OO_x$ for $x\in U$. Then the set $S(U)^{-1}\Gamma(U,\OO_X)$ form a presheaf, whose associated sheaf ring $\mathcal H$ we call the sheaf of total quotient of $\OO_X$. On an arbitrary scheme, the sheaf $\mathcal H$ replaces the concept of function field of an integral scheme. We denote by $\mathcal H^*$ the sheaf of invertible elements in the sheaf of rings $\mathcal H$.
+\end{definition}
+\begin{definition}
+	A Cartier divisor on a scheme $X$ is a global section of the sheaf $\mathcal H^*/\mathcal O^*$. A Cartier divisor can be described by giving an open cover $\{U_i\}$ of $X$, and for each $i$ an element $f_i\in\Gamma(U_i,\mathcal H^*)$, such that for each $i,j$, $\frac{f_i}{f_j}\in\Gamma(U_i\cap U_j,\mathcal O^*)$. A Cartier divisor is principal if it is in the image of the natural map $\Gamma(X,\mathcal H^*)\rightarrow \Gamma(X,\mathcal H^*/\OO^*)$. Two Cartier divisors are lineraly equivalent if their difference is a principal divisor.
+	
+	
+\end{definition}
+The next proposition gives the relation between Weil and Cartier divisors.
+
+\begin{proposition}
+	Let $X$ be an integral, separated noetherian scheme, all of whose local rings are unique factorization domains. Then the group $Div~X$ of Weil divisors on $X$ is isomorphic to the group of Cartier divisors $\Gamma(X,\mathcal H^*/\OO^*)$, furthermore principal Weil divisors correspond to the principal Cartier divisors under this isomorphism.	
+\end{proposition}
+\begin{proof}
+	\cite{hartshorne1977algebraic} Chapter $2$, Proposition $6.11$.
+\end{proof}
+
+One of the most important reason to define Cartier divisors is that it also gives a relation between invertible sheaves, i.e. a locally free $\OO_X$-module of rank $1$, and divisor classes modulo linear equivalence.
+
+We recall an important property of invertible sheaves.
+\begin{proposition}
+	If $ L$ and $ M$ are invertible sheaves on a ringed space $X$, then $L\otimes M$ is also invertible. Furthermore, if $L$ is any invertible sheaf on $X$, there exists an invertible sheaf $L^{-1}$ such that $L\otimes L^{-1}\simeq\OO_X$.
+\end{proposition}
+\begin{proof}
+	Since $L$ and $M$ are locally free of rank $1$ we have $L\otimes M\simeq \OO_X\otimes\OO_X\simeq\OO_X$ locally. For the second statement, let $L$ be locally free of rank $1$, and let $L^\vee=\mathcal Hom(L,\OO_X)$ be the dual sheaf. Then $L^\vee\otimes L\simeq\mathcal Hom (L,L)=\mathcal \OO_X$. 
+\end{proof}
+This proposition leads to the definition of the Picard group.
+
+\begin{definition}
+	Let $X$ be a ringed space, we define the Picard group of $X$, denoted by $Pic~X$, to be the group of isomorphism classes of invertible sheaves on $X$, under the operation $\otimes $. 
+\end{definition}
+Now we can state the relation between divisors and invertible sheaves.
+\begin{definition}
+	Let $D$ be a Cartier divisor on a scheme $X$, represented by $\{(U_i,f_i)\}$. We define a subsheaf $\mathcal L(D)$ to be the sub-$\OO_X$-module of $\mathcal H$, generated by $f_i^{-1}$ on $U_i$. This is well-defined since $f_i/f_j$ is invertible in $U_i\cap U_j$. We call $\mathcal L(D)$ the sheaf associated to $D$. 
+\end{definition}
+\begin{definition}
+	A Cartier divisor is effective if it can be represented by $\{(U_i,f_i) \}$, where all $f_i\in\Gamma(U_i,\OO_{U_i})$. In this case we define the associated subscheme of codimension $1$, namely $Y$, to be the closed subscheme defined by the sheaf of ideals $\mathcal I$ which is locally generated by $f_i$.
+\end{definition}
+\begin{proposition}
+	Let $D$ be an effective Cartier divisor on a scheme $X$, and let $Y$ be the associated locally principal closed subscheme. Then $\mathcal I_Y\simeq\mathcal L(-D)$.
+\end{proposition}
+\begin{proof}
+	\cite{hartshorne1977algebraic} Chapter $2$, Proposition $6.18$.
+\end{proof}
+
+
+
+With these concepts in mind, we can start to discuss intersection theory, and the finally define the Chern classes.
+
+Let $X$ be a variety over $k$. A cycle of codimension $r$ on $X$ is an element of the free abelian group generated by the closed irreducible subvarieties of $X$ of codimension $r$. If $Z$ is a closed subscheme of codimension $r$, let $Y_1,\dots,Y_l$ be its irreducible components, which have codimension $r$, and define the cycle associated to $Z$ as $\sum n_iY_i$, where $n_i$ is the length of the local ring $\OO_{y_i,Z}$, where $y_i$ is the generic point $y_i$ of $Y_i$ in $Z$.
+
+Let $f:X\rightarrow X'$ be a morphism of varieties, and let $Y$ be a subvariety of $X$, if $\dim f(Y)<\dim Y$, then we set $f_*(Y)=0$. Otherwise, we set $f_*(Y)=[K(Y):K(f(Y))] \overline{f(Y)}$, where $K(X)$ denotes the function field of a variety $X$, and $[K,L]$ denotes the field extension of $K$ over $L$. Extending it by linearity we define a homomorphism of cycles on $X$.
+
+For any subvariety $V$ of $X$, let $f:\tilde V\rightarrow V$ be the normalization of $V$. Whenever $D$ and $D'$ are linearly equivalent divisors on $\tilde V$, we say that $f_*D$ and $f_*D'$ are rational equivalent cycles on $X$. 
+
+For each $r$, let $A^r(X)$ be the group of cycles of codimension $r$ on $X$ modulo rational equivalences. Denote by $$A(X)=\bigoplus_{r=0}^n A^r(X),$$ where $\dim X=n$, $A^0(X)=\mathcal Z$ and $A^r(X)=0$ for $r>\dim X$.
+
+An intersection theory on a given class of varieties $\mathcal A$ is defined by giving a pairing $A^r(X)\times A^s(X)\rightarrow A^{r+s}(X)$ for each $X\in \mathcal A$, satisfying the axioms listed below. If $Y\in A^r(X)$ and $Z\in A^s(X)$, we denote its intersection by $Y. Z$. Also, for a subvariety $Y'\in X'$, we denote $$f^*(Y')=p_{1*}(\Gamma_f.p_2^{-1}(Y')),$$ where $p_1$ and $p_2$ are projections from $X\times X'$ to $X$ and $X'$, and $\Gamma_f$ is the graph of $f$ as a cycle in $X\times X'$. The following axioms must be satisfied.
+\begin{enumerate}
+	\item The intersection pairing makes $A(X)$ into a commutative associative graded ring with identity, for every $X\in \mathcal A$. It is called the Chow ring of $X$.
+	\item For any morphism $f:X\rightarrow X'$ of varieties in $\mathcal A$, $f^*:A(X')\rightarrow A(X)$ is a ring homomorphism. If $g:X'\rightarrow X''$ is another morphism, then $f^*\circ g^*=(g\circ f)^*$.
+	\item For any proper morphism $f:X\rightarrow X'$ of varieties in $\mathcal A$, $f_*:A(X)\rightarrow A(X')$ is a homomorphism of graded groups. If $g:X'\rightarrow X''$ is another morphism, then $g_*\circ f_*=(g\circ f)_*$.
+	\item \emph{Projection Formula.} If $f:X\rightarrow X'$ is a proper morphism, if $x\in A(X)$ and $y\in A(X')$, then $$
+	f_*(xf^*y)=f_*(x)y.
+	$$
+	\item \emph{Reduction to the diagonal.} If $Y$ and $Z$ are cycles on $X$, and if $\Delta:X\rightarrow X\times X$ is the diagonal morphism, then $$
+	Y.Z=\Delta^*(Y\times Z).
+	$$
+	\item \emph{Local nature.} If $Y$ and $Z$ are subvarieties of $X$ which intersect properly, then we can write $$Y.Z=\sum i(Y.Z;W_j)W_j,$$ where the sum runs over the irreducible components of $W_j$ of $Y\cap Z$, and where the integer $i(Y.Z;W_j)$ depends only on a neighborhood of the generic point of $W_j$ on $X$. We call $i(Y.Z;W_j)$ the local intersection multiplicity of $Y$ and $Z$ along $W_j$.
+	\item \emph{Normalization.} If $Y$ is a subvariety of $X$ and $Z$ is an effective divisor meeting $Y$ properly, then $Y.Z$ is just the cycle associated to the divisor $Y\cap Z$ on $Y$. 
+	\item Since the cycles in codimension $1$ are just divisors, and rational equivalence is the same as linear equivalence, then $A^1(X)\simeq Pic~X$.
+	\item For any affine space $\Aa^m$, the projection $X\times \Aa^m\rightarrow X$ induces an isomorphism $p^*:A(X)\rightarrow A(X\times A^m)$.
+	\item \emph{Exactness.} If $Y$ is a nonsingular closed subvariety of $X$, and $U=X\setminus Y$, there is an exact sequence $$
+	A(Y)\xrightarrow{i_*} A(X)\rightarrow{j_*}A(U)\rightarrow A(U)\rightarrow 0, 
+	$$
+	where $i:Y\hookrightarrow X$ is one inclusion, and $j:U\hookrightarrow X$ is the other.
+	\item Let $E$ be a locally free sheaf of rank $r$ on $X$, and let $\PP(E)$ be the associated projective space bundle, and let $\xi\in A^1(\PP(E))$ be the class of the divisor corresponding to $\OO_{\PP(E)}(1)$. Let $\pi:\PP(E)\rightarrow X$ be the projection. Then $\pi^*$ makes $A(\PP(E))$ into a free $A(X)$-module generated by $1,\xi,\xi^2,\dots,\xi^{r-1}$.
+\end{enumerate}
+
+\begin{definition}
+	Let $E$ be a locally free sheaf of rank $r$ on a nonsingular quasi-projective variety $X$. For each $i=0,1,\dots,r$, we define the $i$th Chern class $c_i(E)\in A^i(X)$ by the requirement of $c_0(E)=1$, and $$
+	\sum_{i=0}^r(-1)^i\pi^*c_i(E).\xi^{r-i}=0,
+	$$ 
+	using the notation of item $11$.
+\end{definition}
+
+Often it will be useful to use the notation of Chern polynomial $$
+c_t(E)=1+ c_1(E)t+\dots+c_r(E)t^r.
+$$
+We have the following properties
+\begin{enumerate}
+	\item If $E\simeq \mathcal L(D)$ for a divisor $D$, $c_t(E)=1+Dt$.
+	\item If $f:X'\rightarrow X$ is a morphism, and $E$ is a locally free sheaf on $X$, then for each $i$ $$
+	c_i(f^*E)=f^*c_i(E).
+	$$
+	\item If $0\rightarrow E'\rightarrow E\rightarrow E''\rightarrow 0$ is an exact sequence of locally free sheaves, then $$
+	c_t(E)=c_t(E')c_t(E'').
+	$$
+	\item If $E$ splits, i.e. $$E=\bigoplus_{i=1}^r \mathcal L_i,$$ where $\mathcal L_i$ are invertibles sheafs, then $$
+	c_t(E)=\prod_{i=1}^rc_t(\mathcal L_i).
+	$$ 
+	In fact, for any computation of Chern classes we can assume that the bundle $E$ splits.
+\end{enumerate}
+
+
+For instance, if we have vector bundles $F$ and $L$ of rank $2$ and $1$ respectivily, to calculate the Chern classes of $F\otimes L$ in terms, we can assume that $F=L_1\oplus L_2$, and then $$c_1(F)=c_1(L_1)+c_1(L_2),$$ $$c_2(F)=c_1(L_1)c_1(L_2).$$ Then $F\otimes L\simeq(L_1\otimes L)\oplus(L_2\otimes L)$, and it follows that $$
+c_1(F\otimes L)=c_1(F_1\otimes F)+c_1(F_2\otimes F)=c_1(L_1)+c_1(L_2)+2c_1(L)=c_1(F)+2c_1(L),
+$$
+and $$
+c_2(F\otimes L)=c_1(L_1\otimes L)c_1(L_2\otimes L)=(c_1(L_1)c_1(L))(c_1(L_2)c_1(L))=c_2(F)+c_1(F)c_1(L)+c_1(L)^2.
+$$
+
+In fact, a more general result can be proven. Let $F$ be a rank $r$ bundle and $L$ be a line bundle, then $$
+c_p(F\otimes L)=\sum_{i=0}^p\binom{r-i}{p-i}c_i(F)c_1(L)^{p-i}.
+$$
+
+Furthermore, if we denote the Chern polynomial of $E$ by $$
+c_t(E)=\prod_{i=1}^{r}(1+a_it^i),
+$$
+we define the Chern character $$
+ch(E)=\sum_{i=1}^{r}e^{a_i},
+$$
+and the Todd class of $E$ as $$
+td(E)=\prod_{i=1}^{r}\frac{a_i}{1-e^{a_i}}.
+$$
+With this invariants, we can state one of the main results that connects cohomology and Chern classes.
+\\\\
+\begin{teorema}[Hirzebruch-Riemann-Roch]\label{HRR}
+	Let $E$ be a locally free sheaf of rank $r$ on a nonsingular projective variety $X$ of dimension $n$, then $$
+	\chi(E)=\int_{X}ch(E)td(X).
+	$$	
+\end{teorema}
+\begin{proof}
+	\cite{hirzebruch} Theorem $21.1.1$.
+\end{proof}
+
+
+
+\section{Derived Categories}
+
+We present a small introduction to derived categories to be able to define the cohomology of sheaves. In this section we will mostly follow the first three chapters of		 \cite{huybrechts2006fourier}.
+\begin{definition}Let $\mathcal D$ be an additive category. The structure of a triangulated category consists of an additive equivalence $$
+	T:\mathcal D\rightarrow \mathcal D,
+	$$
+	called the shift functor, and a set of distinguished triangles on $\mathcal{D}$ $$
+	A\rightarrow B\rightarrow C\rightarrow T(A),
+	$$
+	which satisfie the following properties:
+	\begin{enumerate}
+		\item Any triangle of the form $A\rightarrow A\rightarrow 0\rightarrow A[1]$ is distinguished.
+		\item Any triangle isomorphic to a distinguished triangle is distinguished.
+		\item Any morphism $f:A\rightarrow B$ can be completed to a distinguished triangle $$
+		A\xrightarrow{f}B\rightarrow C\rightarrow A[1]. 
+		$$
+		\item The triangle $$A\xrightarrow{f}B\xrightarrow{g} C \xrightarrow h A[1]
+		$$ is distinguished if and only if $$B\xrightarrow{g}C\xrightarrow{h} A[1] \xrightarrow{-f[-1]} B[1]
+		$$ is a distinguished triangle.
+		\item Suppose that exists a commutative diagram of distinguished triangles with vertical arrows $f$ and $g$, i.e.
+		$$
+		\begin{matrix}
+		A&\rightarrow &B&\rightarrow&C&\rightarrow&A[1]\\ {\scriptstyle f}\downarrow&&{\scriptstyle g}\downarrow&&&&{\scriptstyle f[1]}\downarrow\\
+		A'&\rightarrow &B'&\rightarrow&C'&\rightarrow&A'[1]
+		\end{matrix}
+		$$
+		then the diagram can be completed to a commutative diagram by a morphism $h:C\rightarrow C'.$
+		\item Given distinguished triangles $$
+		\begin{matrix}
+		A\xrightarrow u B\xrightarrow j C'\xrightarrow k\\
+		B\xrightarrow v C\xrightarrow l A'\xrightarrow i \\
+		A\xrightarrow{vu}  C\xrightarrow m B'\xrightarrow n
+		\end{matrix}
+		$$
+		there exists a distinguished triangle $$
+		C'\xrightarrow f B'\xrightarrow g A'\xrightarrow h
+		$$ such that
+		$$
+		l=gm, k=nf, h=j[1]i, ig=u[1]n, fj=mv.
+		$$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	A category of complexes $Kom(\mathcal A)$ of an abelian category $\mathcal A$ is the category of complexes $A^\bullet\in \mathcal A$, and whose morphisms are morphisms of complexes.
+	
+	We define the complex $A^\bullet[1]$ as the complex with $(A^\bullet[1])^i=A^{i+1}$ and differential $d^i_{A^\bullet[1]}=d^{i+1}_{A^\bullet}.$
+	
+	Furthermore, the shift functor $T:Kom(\mathcal A)\rightarrow Kom(\mathcal{A})$ defines an equivalence of abelian categories.
+	
+	A morphism of complexes $f:A^\bullet\rightarrow B^\bullet$ is a quasi-isomorphism (or qis) if for all $i\in\mathbb Z$ the induced map $H^i(f):H^i(A)\rightarrow H^i(B)$ is an isomorphism.
+\end{definition}
+
+The idea of the derived category is that when considering two complexes $A^\bullet$ and $B^\bullet$ in a category $Kom(\mathcal A)$, the isomorphism in the derived category $D(\mathcal A)$ will not mean $A^i\simeq B^i$ for all $i$, but instead that each cohomology is isomorphic, i.e. $H^i(A^\bullet)\simeq H^i(B^\bullet)$, in other words, quasi-isomorphism in the category of complexes means isomorphisms in the derived category.
+
+\begin{teorema}
+	Let $\mathcal A$ be an abelian category and $Kom(\mathcal A)$ its category of complexes. Then there exists a category $D(\mathcal A)$, called the derived category of $\mathcal A$, and a functor 
+	$$
+	Q:Kom(\mathcal A)\rightarrow D(\mathcal A),
+	$$
+	such that
+	\begin{enumerate}
+		\item If $f:A^\bullet\rightarrow B^\bullet$ is a quasi-isomorphism, then $Q(f)$ is an isomorphism in $D(\mathcal A)$.
+		\item Any functor $F:Kom(\mathcal A)\rightarrow D(\mathcal A)$ satisfying the last condition factorizes uniquely over $Q:Kom(\mathcal A)\rightarrow D$, i.e. there exists a unique functor $G:D(\mathcal A)\rightarrow D$, with $F\simeq G\circ Q$.
+	\end{enumerate}
+\end{teorema}
+
+To be more precise, we can define the category $D(\mathcal A)$ by having as objects $$
+Ob(D(\mathcal A))=Ob(Kom(\mathcal A)),
+$$ 
+and the set of morphisms between complexes $A^\bullet$ and $B^\bullet$ viewed as objects in $D(\mathcal A)$ is the set of equivalence class of diagrams of the form $$
+\begin{tikzcd}
+& C^\bullet \arrow[ld, "qis"'] \arrow[rd] &           \\
+A^\bullet &                                         & B^\bullet
+\end{tikzcd}
+$$
+\begin{definition}
+	Let $f:A^\bullet \rightarrow B^\bullet$ be a complex morphism, its mapping cone is the complex $C(f)$ with $$
+	C(f)^i=A^{i+1}\oplus B^i,~~ d^i_{C(f)}=\left( {\begin{array}{cc}
+		-d^{i+1}_A&0\\
+		f^{i+1}&d^i_B
+		\end{array} } \right)	
+	$$
+\end{definition}
+\begin{definition}
+	Two morphisms of complexes $f,g$ are called homotopically equivalent, denoted by $f\sim g$, if there exists a collection of homomorphism $h^i:A^i\rightarrow B^{i-1}\in \mathbb Z$ such that $$
+	f^i-g^i=h^i\circ d^i_A + d^{i-1}_B\circ h^i.
+	$$
+	
+	The homotopy category of complexes $K(A)$ is the category whose objects are the objects of $Kom(\mathcal A)$ and morphisms $\Hom_{K(\mathcal A)}(A^\bullet, B^\bullet)=\Hom_{Kom(\mathcal A)}(A^\bullet, B^\bullet)/\sim$.
+\end{definition}
+
+Now we construct the derived functors.
+
+\begin{definition}
+	Let $Kom^*(\mathcal A)$, with $*=+,-,b$, be the category of complexes $A^\bullet$ in the category $\mathcal A$ with $A^i=0$ for $i\le 0, ~i\geq0,~|i|\geq0$ respectively. 
+\end{definition}
+
+\begin{lema}
+	Let $F:\mathcal A\rightarrow \mathcal B$ be a functor between triangulated categories, then $F$ induces a commutative diagram $$
+	\begin{matrix}
+	K^*(\mathcal A)&\rightarrow &K^*(\mathcal B)\\
+	\downarrow&&\downarrow\\
+	D^*(\mathcal A)&\rightarrow &D^*(\mathcal B),
+	\end{matrix}
+	$$
+	if one of the following is true:
+	\begin{enumerate}
+		\item under $F$, a quasi-isomorphism is mapped to a quasi-isomorphism,
+		\item the image of an acyclic complex is again acyclic.
+	\end{enumerate}
+	
+\end{lema}
+
+So assume that we have a left exact functor $F:\mathcal A \rightarrow \mathcal B$, furthermore we assume that $\mathcal A$ contains enough injectivies. We have the following diagram $$
+\begin{tikzcd}
+K^+(\mathcal I_\mathcal A) \arrow[r, hook] \arrow[rd, "i"'] & K^+(\mathcal A) \arrow[r, "K(F)"] \arrow[d, "Q_\mathcal A"] & K^+(\mathcal B) \arrow[d, "Q_\mathcal B"] \\
+& D^+(\mathcal A)                                             & D^+(\mathcal B)                          
+\end{tikzcd}
+$$
+
+\begin{definition}
+	
+	We define the right derived functor of $F$ as the functor $$
+	RF=Q_\mathcal B \circ K(F) \circ i^{-1}:D^+(\mathcal A)\rightarrow D^+(\mathcal B).
+	$$
+	In the same manner one can construct the left derived functor.
+	
+	We also set $R^iF(A^\bullet)=H^i(RF(A^\bullet))\in \mathcal B$.
+	
+\end{definition}
+\begin{proposition}
+	
+	The right derived functor is an exact functor of triangulated categories.
+	
+\end{proposition}
+\begin{proof}
+	\cite{huybrechts2006fourier} Proposition $2.47$.
+\end{proof}
+\begin{definition}
+	If $\mathcal A$ contains enough injectives, one defines $$
+	Ext^i(A,-)=H^i\circ R\Hom(A,-).
+	$$
+	These $Ext$ groups can be interpreted purely in terms of certain homomorphism groups within the derived category. 
+\end{definition}
+\begin{proposition}
+	If $A, B\in \mathcal A$ an abelian category with enough injectives, then there are natural isomorphisms $$
+	Ext^i_{\mathcal A} (A,B)=\Hom_{D(\mathcal A)}(A,B[i]),
+	$$
+	where $A$ and $B$ are complexes concentrated in degree zero.
+\end{proposition}
+\begin{proof}
+	\cite{huybrechts2006fourier} Proposition $2.56$.
+\end{proof}
+
+We now introduce these notions in the sense of sheaves and schemes. Let $X$ be a scheme, its derived category $D^b(X)$ is, by definition, the bounded derived category of the abelian category $Coh(X)$ of coherent sheaves, i.e.,
+$$
+D^b(X)=D^b(Coh(X)).
+$$
+
+Often the category $Coh(X)$ do not contain non-trivial injective objects, usually this happens when $X$ is projective, then to compute derived functors we have to pass to the category of quasi-coherent sheaves $Qcoh(X)$, and some times, to the category of $\OO_X$-modules $Sh_{\OO_X}(X)$.
+
+
+\begin{proposition}
+	For any noetherian scheme $X$ there are natural equivalences $$
+	D^*(Qcoh(X))\simeq D^*_{Qcoh(X)}(Sh_{\OO_X}(X)).
+	$$
+	This means that we can think $D^*(Qcoh(X))$ as the bounded derived category of $Qcoh(X)$ or as the full triangulate subcategory of $D^*(Sh_{\OO_X})$ of bounded complexes with quasi-coherent cohomology.	
+\end{proposition}
+
+We now recall what is $t$-structure and its heart. For this part we follow \cite{beilinson2018faisceaux}.
+
+\begin{definition}
+	A $t$-structure is a triangulated category $\mathcal D$, with two full subcategories $\mathcal D^{\geq0}$ and $\mathcal D^{\le0}$, such that, defining $\mathcal D^{\le n}=\mathcal D^{\le0}[-n]$ and $\mathcal D^{\geq n}=\mathcal D^{\geq0}[-n]$, we have
+	\begin{enumerate}
+		\item If $X\in \mathcal D^{\le0}$ and $Y\in \mathcal D^{\geq1}$, then $\Hom(X,Y)=0$.
+		\item $\mathcal D^{\le0}\subset \mathcal D^{\le 1}$ and $\mathcal D^{\geq0}\supset \mathcal D^{\geq 1}$.
+		\item For any $X\in \mathcal D$, there is a distinguished triangle $$ A\rightarrow X\rightarrow B\rightarrow A[1],$$ 
+		such that $A\in\mathcal D^{\le0}$ and $B\in\mathcal D^{\geq0}$.
+	\end{enumerate}
+	
+	The heart $\mathcal H$ of a $t$-structure on $(\mathcal D)$ is the intersection $$\mathcal H=\mathcal D^{\le0}\cap\mathcal D^{\geq0}.$$
+\end{definition}
+
+A natural exemple of a $t$-structure on the derived category of an abelian category $\mathcal A$ is the set $D(\mathcal A)^{\le0}$ (respectively $D(\mathcal A)^{\geq0})$) defined by the subcategories of complexes $K$ such that $H^i(K)=0$ for $i>0$ (repectively $i<0$), and its heart $\mathcal H$ is the set of complexes $K$ satisfying $H^i(K)=0$ for $i\neq0$.
+
+\section{Cohomology of Sheaves}
+
+The goal of this section is to introduce the reader to the concept of cohomology of sheaves. 
+
+\begin{definition}
+	Let $X$ be a topological space. Let $\Gamma(X,-)$ be the global section functor. We define the cohomology functors $H^i(X,-)$ as the right derived functors of $\Gamma(X,-)$. For any sheaf $\mathcal F$, the groups $H^i(X,\mathcal F)$ are the cohomology groups of $\mathcal F$.
+\end{definition}
+
+Often we have similar results of the classical cohomology translated for cohomology of sheaves, as the next one.
+
+\begin{teorema}
+	Let $X$ be a noetherian topological space of dimension $n$. Then for all $i>n$ and all sheaves of abelian groups $\mathcal F$ on $X$, we have $H^i(X,\mathcal F)=0$.
+\end{teorema} 
+\begin{proof}
+	\cite{hartshorne1977algebraic} Chapter $3$, Theorem $2.7$.
+\end{proof}
+
+The next theorem gives a criterium for affiness of a scheme $X$ by its cohomology. 
+
+\begin{teorema}
+	Let $X$ be a noetherian space, then the following conditions are equivalent. 
+	\begin{enumerate}
+		\item $X$ is affine.
+		\item $H^i(X,\mathcal F)=0$ for all $\mathcal F$ quasi-coherent and all $i>0$.
+		\item $H^i(X,\mathcal I)=0$ for all coherent sheaves of ideals $\mathcal I$. 
+	\end{enumerate}
+\end{teorema}
+\begin{proof}
+	\cite{hartshorne1977algebraic} Chapter $3$, Theorem $3.7$.
+\end{proof}
+
+We give the calculations of the cohomology for the structure sheaf of $\PP^n$ in the following theorem.
+
+\begin{teorema}
+	Let $A$ be a noetherian ring and let $X=\PP^n_A$, with $n\geq1$. Then $$H^i(X, \OO_X(m))=0,$$ for $0<i<n$ and all $m\in \ZZ$, and $$H^n(X,\OO_X(-n-1))\simeq A.$$
+\end{teorema}
+\begin{proof}
+	\cite{hartshorne1977algebraic} Chapter $3$, Theorem $5.1$.
+\end{proof}
+
+\begin{definition}
+	Let $X$ be a proper scheme of dimension $n$ over a field $\mathbb K$. A dualizing sheaf for $X$ is a coherent sheaf $\omega_X^\circ$ on $X$, together with a trace morphism $tr:H^n(X,\omega_X^\circ)\rightarrow \mathbb k$, such that for all coherent sheaves $\mathcal F$ on $X$, the natural pairing $$
+	\Hom(\mathcal F,\omega_X^\circ)\times H^n(X,\mathcal F)\rightarrow H^n(X,\omega_X^\circ),
+	$$
+	composed with $tr$ induces an isomorphism $$
+	\Hom(\mathcal F,\omega_X^\circ)\xrightarrow{\sim}H^n(X,\mathcal F)^*.
+	$$
+\end{definition}
+
+
+
+\begin{definition}
+	A bundle $L$ is very ample if the pull back of $\OO(1)$ via $i:X\rightarrow \PP^n$ is isomorphic to $L$, for some embedding $i$ and some $n\in\ZZ$.
+\end{definition}
+
+In other words, a very ample line bundle is a line bundle with enough global sections to embed its base variety into a projective space.
+
+\begin{teorema}[Serre duality] Let $X$ be a projective scheme of dimension $n$ over an algebraically closed field $\mathbb K$. Let $\omega_X^\circ$ be a dualizing sheaf on $X$, and let $\OO_X(1)$ be a very ample sheaf on $X$. Then:
+	\begin{enumerate}
+		\item For all $i\geq 0$ and $\mathcal F$ coherent on $X$, there are natural functorial maps $$
+		\theta^i:\Ext^i(\mathcal F, \omega_X^\circ)\rightarrow H^{n-i}(X,\mathcal F)^*,
+		$$	
+		such that $\theta^0$ is the map given in the definition of dualizing sheaf above. 
+		\item The following conditions are equivalent:
+		\begin{enumerate}
+			\item $X$ is Cohen-Macaulay and equidimensional, i.e. for each $x\in X$ there is a neighborhood $U$ of $x$, such that $\OO_X(U)$ is Cohen-Macaulay and all irreducible components have same dimension respectively.
+			\item For any local $\mathcal F$ locally free sheaf on $X$, we have $H^i(X,\mathcal F(-q))=0$ for $i<n$ and $q\gg0$.
+			\item The maps $\theta^i$ are isomorphisms for all $i\geq 0$ and all $\mathcal F$ coherent on $X$.
+		\end{enumerate}
+	\end{enumerate}
+\end{teorema}
+\begin{proof}
+	\cite{hartshorne1977algebraic} Chapter $3$, Theorem $7.6$.
+\end{proof}
+
+
+
+\section{A Brief Introduction To Stacks}
+
+
+The notion of stacks was introduced in \cite{Deligne1969} having as motivation the study of moduli space of curves, and it was generalized in \cite{Artin1974}. The main reference used to this introduction is \cite{FantechiBarbara}.
+
+For this section we fix the category $\mathcal G$, as our main case of interest is when it is a subcategory of the category of schemes, we will call its objects schemes. A commutative diagram 
+$$
+\begin{matrix}
+T'&\xrightarrow {\overline f} &T\\
+p'\Big\downarrow& &\Big\downarrow p\\
+S'&\xrightarrow{f}&S
+
+\end{matrix}
+$$
+is called a Cartesian diagram if it induces all other commutative diagrams with same lower-right corner, i.e. for any other commutative diagram $$
+\begin{matrix}
+U&\xrightarrow {g} &T\\
+q\Big\downarrow& &\Big\downarrow p\\
+S'&\xrightarrow{f}&S
+\end{matrix}
+$$
+there is a unique morphism $h:U\rightarrow T'$, such that $q=p'\circ h$ and $g=\overline f\circ h$.
+
+We want to give the structure to our scheme. For this we define the Grothendieck topology.
+\begin{definition}
+	A \textit{Grothendieck topology} $T$ consists of a category $\mathcal T$ and a set $Cov~T$ of families $\{U_i\xrightarrow{\phi_i} U\}_{i\in I}$ of maps in $\mathcal T$ called coverings, where the $U$ is fixed, satisfying:
+	\begin{enumerate}
+		\item if $\phi_i$ is a isomorphism, then $\{\phi_i\}\in Cov~T$,
+		\item if $\{U_i\rightarrow U\}\in Cov~T$ for each $i$, then the family $\{V_{ij}\rightarrow U \}$ obtained by composition is in $Cov~T$,
+		\item if $\{U_i\rightarrow U \}\in Cov~T$ and $V\rightarrow U\in\mathcal T$ is arbitrary, then $U_i\times_U V$ exists and $\{U_i\times_U V\rightarrow V  \}\in Cov~T$. 
+	\end{enumerate}
+\end{definition}
+
+In the case whom the objects of $\mathcal G$ are topologial spaces, we can take open covering to be the usual ones. However, in the case of $\mathcal G$ being a category of schemes, the Zariski topology is not appropriate. An \'etale morphism, i.e. for a smooth scheme, a morphism with the differential that is a isomorphism at every point is not necessaraly a local isomorphism. For that reason when defining an algebraic stack, we will utilise the \'etale topology, i.e. let $S$ be a scheme and define an open covering to be a collection of \'etale morphisms $\{S_i\rightarrow S \}$, such that $\cup S_i\rightarrow S$ is surjective. For a fixed $j$, $\{S_i\times_S S_j\}$ is an open of $S_j$ because being \'etale is invariant under base change. If each $S_i\rightarrow S$ is an open embedding, then $ \{S_i\times_S S_j\}\simeq S_i\cap S_j$.	
+
+
+\begin{definition}
+	Let $E$ be a vector bundle over a scheme $S$ and $f:T\rightarrow S$ is a morphism of schemes, we call a diagram$$
+	\begin{matrix}
+	F&\xrightarrow{\overline f}&E\\
+	\Big\downarrow&&\Big\downarrow\\
+	T&\xrightarrow{f}&S
+	\end{matrix}
+	$$
+	a \textit{pullback diagram} if $F$ is a vector bundle over $T$, and the diagram makes $F$ into the pullback of $E$ via $f$, i.e. the diagram is cartesian. We also say that $(F, \overline f)$ is a pullback of $E$ via $f$.
+\end{definition}
+
+Pullback is unique up to isomorphisms, in other words, if $(F', \overline f')$ is another pullback of the previous diagram, there exists a unique isomorphism $\alpha: F'\rightarrow F$ of vector bundles over $T$ such that $\overline f'=\overline f\circ \alpha$.
+
+We can define the category $V_r$ as the category that has as its objects rank $r$ vector bundles over schemes, and its morphism are pullback diagrams. There is a natural forgetful functor from $V_r$ to $\mathcal G$, which associates to every bundle its base scheme and to every pullback diagram the morphism $f$ of the bases. The category $V_r$ will be our guideline example.
+
+\begin{definition}
+	A \textit{category over} $\mathcal G$ is a category $X$ with a fixed covariant functor $\pi:X\rightarrow \mathcal G$. We say that a object $E\in X$ is \textit{over}, or is a \textit{lifting} of a scheme $S\in \mathcal G$, if $\pi(E)=S$, and similarly for morphisms. If $S\in \mathcal G$, the fiber over $S$ is the subcategory of $X$ of objects over $S$ and morphisms over the identity of $S$.
+\end{definition}
+
+Note that $V_r$ is a category over $\mathcal G$, the fiber over $S\in\mathcal G$ is the category of vector bundles over $S$, and the morphisms are the isomorphisms among them.
+
+To a scheme $S\in \mathcal G$ we can associate a category $\mathcal G/S$ over $\mathcal G$, called the category of $S$-schemes. The objects are morphisms with target $S$ in $\mathcal G$, and a morphism from $f:T\rightarrow S$ to $f':T'\rightarrow S$ is a morphism $g:T\rightarrow T'$ with $f=f'\circ g$. The projection functor sends the object $T\rightarrow S$ to $T$ and a morphism $g$ to itself. In diagrams we have the following picture
+$$
+\begin{tikzcd}
+T\arrow[d] \arrow[r, "g"] & T'\arrow[d]\\
+S \ar[-,double line with arrow={-,-}]{r}&S 
+\end{tikzcd}
+$$
+is commutative.
+
+In the case where $S$ is a point $p$, the category $\mathcal G/p$ is just the category $\mathcal G$ itself, and the natural projection is the identity functor.
+
+Now we should define what are the morphisms of categories over $\mathcal G$. 
+\begin{definition}
+	A morphism of categories over $\mathcal G$ is a covariant functor commuting with the projection to $\mathcal G$.
+\end{definition}
+
+Let $S$ be a scheme, $X$ a category over $\mathcal G$, $f:\mathcal G/S\rightarrow X$ a morphism of categories over $\mathcal G$. To this morphism we can associate an object $E\in X$ over $S$, the image of $id_S:S\rightarrow S$.
+
+If $S$ and $T$ are schemes, and $f:\mathcal G/T\rightarrow \mathcal G/S$ is a morphism of categories over $\mathcal G$, then the associated object is a morphism $g:T\rightarrow S$, and $f$ is uniquely determined by $g$. Therefore, morphisms of categories over $\mathcal G$ from $\mathcal G/T$ to $\mathcal G/S$ are the same as a morphism of schemes $T\rightarrow S$. Hence, the category $\mathcal G/S$ determines the scheme $S$ up to isomorphism.
+
+\begin{definition}
+	If $X$ and $Y$ are categories over $\mathcal G$, let $f$ and $g$ be morphisms from $X$ to $Y$, a $2$-morphism $f\rightarrow g$ is a natural transformation over the identity functor on $\mathcal G$. 
+\end{definition}
+
+As we have the existence of $2$-morphisms, categories over $\mathcal G$ form a $2$-category, i.e. morphisms can be isomorphic without being equal. This idea is analagous to homotopy, as two continous maps are homotopic without being equal.
+
+\begin{definition}
+	An isomorphism of categories over $\mathcal G$ is a morphism which is an equivalence of categories, in other words, it induces bijections on morphisms and is surjective on objects up to isomorphism. An isomorphism has an inverse up to $2$-isomorphisms.	
+\end{definition}
+
+
+\begin{definition}
+	A category $X$ over $\mathcal G$ is called a category fibered in grupoids, or grupoid fibration, over $\mathcal G$ if for any choice of morphism of schemes $f:T\rightarrow S$ and of a lifting $E$ of $S$ to $X$, there exists a lifting $\overline f:F\rightarrow E$ of $f$ to $X$, and the lifting is unique up to isomorphism, i.e. for any other lifting $\overline f':F'\rightarrow E$, there is a unique $\alpha:F'\rightarrow F$ over $id_T$ such that $\overline f'=\overline{f}\circ \alpha$.
+\end{definition}
+
+\begin{definition}
+	A grupoid is a category in which every morphism is invertible, i.e. an isomorphism.
+	
+\end{definition}
+
+Let $X$ be a grupoid over $\mathcal G$. We assume that for every morphism $f:T\rightarrow S$ and every object $E$ over $S$, we have choosen one lifting $f_E:f^*E\rightarrow E$ of $f$ with target $E$. If $E'$ is another object over $S$, and $\alpha:E'\rightarrow E$ is a morphism in the fiber there is a unique morphism $f^*\alpha:f^*:f^*E'\rightarrow f^*E$ such that the diagram $$
+\begin{tikzcd}
+f^*E' \arrow[r, "f_{E'}"] \arrow[d, "f^*\alpha"'] & E' \arrow[d, "\alpha"] \\
+f^*E \arrow[r, "f_E"']                            & E                     
+\end{tikzcd}	
+$$
+commutes.
+
+If the morphism considered $f:T\rightarrow S$ is clear, sometimes we will denote $f^*E$ by $T|E$, we will analogously change the notation for morphisms.
+
+\begin{definition}\label{def 4.1}
+	Let $X$ be a category fibered in grupoids over $\mathcal G$. A descent datum for $X$ over a scheme $S$ is the following: an open covering $\{S_i\rightarrow S\}$; for every $i$, a lifting $E_i$ of $S_i$ to $X$; for every $i,j$ an isomorphism $\alpha_{ij}:E_i|S_i\cap S_j\rightarrow E_j|S_i\cap S_j$ in the fiber which satisfies the cocycle condition $\alpha_{ik}=\alpha_{jk}\circ\alpha_{ij}$ over $S_i\cap S_j\cap S_k$.
+	
+	The descent datum is said to be effective if there exists a lifting $E$ of $S$ to $X$ together with isomorphisms $\alpha_i:E|S_i\rightarrow E_i$ in the fiber such that $\alpha_{ij}=\alpha_j|S_{i}\cap S_j\circ(\alpha_i|S_{i}\cap S_j)^{-1}$.
+\end{definition}
+
+The covering $\{S_i\}$ can be thinked as lying over $S$, and we have a collection of bundles above, and we descend them to a bundle over $S$.
+
+\begin{definition}
+	Let $X$ be a category fibered in grupoids over $\mathcal G$. We say that isomorphisms are a sheaf for $X$ if, for any scheme $S$ and any $E,E'$ in the fiber of $S$, for every open covering $\{S_i\rightarrow S \}$ of $S$, and for every collection of isomorphisms $\alpha_i: E|S_i\rightarrow E'|S_i$ in the fiber over $S_i$, such that $\alpha_i|S_i\cap S_j=\alpha_j|S_i\cap S_j$, there is a unique isomorphism $\alpha:E\rightarrow E'$ such that $\alpha|S_i=\alpha_i$.
+\end{definition}
+
+With these concepts we can define the notion of stack.
+
+\begin{definition}
+	A stack is a category fibered in grupoids over $\mathcal G$ such that isomorphisms are a sheaf and every descent datum is effective.
+\end{definition}
+
+If $X$ is a stack, then for every descent datum as in Definition \ref{def 4.1}, the $(E,\alpha_i)$ whose existence is guaranteed by effectiveness are unique up to isomorphism, i.e. for any other $(E',\alpha_i')$ there exists a unique isomorphism $\beta:E'\rightarrow E$ in the fiber such $\alpha_i'=\alpha_i\circ \beta$. 
+
+Morphisms of stacks are defined to be morphisms of categories over $\mathcal G$, and the same for $2$-morphisms and isomorphisms.
+
+The category $\mathcal G/S$ is always fibered in grupoids over $\mathcal G$, but not necessarily a stack, it will depend on the topology. However, for schemes, varieties, manifolds, topological spaces, they form a stack with the usual topology. It is also true for schemes with the \'etale topology.
+
+\begin{definition}
+	A stack $X$ over $\mathcal G$ is representable if it is isomorphic to the stack $\mathcal G/S$ induced by $S$.
+\end{definition}
+
+Roughly speaking, a representable morphism of stacks is a morphism whose fibers are schemes.
+
+\begin{definition}
+	A morphism $X\rightarrow Y$ of stacks is representable if, for every morphism $S\rightarrow Y$ with $S$ a scheme, the fiber product $S\times_Y X$ is representable.
+\end{definition}
+
+A property of morphism of schemes is invariant under base change if, for any cartesian diagram, if $p$ has a the property, then so has $p'$.
+
+\begin{definition}
+	Let $P$ be a property of morphisms of schemes which is invariant under base change. A representable morphism $X\rightarrow Y$ of stacks has property $P$ if, for every morphism $S\rightarrow Y$ with $S$ a scheme, the induced morphism of schemes $S\times_Y X\rightarrow S$ has $P$.
+\end{definition} 
+
+Examples of properties that are invariant under base changes includes smoothness, being \'etale, being proper, open embedding and closed embedding.
+
+We now will consider $\mathcal G$ to be the category of quasiprojective schemes over the complex numbers, with the \'etale topology.
+
+\begin{definition}
+	A stack $X$ over $\mathcal G$ is algebraic in the sense of Deligne and Mumford (respectively Artin) if there exists an \'etale (respectively smooth) and surjective representable morphism $S\rightarrow X$ where $S$ is a scheme. We say $S\rightarrow X$ is a presentation of $X$.  
+\end{definition}
+\begin{lema}
+	Let $W$ be a vector space of dimension $r$. Define a morphism $p\rightarrow V_r$, where $p$ is the category $\mathcal G/p$, mapping every scheme $T$ to the trivial bundle $T\times W$, and every morphism to the natural pullback diagram. Then for every scheme $S$ and every morphism $S\rightarrow V_r$, the fiber product $S\times_{V_r}p$ is a representable stack, isomorphic to the frame bundle of $E$. Furthermore, the morphism $p\rightarrow V_r$ is representable.
+\end{lema}
+\begin{proof}
+	\cite{FantechiBarbara} Subsection $6.2$.
+\end{proof}
+
+This lemma implies that $p\rightarrow V_r$ is representable, smooth and surjective, therefore the stack $V_r$ is algebraic in the sense of Artin, and the morphism $p\rightarrow V_r$ is a presentation.
+
+\chapter{Interpolation Problem}
+
+\section{Bridgeland Stability}
+
+In this section we will define the concepts of Bridgeland stability and its walls, we will also state the main results used to prove the interpolation for complete instersection and monomial schemes.
+
+Given a zero-dimensional scheme $Z$, the interpolation problem consists in classifying the slope $\mu$ such that there exists a vector bundle $E$ of such slope, such that $H^i(E\otimes  I_Z)=0$ for all $i\in\ZZ$. The article \cite{COSKUN} gives a proof for the cases of $Z$ being a complete intersection and a monomial scheme.
+
+The slope $\mu$ and the discriminant $\Delta$ of a bundle $E$ are defined as $$
+\mu=\frac{c_1}{r}, \Delta=\frac{\mu^2}{2}-\frac{c_2}{r}.
+$$
+We say that the sheaf $E$ is slope stable if for every coherant subsheaf $F\subset E$ we have $\mu(F)\le\mu(E)$, and in case of equality $\Delta (F)>\Delta(E)$.
+
+The concept of Bridgeland stability can be thought as a generalization of the slope stability. Let $D^b(\PP^2)$ be the derived category of coherant sheaves and $L$ the class of a line. A Bridgeland stability consists of a pair $\sigma=(\mathcal A,\mathcal Z)$ such that $\mathcal A$ is the heart of a bounded $t$-structure and $\mathcal Z$ is a morphism satisfying:
+\begin{enumerate}
+	\item[(i)](Positivity) For all $E\neq 0\in \mathcal A$, $Z(E)\in\{re^{i\theta}|r>0,\theta\in(0,1]\}$.
+	\item[(ii)](Harder-Narasimhan property) For any object $E\in \mathcal A$, let the $\mathcal Z$-slope of $E$ be defined as $\mu(E)=\frac{-Re(\mathcal Z(E))}{Im(\mathcal Z(E))}$. An object $E$ is called $\mathcal Z$-stable if for every subobject $F$, $\mu(F)<\mu(E)$, in case of equality we say that is semi-stable. The pair $(\mathcal A,\mathcal Z)$ is required to satisfy the Harder-Narasimhan property, i.e. $E$ has a filtration $$
+	0=E_0\hookrightarrow E_1\hookrightarrow\dots\hookrightarrow E_n=E,
+	$$ 
+	such that $F_i=E_i/E_{i+1}$ is $\mathcal Z$-semi-stable and $\mu(F_i)>\mu(F_{i+1})$.
+\end{enumerate}
+
+We construct the Bridgeland Stability that we will use. Let $s\in \mathbb R$ be given, and consider the full categories of torsion sheaves $Q_s$ with $\mu_{min}(Q)>s$, for $Q\in Q_s$, and the full category of torsion free sheaves $F_s$, satisfying $\mu_{max}(F_s)<s$. Then let $\mathcal A_s$ be the heart of the $t$-structure on $D^b(\PP^2)$ obtained from $(F_s, Q_s)$. Define the function $\mathcal Z$ by 
+$$
+\mathcal Z_{s,t}(E)=-\int_{\PP^2}e^{-(s+it)L}ch(E).
+$$
+If $E$ has Chern character $\xi=(r,\mu,\Delta)$, then 
+$$
+\mathcal Z_{s,t}(E)=\frac{1}{2}r((\mu-s^2)-t^2-2\Delta)+irt(\mu-s),
+$$
+and the slope is given by $$
+\mu_{s,t}=\frac{(\mu-s)^2-t^2-2\Delta}{2t(\mu-s)}.
+$$
+
+If we have a Chern character $\xi$, then in the $(s,t)$-plane we can consider the walls such that, as the stability condition $\sigma_{s,t}$ varies in the chamber, the set of $\sigma_{s,t}$-stable objects of class $\xi$ does not change. These walls are called Bridgeland walls.
+
+Suppose that $\xi,\zeta$ are two linearly independent Chern characters, a potential Bridgeland wall is a set in the $(s,t)$-plane of the form $$
+W(\xi,\zeta)=\{(s,t)|\mu_{s,t}(\xi)=\mu_{s,t}(\zeta) \},
+$$   
+note that Bridgeland walls are potential Bridgeland walls. The potential Bridgeland walls for $\xi$ are all the walls $W(\xi,\zeta)$ as $\zeta$ varies. 
+
+If we consider $\xi=(r,c,d)$ and $\zeta=(r',c',d')$, by direct calculation we have that
+\begin{enumerate}
+	\item[(i)] If $\mu(\xi)=\mu(\zeta)$, then the wall $W(\xi,\zeta)$ is the vertical line $s=\mu(\xi)$.
+	\item[(ii)] Otherwise, assume $\mu(\xi)<\infty$. It can be shown that the walls $W(\xi,\zeta)$ and $W(\xi,\xi+\zeta)$ are equal, so we can assume that $\mu(\zeta)<\infty$. Then changing the basis to $\xi=(r,\mu,\Delta)$ and $\zeta=(r',\mu',\Delta')$, we obtain that the wall $W(\xi,\zeta)$ is the semicircle centered at $(s,0)$ and radius $\rho$, with $$
+	s=\frac{\mu+\mu'}{2}-\frac{\Delta-\Delta'}{\mu-\mu'}, \rho^2=(s-\mu)^2-2\Delta.
+	$$
+	
+	
+\end{enumerate}
+
+From this we see that for a Chern character $\xi$ with nonzero rank and nonnegative discriminant the walls are a vertical line in $s=\mu$, and semicircles to the left of the vertical line, with smaller radius closer to the wall, and the centers converge to the point $(\mu-\sqrt{2\Delta},0)$ when comparing with negative ranks, and for positive ranks the picture is similar converging to the point $(\mu+\sqrt{2\Delta},0)$. In the case of a rank $0$ object, the walls are semicircles centered at $(\mu,0)$.
+
+An object $E$ is called Gieseker semistable if there is some $s\in\mathbb R$ such that $E$ is a $\mathcal Z_{s,t}$-semi-stable object of $\mathcal A_s$ for all $t\gg0$. If $W$ is a semicircular potential wall for a Gieseker semi-stable object $E$, then $E$ is destabilized along $W$ if \begin{enumerate}
+	\item E is not semi-stable at any point inside of $W$,
+	\item E is semi-stable along $W$,
+	\item E is semi-stable at any point $(s,t)$ outside of $W$ such that $E\in \mathcal A_s$.
+\end{enumerate}
+
+
+\begin{proposition}
+	Let $$0\rightarrow A\rightarrow E\rightarrow B\rightarrow 0$$ be an exact sequence of Gieseker semi-stable $\mathcal A_s$. Suppose $A$ and $B$ have linearly independent Chern characters. If $A$ and $B$ are destabilized along walls nested inside of $W(A,E)$, then $E$ is destabilized along $W$.	
+\end{proposition}
+\begin{proof}
+	\cite{COSKUN} Proposition 2.5.
+\end{proof}
+
+The proof of the interpolation for complete intersection consists in finding these sequences and showing acyclicity for $A$ and $B$.
+
+We introduce another space of coherent sheaves.
+\begin{definition}
+	A torsion-free coherent sheaf $E$ on $\PP^2$ is \textit{prioritary} if $$
+	\Ext^2(E,E(-1))=0.
+	$$  
+\end{definition}
+\begin{definition}
+	Let $E$ be a coherent sheaf on $\PP^2$, we say that $E$ has nonespecial cohomology if $H^i(E)\neq0$ for at most one value of $i\in \mathbb Z$.
+\end{definition}
+Now we list some important properties about prioritary sheaves that will be used later. Let $P(\xi)$ be the stack of prioritary sheaves in $\PP^2$ with Chern character $\xi$.
+\begin{teorema}\label{Teo 3.5} Let $\xi$ be a Chern character such that $P(\xi)$ is nonempty.
+	\begin{enumerate}
+		\item The stack $P(\xi)$ is irreducible.
+		\item The stack of semi-stable sheaves $M(\xi)$ is an open substack of $P(\xi)$, wich is irreducible when nonempty.
+		\item If $rk\xi\geq2$, then the general element of $P(\xi)$ is locally free.
+		\item If $rk\xi\geq2$, then the general element of $P(\xi)$ has nonespecial cohomology.
+	\end{enumerate}
+\end{teorema}
+\begin{proof}
+	For items $1$ to $3$ see \cite{Hirschowitz1993}, and \cite{1994weak} for item $4$.
+\end{proof}
+
+The next result gives a clear connection between cohomology and stability.
+
+\begin{definition}
+	Let $E$ be a locally free sheaf (or a holomorphic vector bundle), there is a unique $k$ such that $$
+	r-1\le c_1(E(-k_E))\le 0,
+	$$ 
+	where $r=rk (E)$. We denote by $E_{norm}=E(-k_E)$ the normalized sheaf of $E$, and we say that $E$ is the normalized if $E_{norm}=E$.
+\end{definition}
+\begin{teorema}[Hoppe]
+	Let $X$ be a projective manifold with $Pic~X=\mathbb Z$, and let $E$ be a vector bundle on $X$. If $H^0(X,(\wedge^q E)_{norm})=0$, for $1\le q\le r-1$, then $E$ is stable.
+\end{teorema}
+\begin{proof}
+	\cite{Hoppe1984} Lemma $2.6$.
+\end{proof}
+The converse of the previus statement is false, but for rank $2$ sheaves the converse is true.
+\begin{teorema}
+	If $E$ is a rank $2$ holomorphic vector bundle on $X$, and $Pic~X=\mathbb Z$, then $E$ is stable if and only if $h^0(E_{norm})=0$.
+\end{teorema}
+\begin{proof}
+	\cite{Okonek} Lemma $1.2.5$.
+\end{proof}
+
+For the last part of normalized bundle we refer to \cite{jardim} and \cite{Ottaviani}.
+
+Having nonespecial cohomology is a great improvement, because now the problem translates into showing that $\chi(E)=0$. The next theorem shows that is not only important to find $E$ with interpolation, but we should care to find the Chern character $\xi$ with minimal slope such that the general prioritary bundle $E\in P(\xi)$ has $\chi(I_Z\otimes E)=0$. 
+\begin{teorema}\label{bigger slope theorem}
+	Let $Z\subset \PP^2$ be a zero-dimensional scheme, suppose that $E$ is a vector bundle of slope $\mu$ with $H^1(E\otimes I_Z)=0$. Then for each slope $\mu'\geq \mu$ there is a prioritary bundle $E'$ with slope $\mu'$ such that $E'$ has interpolation for $Z$.  
+	
+\end{teorema}
+\begin{proof}
+	By Lemma $3.1$ and Corollary $3.4$ in \cite{COSKUN}, we can assume that $E$ is a stable vector bundle, $\mu(E)\geq 0$ and $H^1(E)=0$. Let $\mu'\geq \mu$, and $k$ the integer such $$
+	\mu+k\le\mu'<\mu +k+1.
+	$$
+	We can chose $a,b$ such that the bundle $$
+	F=E(k)^a\oplus E(k+1)^b
+	$$
+	has slope $\mu'$ and by Serre duality it follows that . 
+	
+	We claim that $H^1(F\otimes I_Z)=0$, which follows from $H^1(E(j)\otimes I_Z)=0$ for each $j\geq 0$.
+	
+	For the base case, it is the assumption of the theorem. Note that we have a exact sequence $$
+	0\rightarrow E(-1)\rightarrow E\rightarrow E|_L\rightarrow 0,
+	$$
+	where $L$ is a line in $\PP^2$. Notice that  $H^2(E(-1))\simeq H^0(E^\vee(-2))$, as $E$ is stable, it means that $E^\vee$ is also stable and has $\mu(E^\vee)\le 0$. Because $E^\vee$ is stable, it follows that $H^0(E^\vee_{Norm})=0$, and $E^\vee_{norm}\simeq E^\vee(\alpha)$ for some $\alpha\geq0$, therefore $H^0(E^\vee(-2))=0$, also $H^1(E(-1))=0$. Then $H^1(E|_L)=0$. Assume that this vanishes hold for $j-1$, we have the sequence $$
+	0\rightarrow E(j-1)\rightarrow E(j)\rightarrow E(j)|_L\rightarrow 0.
+	$$
+	We can restrict this sequence even more to $$
+	0\rightarrow E(j-1)|_L\rightarrow E(j)|_L\rightarrow E(j)|_p\rightarrow 0.
+	$$
+	By induction $H^i(E(j))|_L=0$. Tensoring the first sequence by $I_Z$ gives $H^i(E(j)\otimes I_Z)=0$ by induction. Lemma $3.1$ of \cite{COSKUN} shows that $H^1(F)=H^1(F\otimes I_Z)=H^2(F\otimes I_Z)=0$. If $h^0(F\otimes I_Z)\neq 0$, let $w=h^0(F\otimes I_Z)$, and consider a zero dimensional scheme of length $w$. If $F'$ is the kernel of a general map $F\otimes I_Z\rightarrow \OO_W$, then $F'$ is acyclic by Lemma $3.7$ \cite{COSKUN}. As $F'\rightarrow F\otimes I_Z$ is a isomorphism near $Z$, we have that $F'=F''\otimes Z$ for some $F''\subset F$, and there is a exact sequence $$
+	0\rightarrow F''\rightarrow F\rightarrow \OO_W\rightarrow 0,
+	$$
+	if $F\rightarrow \OO_W$ is a general map with kernel $F''$, then $F''\otimes I_Z$ is acyclic. Moreover, $F''$ is prioritary since $F$ is, and $\mu(F)=\mu(F'')$.
+	
+\end{proof}
+
+With this theorem it is natural to define $\mu_{min}^\perp(I_Z)$ as the minimum slope such that there is a bundle with interpolation for $I_Z$. 
+
+\begin{teorema}\label{Teo 3.15}
+	Let $F$ be a semi-stable pure $1$ dimensional sheaf, and suppose that $E$ is prioritary and $E\otimes F$ is acyclic. Let $(r,\mu,\Delta)$ be numerical invariantes of $E$, and fix $\Delta'\geq \Delta$ rational. If $r'$ is sufficiently divisible, then $E'\otimes F$ is acyclic for a general prioritary bundle $E'\in P(r',\mu,\Delta')$.
+\end{teorema}
+\begin{proof}
+	\cite{COSKUN} Theorem $3.15$.
+\end{proof}
+The next proposition will give us the candidate for the Chern character with minimal slope having interpolation.
+
+\begin{proposition}\label{prop 4}
+	Let $\xi_1,\xi_2$ be two independent Chern character with either rank $0$ or $0>\Delta$. Suppose that $\zeta=(r,\mu,\Delta)$ is a Chern character with $r\neq 0$, $\Delta >-\frac{1}{8}$ and $$
+	\chi(\zeta^*,\xi_1)=\chi(\zeta^*,\xi_2)=0.
+	$$
+	Then the wall $W(\xi_1,\xi_2)$ is semicircular, with center $(s,0)$ and radius $\rho$ equal to $$
+	s=-\mu-\frac{3}{2}, \rho^2=2\Delta+\frac{1}{4}.
+	$$
+\end{proposition}
+\begin{proof}
+	
+	\cite{COSKUN} Proposition $4.1$.
+\end{proof}
+
+\begin{definition}
+	Let $\xi, \zeta$ be two Chern characters. We will say that they are orthogonal if $\chi(\zeta^*,\xi)=0$.
+\end{definition}
+
+The $\zeta$ comes naturally in the sense that it will be the orthogonal Chern character of the destabilizing sequence of the complete intersection and monomial schemes. 
+
+\section{Interpolation for Complete Intersection Schemes}
+
+Now we prove the interpolation for complete intersection schemes.
+
+\begin{teorema}
+	Let $Z$ be a zero-dimensional complete intersection scheme in $\PP^2$ given by $Z=(f,g)$, where $deg(f)=a$, $deg(g)=b$, with $a\le b$. Then $\mu_{min}^\perp(I_Z)=b+\frac{a-3}{2}.$
+\end{teorema}
+\begin{proof}
+	Note that $I_Z$ has resolution
+	$$
+	0\rightarrow \OO_{\PP^2}(-a-b)\rightarrow\OO_{\PP^2}(-a)\oplus\OO_{\PP^2}(-b)\rightarrow I_Z\rightarrow 0. 
+	$$
+	We can complete it to the following diagram $$
+	\begin{tikzcd}
+	&                                          & 0 \arrow[d]                                                                         & 0 \arrow[d]                            &   \\
+	&                                          & \mathcal O_{\mathbb P^2}(-a) \arrow[d] \arrow[r]                                    & \mathcal O_{\mathbb P^2}(-a) \arrow[d] &   \\
+	0 \arrow[r] & \mathcal O_{\mathbb P^2}(-a-b) \arrow[r] & \mathcal O_{\mathbb P^2}(-a)\oplus \mathcal O_{\mathbb P^2}(-b) \arrow[r] \arrow[d] & I_Z \arrow[r] \arrow[d]                & 0 \\
+	0 \arrow[r] & I_C(-b) \arrow[r]                        & \mathcal O_{\mathbb P^2}(-b) \arrow[r] \arrow[d]                                    & \mathcal O_{C}(-b) \arrow[r] \arrow[d] & 0 \\
+	&                                          & 0                                                                                   & 0                                      &  
+	\end{tikzcd}
+	$$
+	
+	
+	And from that we obtain the sequence $$
+	0\rightarrow \OO_{\PP^2}(-a)\rightarrow I_Z\rightarrow \OO_C(-b)\rightarrow 0,
+	$$
+	where $C$ is the curve defined by $f$. We will show that there is a choice of $E$ such that $E\otimes \OO_{\PP^2}(-a)$ and $E\otimes\OO_C(-b)$ are acyclic.
+	
+	First we compute the wall $W(\OO_{\PP^2}(-a),I_Z)$. We have $$
+	ch(\OO_{\PP^2}(-a))=(1,-a,\frac{-a^2}{2}), ~ch(I_Z)=(1,0,-ab),
+	$$
+	from the previus calculations for the center and radius of the walls we obtain $$
+	s=-\frac{1}{2}a-b,~\rho^2=\frac{1}{4}(a-2b)^2.
+	$$
+	Then we can consider the Chern character $\xi_{opt}$ with $r(\xi_{opt})\neq 0$ that satisfies $$
+	\chi(\xi_{opt}^*,\OO_{\PP^2}(-a))=\chi(\xi_{opt},I_Z)=0,
+	$$
+	using the previus proposition we must have $$
+	\mu_{opt}:=\mu(\xi_{opt})=-s-\frac{3}{2}=b+\frac{a-3}{2}
+	$$
+	and $$
+	\Delta_{opt}:=\Delta(\xi_{opt})=\frac{1}{2}\rho^2-\frac{1}{8}=\frac{1}{8}((a-2b)^2-1).
+	$$
+	We want to show that if $r(\xi_{opt})$ is sufficiently large and divisible, then a general $E\in P(\xi_{opt})$ has interpolation for $Z$. Note that $\chi(\xi_{opt}^*,\OO_{\PP^2}(-a))=\chi(E^*,\OO_{\PP^2}(-a))=\chi(E(-a))=0$, then by Theorem \ref{Teo 3.5}, we have $H^i(E(-a))=0$ for $i\geq0$.
+	
+	Now is only left to show that $E\otimes \OO_C(-b)$ is acyclic, to do that we will solve the interpolation for $\OO_C(-b)$ in a similar manner. Consider the sequence $$
+	0\rightarrow \OO_{\PP^2}(-b)\rightarrow \OO_C(-b)\rightarrow \OO_{\PP^2}(-a-b)[1]\rightarrow 0.
+	$$
+	The wall $W(\OO_{\PP^2}(-b),\OO_C(-b))$ has center $s=-\frac{1}{2}a-b$ and radius $(\rho')^2=\frac{1}{4}a^2$. Then $\rho^2-(\rho')^2\geq0$, and then this wall is nested inside $W(\OO_{\PP^2}(-a),I_Z)$. 
+	
+	Take $\xi_{opt}'$ the orthogonal class to $\OO_{\PP^2}(-b)$ and $\OO_C(-b)$, then $$
+	\mu_{opt}(\OO_C(-b)):=\mu(\xi_{opt}')=b+\frac{a-3}{2}, ~\Delta_{opt}(\OO_C(-b)):=\Delta(\xi_{opt}')=\frac{1}{8}(a^2-1).
+	$$
+	
+	By additivity $\chi(E(-b))=\chi(E(-a-b))=0$, it follows again by Theorem \ref{Teo 3.5} that if we choose $r(\xi_{opt}')$ sufficiently large and divisible, then for a general $E'\in P(\xi_{opt}')$ then both $E'(-b)$ and $E'(-a-b)$ are acyclic. Therefore $E'\otimes \OO_C(-b)$ is acyclic. By Theorem \ref{Teo 3.15}, the general $E\in P(\xi_{opt})$ also has $ E\otimes \OO_C(-b)$ acyclic since $\Delta_{opt}(I_Z)\geq\Delta_{opt}(\OO_C(-b))$. It follows that $F\otimes I_Z$ is acyclic for $F\in P(\xi)$ with $\mu(\xi)\geq\mu_{opt}$.
+	
+	To show that $\mu^\perp_{min}(I_Z)=\mu_{opt}(I_Z)$ we construct a projective curve $\alpha\subset Hilb^n(\PP^2)$ such that $Z\in \alpha$ and $I_{Z'}$ has interpolation when tensored with $E\in P(\xi_{opt})$ for every $Z'\in \alpha$, since $$
+	\alpha D_E=\{X\in\alpha|X\otimes E \text{ is not acyclic} \},
+	$$ 
+	or in other words, $E$ has interpolation for $Z$ if and only if $Z$ lies outside of the divisor $D_E$, i.e. $ \alpha D_E=0$. To construct $\alpha$ we fix $f$ and let $g$ vary, for example $$
+	\alpha(t)=\{Z'=V(f,h(t)g)~|~h(t) \text{ is a polynomial in } t  \},
+	$$ as any complete intersection $Z'$ constructed in such way has the same resolution, and since the side terms will always be $\OO_{\PP^2}(-a)$ and $\OO_C(-b)$ wich are acyclic when tensored with $E$, it follows that $I_{Z'}\otimes E$ is acyclic for any $Z'\in\alpha$, then $$\alpha D_{E}=\{Z'\in\alpha|\chi(I_{Z'}\otimes E)\neq0\}=\emptyset.$$
+	We have $D_E=c_1H+r\frac{B}{2}$ and $D_{E'}=c_1'H+r'\frac{B}{2}$. Since the coefficients of a divisor $D_E$ are computed in terms of the slope in the effective cone of $E$, and if $E'$ has smaller slope, then for any curve $C$ in the Hilbert scheme we have $$CD_{E'}\le CD_E, $$ choosing the general $E'\in P(\xi')$ with $\mu(E')<\mu_{opt}$ leads to $\alpha D_{E'}<0$, which means that $\alpha$ is contained in any divisor of class $D_{E'}$, it follows that $Z\in D_{E'}$, wich means that $I_Z\otimes E'$ is not acyclic.  
+	(deixo esta parte?)
+\end{proof}
+
+It is worth to note that the walls $W(\OO_{\PP^2}(-a),I_Z)$ and $W(\OO_{\PP^2}(-b),I_C(-b)$ are the destabilizing walls of $I_Z$ and $I_C(-b)$ respectively and this is proved in \cite{COSKUN}, but we came to the conclusion that even though the destabilizing sequences are used in the proof, the fact of being the destabilizing one does not change the proof, and other sequences with acyclic side terms and that $\Delta(\xi)\geq\Delta(\xi')$ would be enough. What is interisting is that Coskun and Huizenga conjuctured that the destabilizing wall of $I_Z$ will always give a sequence that makes $E\otimes I_Z$ acyclic, with $E$ having the minimum slope for such property.
+
+\section{Monomial Objects}
+
+We will now focus the same problem for monomial schemes. A monomial scheme is a zero-dimensional scheme whose ideal is generated by monomials. If we consider the monomial scheme on an affine space of $\PP^2$, it is generated by a set of monomials $$
+x^{a_1},x^{a_2}y^{b_2},\dots,y^{b_r},
+$$ 
+with $a_1>a_2>\dots>a_r=0$, and $b_r>b_{r-1}>\dots>b_1=0$. 
+
+A block diagram consists of finitely many rows of finitely many boxes, and the number of boxes in each row is non-increasing proceeding from bottom to top. The box on the bottom left corresponds to the monomial $1$. If a box represents the monomial $x^ay^b$, then the box right to it represents $x^{a+1}y^b$, and the box above represents $x^ay^{b+1}$. We can represent a monomial scheme in $\mathbb P^2$ by a block diagram $D_Z$ that records its monomials on the quotient $$
+\CC[x,y]/(x^{a_1},\dots,y^{b_r}).
+$$ 
+The block diagram has $b_{i+1}-b_i$ rows of $a_i$ boxes for $1\le i\le r-1$. The length of the scheme $Z$ is given by the number of boxes on the diagram. As an example, consider the monomial scheme generated by $x^5,x^3y,xy^3,y^4$. The block diagram associated to it has the following configuration 
+
+\begin{center}
+	{\includegraphics{c}}
+\end{center}
+
+On the other hand, if we have $D$ a block diagram, we can associate to it a monomial scheme $Z(D)$, such that $D=D_{Z(D)}$. Suppose that $D$ has $n_j$ rows of lenght $a_j$ for $1\le j\le r-1$. Set $a_r=0$ and set $b_i\sum^{i-1}_{j=1}n_j$ for $1\le i\le r$. The monomial scheme $Z(D)$ is the scheme generated by the monomials $x^{a_i}y^{b_i}$, for $1\le i\le r$.
+
+Furthermore, if $Z$ is again generated by $x^{a_1},x^{a_2}y^{b_2},\dots,y^{b_r}$, then the minimal free resolution is given by $$
+0\rightarrow \bigoplus_{i=1}^{r-1}\OO_{\PP^2}(-a_i-b_{i+1})\xrightarrow{M}\bigoplus_{i=1}^r\OO_{\PP^2}(-a_i-b_i)\rightarrow I_Z\rightarrow 0,
+$$
+where $M$ is the $r\times (r-1)$ matrix with entries $m_{i,i}=y^{b_{i+1}-b_i}$, $m_{i+1,i}=-x^{a_i-a_{i+1}}$ and $m_{i,j}=0$ otherwise.
+
+
+Consider $Z$ a monomial scheme of degree $n$, its block $D_Z=D$ whose number of rows is $r(d)$ and of columns is $c(d)$. The minimal power of $x$ and $y$ in $I_Z$ are $x^{r(D)}$ and $y^{c(D)}$. Let $L$ be the line $y=0$ and $L'$ the line $x=0$. We denote $y^k=0$ by $kL$. In general we will add the prime to say that the property is related to $x$.
+
+The monomial scheme $W_k$, where $1\le k\le c(D)$, corresponds to the ideal quotient $(I_Z,y^k)$, and $Z_k$ to the intersection $Z\cap L$. Similarly for $W_k'$ and $Z_k'$. In the block diagram it means dividing it in the $k$-th row, the upper block diagram is $W_k$ and the bottom block diagram is $Z_k$. Let $w_k$ be the degree of $W_k$, then $deg(Z_k)=n-w_k$. Finally $l=l(Z)$ is the number of rows of maximal length in the block diagram. The following image is an example of what $Z_k$ and $W_k$ means on the block diagram.
+
+\begin{center}
+	\includegraphics{7}
+\end{center}
+
+A rank one monimial object is the sheaf $I_Z$ of a monomial scheme. For each $k$ there is an exact sequence$$
+0\rightarrow I_{W_k}(-k)\xrightarrow{y^k} I_Z \rightarrow I_{Z_k\subset kL}\rightarrow 0.
+$$
+We have a similar sequence changing $y$ for $x$. The destabilizing sequence will be the one with the biggest potential wall $W(I_{W_k}(-k),I_Z)$.
+
+Notice that since the rank is bigger than zero, the Bridgeland walls are nested semicircles on the left of the vertical wall $s=0$ in the $(s,t)$-plane. The destabilizing sequence of $I_Z$ will be the biggest wall constructed in such manner. Also, note that the destabilizing subobject is a twist sheaf of a rank one monomial object with smaller degree.
+
+
+
+
+
+
+A rank zero monomial object is the cokernel of the destabilizing sequence for rank one monomial objects, it is an ideal sheaf $I_{Z\subset kL}$, where $Z\subset kL$ is horizontally pure (it may sounds obscure for now, but we will define soon what horizontally pure means as we need some more concepts before doing it) and $r(D)=k$. There are $l'>0$ columns of $k$ on the block diagram for $Z$, and for each $i$, with $l'\le i\le c(D)$ we consider the map $I_{W_i'}(-i)\xrightarrow{x^i} I_{Z\subset kL}$. The kernel is $\OO_{\PP^2}(-k-i)$ and the cokernel is $I_{Z_i'\subset kL\cap iL'}$. We have the following diagram $$
+\begin{tikzcd}
+I_{W_i'}(-i) \arrow[rr] \arrow[d]                          &  & I_{Z\subset kL} \arrow[d] \\
+\mathcal O_{\PP^2}(-i) \arrow[rr]                          &  & I_{Z'\subset kL}          \\
+\OO_{\PP^2}(-i)\oplus \OO_{\PP^2}(-j) \arrow[rr] \arrow[u] &  & I_{Z_i'} \arrow[u]       
+\end{tikzcd}
+$$ 
+Viewing the rows of the diagram as complexes, the vertical maps are quasi-isomorphism. Let $F^\bullet$ be the last row, in positions $-1$ and $0$ on the complex. Then $F^\bullet$ is the mapping cone of the map $I_{W_i'}\rightarrow I_{Z\subset kL}$, and there is a distingueshed triangle
+$$I_{W_i'}\rightarrow I_{Z\subset kL}\rightarrow F^\bullet\rightarrow I_{W_i'}[1]$$
+in $D^b(\PP^2)$. From this sequence, for each $i$ we have a potential Bridgland wall $W(I_{W_i'},I_{Z\subset kL})$ for the rank $0$ object $I_{Z\subset kL}$. Because the rank is zero, all of these walls are concentrical semicircles and the biggest one will be the destabilizing one. 
+
+As before, the destabilizing subobject is a rank one monomial object, with such monomial scheme having smaller degree than $Z$. Again, the cockernel is a new object, the rank $-1$ monomial object.
+
+
+
+
+
+
+
+A rank $-1$ monomial object is a complex $F^\bullet$ of the form $$
+\OO_{\PP^2}(-k)\oplus \OO_{\PP^2}(-i)\xrightarrow{(y^k,x^i)} I_Z,
+$$
+where $Z$ is a monomial scheme whose block diagram has $r(D)=k$ and $c(D)=i$. Note that
+$$
+H^{-1}(F^\bullet)=\OO_{\PP^2}(-k)\oplus\OO_{\PP^2}(-i), ~H^0(F^\bullet)=I_{Z\subset kL\cap iL'},
+$$
+then $F^\bullet \in \mathcal A_s$ if and only if $s$ lies on the right of the vertical wall $s=-i-k$. Observe that if $Z$ is a complete intersection $kL\cap k'L'$, then $F^\bullet$ is quasi-isomorphic to $\OO_{\PP^2}(-i-k)[1]$, in this case we call $F^\bullet$ trivial. Then, we assume that $F^\bullet$ is nontrivial. For any $l\le j\le k$ there are maps of complexes $$
+\begin{tikzcd}
+\OO_{\PP^2}(-k) \arrow[r] \arrow[d] & \OO_{\PP^2}(-k)\oplus\OO_{\PP^2}(-i) \arrow[r] \arrow[d] & \OO_{\PP^2}(-i) \arrow[d] \\
+I_{W_j}(-j) \arrow[r]               & I_Z \arrow[r]                                            & I_{Z_j\subset jL}        
+\end{tikzcd}
+$$
+For each $j$ we obtain a wall where the three vertical complexes have the same Bridgeland slope. Again, the destabilizing wall will be the biggest of such walls.
+
+If we are in the case of the diagram, i.e. not interchanging $x$ and $y$ roles, then the destabilizing subobject is quasi-isomorphic to $I_{W_j\subset(k-j)L}(-j)$, a rank zero monomial object. On the other hand the quotient object $\OO_{\PP^2}(-i)\rightarrow I_{Z_j\subset jL}$ is quasi-isomorphic to the rank $-1$ monomial object (need to check) $$
+\OO_{\PP^2}(-j)\oplus \OO_{\PP^2}(-i)\rightarrow I_{Z_j},
+$$
+and since $j<k$, then $W_j,Z_j\neq \emptyset$, it follows that they both have smaller degree than $Z$.
+
+Now we present some numerical invariants for those monomial objects that later will be used in the proof of interpolation for monomial schemes.
+
+Using the sequence for rank one monomial objects $$
+0\rightarrow I_{W_k}(-k)\rightarrow I_Z\rightarrow I_{Z_k\subset kL}\rightarrow 0,
+$$
+we have $ch(I_{W_k}(-k))=(1,-k,\frac{k^2}{2}-w_k)$ and $ch(I_Z)=(1,0,-n)$. So the potential Bridgeland wall $W(I_{W_k}(-k),I_Z)$ is defined by its center $(s,0)$, $$s_k=-\frac{k}{2}-\frac{w_k-n}{2}.$$ Furthermore $\Delta(I_Z)=n\geq 0$, then the walls for $I_Z$ are nested semi-circles to the left of the vertical wall $s=0$, and the radius grows as $s$ is more negative, it follows that choosing the biggest wall means minimizing $s_k$.   %add the part of the format of the wall with rank before%
+
+If we let $\xi_k$ be the Chern character with $r(\xi_k)\neq 0$ and $\chi(\xi_K^*,I_{W_k}(-k))=\chi(\xi_k^*,I_Z)=0$, then $$\mu_k(I_Z)=\mu(\xi_k)=-s_k-\frac{3}{2},$$ 
+and $$
+\Delta_k(I_Z)=\Delta(\xi_k)=\frac{1}{2}\rho^2_k-\frac{1}{8}.
+$$
+
+Then $\mu_{opt}(I_Z)=\max\{\mu_k,\mu_{k'}  \}$ and $\Delta_{opt}=\max\{\Delta_k,\Delta_{k'}  \}$.
+\begin{definition}
+	These slopes $\mu_k$ gives rise to the definition of horizontaly pure. Let $Z$ be a monomial scheme, with $k$ rows in its block diagram, and consider the $k$ horizontal slopes $\mu_1(I_Z),\dots,\mu_k(I_Z)$ defined above. The scheme $Z$ is horizontally pure if $\mu_i(I_k)\le \mu_k(I_Z)$, for $1\le i\le k$. 	
+\end{definition}
+
+We have the following proposition that assures that the cokernel of the destabilizing sequence for rank one monomial objects are indeed horizontally pure, and therefore a rank $0$ monomial objects.
+
+\begin{proposition}
+	Let $Z$ be a monomial scheme, and suppose that the biggest potential wall constructed for the rank one monomial object $I_Z$ corresponds to the horizontal slope $\mu_{opt}(I_Z)=\mu_k(I_Z)$. Then $Z_k$ is horizontally pure, so the quotient object $I_{Z_k\subset kL}$ is a rank $0$ monomial object.
+\end{proposition}
+\begin{proof}
+	\cite{COSKUN} Proposition $7.3$.
+\end{proof}
+
+Similarly, consider $F=I_{Z\subset kL}$, where $Z$ is horizontally pure, a rank $0$ monomial object. Let $l'$ be the number of columns with length $k$, and $l'\le i\le c(D)$. In previus discussion we obtained the triangle $$
+I_{W_i'}(-i)\rightarrow F\rightarrow (\OO_{\PP^2}(-k)\oplus\OO_{\PP^2}(-i)\rightarrow I_{Z_i'})\rightarrow I_{W_i'}(-i)[1].
+$$ 
+Then $ch(I_{W_i'}(-i))=(1,-i,\frac{i^2}{2}-w_i'), ~ch(F)=(0,k,-\frac{k^2}{2}-n)$. It follows that the potential Bridgeland walls are defined by its center $(s_0,0)$ and radius $$
+s_0=-\frac{2n-k^2}{2k}, ~(\rho_i')^2=s_0^2-(i(k-i)+\frac{2ni}{k}+w_i').
+$$
+
+Now let $\xi_i$ be the orthogonal class to $I_{W_i'}(-i)$ and $F$, then $$
+\Delta_i'(F)=\Delta'(\xi_i)=\frac{1}{2}(\rho_i')^2-\frac{1}{8}.
+$$
+As we want to maximize the wall we have $$
+\mu_{opt}(F)=-s_0-\frac{3}{2},~\Delta_{opt}(F)=\max\{\Delta_i(F), \Delta_i'(F)  \}.
+$$
+
+The last case is the invariants for rank $-1$ monomial objects. Let 
+$$
+F^\bullet=(\OO_{\PP^2}(-k)\oplus\OO_{\PP^2}(-i)\rightarrow I_{Z}),
+$$
+we have the sequence $$
+0\rightarrow I_{W_j\subset(k-j)L}(-j)\rightarrow F^\bullet\rightarrow (\OO_{\PP^2}(-j)\oplus\OO_{\PP^2}(-i)\rightarrow I_{Z_j})\rightarrow I_{W_j\subset(k-j)L}(-j)[1]\rightarrow 0,
+$$
+with $l\le j< k$. The Chern characters are $$ch(F^\bullet)=(-1,k+i,-\frac{k^2+i^2}{2}-n),$$ and $$ch((\OO_{\PP^2}(-j)\oplus\OO_{\PP^2}(-i)\rightarrow I_{Z_j}))=(-1,j+i,-\frac{j^2+i^2}{2}-(n-w_j)).$$ From wich we obtain the center
+$$
+s_j=-\frac{1}{2}(j+k)-\frac{w_j}{k-j}.
+$$ 
+
+As $\Delta(F^\bullet)=ki-n\geq0$, it follows that the walls are on the right of $s=-k-i$, and grow bigger as $s$ grows, so maximizing the wall means maximizing $s_j$. Denoting by $\rho_j$ the radius and defining $\xi_j$ as the orthogonal class we have $$
+\mu_j(F^\bullet)=\mu(\xi_j)=-s_j-\frac{3}{2},~\Delta_j(F^\bullet)=\Delta(\xi_j)=\frac{1}{2}\rho^2_j-\frac{1}{8}.
+$$
+Then $$
+\mu_{opt}(F^\bullet)=\min\{\mu_j,\mu_j'\}, ~
+\Delta_{opt}(F^\bullet)=\max\{\Delta_j,\Delta_j' \}.
+$$
+
+As the outline of the proof of interpolation for monomial schemes will be similar to the one for complete intersections, it is necessary that those schemes are Gieseker semi-stable, therefore we have the following theorem.
+
+\begin{teorema}
+	Monomial objects are Gieseker semi-stable objects.
+\end{teorema}
+\begin{proof}
+	\cite{COSKUN} Theorem $8.1$.
+\end{proof}
+
+We will assume for each sequence $$ 0\rightarrow A(-j)\rightarrow F\rightarrow B\rightarrow 0,
+$$
+that the theorem is known for $A$ and $B$. For each object we show that $E\otimes F$ is acyclic for a general $E\in P(\zeta_{opt}(F))$.
+
+We state some lemmas that will give us inequalities to compare the slopes of two monomial objects, these inqualities will later be used on the proof of the main theorem. They will concern the destabilizing sequences of rank $1$, rank $0$ and rank $-1$ monomial objects respectively.  
+
+\begin{lema}
+	If $I_{W_k}(-k)$ is nontrivial, then $$
+	\mu_{opt}(I_{W_k})+k \le  \mu_{opt}(I_Z),
+	$$
+	and $$
+	\Delta_{opt}(I_{Z\subset kL})\le \Delta_{opt}(I_Z).
+	$$
+	
+	Furthermore, $I_{W_k}(-k)$ is destabilized along a wall nested inside of $W(I_{W_k}(-k),I_Z)$.
+\end{lema}
+\begin{proof}
+	\cite{COSKUN} Lemma $9.2$ and Lemma $9.3$.
+\end{proof}
+\begin{lema}
+	Let $F=I_{Z\subset kL}$ be a rank $0$ monomial object. If $I_{W_i'}(-i)$ is nontrivial, then it is destabilized along a wall nested inside of $W(I_{W_i'}(-i),F)$, $$
+	\mu_{opt}(I_{W_i'})+i\le\mu_{opt}(F),
+	$$
+	and
+	$$
+	\mu_{opt}(G^\bullet)\geq\mu_{opt}(F),
+	$$
+	where $G^\bullet$ is the rank $-1$ object in the destabilizing sequence of $F$.
+\end{lema}
+\begin{proof}
+	\cite{COSKUN} Lemma $9.4$ and Lemma $9.5$.
+\end{proof}
+\begin{lema}
+	Let $F^\bullet$ be a rank $-1$ monomial object and $G^\bullet$ the rank $-1$ object on the destabilizing sequence of $F^\bullet$ $$ 0\rightarrow E(-j)\rightarrow F^\bullet\rightarrow G^\bullet\rightarrow 0,$$ where $E$ is the rank $0$ object $I_{W_j\subset (k-j)L}$ and $G^\bullet=\OO_{\PP^2}(-j)\oplus\OO_{\PP^2}(-i)\rightarrow I_{Z_j}$. Then $G^\bullet$ is destabilized along a wall nested in $W(F^\bullet, G^\bullet)$,    $$
+	\Delta_{opt}(E)\le \Delta_{opt}(F^\bullet),
+	$$
+	and $$
+	\mu_{opt}(G^\bullet)\geq \mu_{opt}(F^\bullet).
+	$$
+\end{lema}
+\begin{proof}
+	\cite{COSKUN} Lemma $9.6$ and Lemma $9.7$.
+\end{proof}
+\section{Interpolation for Monomial Schemes}
+
+Now we can state and prove the main result.
+
+\begin{teorema}
+	Let $F$ be a monomial object, and let $\zeta=(r,\mu,\Delta)$ be a Chern character such that $\chi(\zeta^*,F)=0$. Suppose that $r$ is sufficiently large and divisible and let $E\in P(\zeta)$ be a general prioritary bundle. Let $\mu_{opt}(F)$, $\Delta_{opt}(F)$ be the invariants defined before. Then \begin{enumerate}
+		\item[(1)] If $F$ has rank $1$, then $E\otimes F$ is acyclic if and only if $\mu\geq \mu_{opt}(F)$. That is $\mu^\perp_{min}(F)=\mu_{opt}(F)$
+		\item[(2)] If $F$ has rank $0$, then $E\otimes F$ is acyclic if and only if $\Delta\geq \mu_{opt}(F)$. That is $\Delta^\perp_{min}(F)=\Delta_{opt}(F)$
+		\item[(3)] If $F$ has rank $0$, then $E\otimes F$ is acyclic if and only if $\mu\le \mu_{opt}(F)$.
+	\end{enumerate}
+	
+	
+	
+\end{teorema}
+
+In order to prove the theorem, we will prove first that the candidates of slope and discriminat satisfies interpolation, i.e. $H^i(E\otimes F)=0$ for all $i\geq0$, and then to prove that these are indeed the minimal ones.
+\begin{lema}
+	If $F$ is a rank $1$ monomial object, then $E\otimes F$ is acyclic for a general object $E\in P(\zeta_{opt}(F))$.
+\end{lema}
+\begin{proof}
+	If $A=\OO_{\PP^2}$ is trivial, then $E(-j)$ is acyclic by Theorem \ref{Teo 3.5}. Suppose that $A$ is non trivial. Then $$\mu_{opt}(A)+j\le\mu_{opt}(F),$$ then $\mu(E(-j))\geq \mu_{opt}(A)$. As $\chi(E(-j)\otimes A)=0$, we find by induction $E\otimes A(-j)$ is acyclic for a large and divisible rank.
+	
+	Similarly we have $$
+	\Delta_{opt}(B)\le\Delta_{opt}(F).
+	$$ 
+	We have $\chi(E\otimes B)=0$, so again by induction $E\otimes B$ is acyclic for a general $E$ for a large and divisible rank.
+	
+	Increasing the rank to a commum multiple if necessary, we have $E\otimes F$ acyclic for a general $E\in P(\zeta_{opt}(F))$.
+\end{proof}
+
+The proof for the rank $0$ case follows the exact same arguments, with the appropriate inequalities.
+
+For the rank $-1$ case it follows applying Serre duality in the next result.
+
+\begin{proposition}
+	The derived dual of a rank $-1$ monomial object is, up to twist and shifts, a rank $1$ monomial object.
+\end{proposition}
+\begin{proof}
+	Consider the rank $-1$ monomial object $$
+	F^\bullet = (\OO_{\PP^2}(-k)\oplus \OO_{\PP^2}(-1)\rightarrow I_Z ),
+	$$
+	and set $x^{a_1},x^{a_2}y^{b_2},\dots, y^{b_r}$ the generators of $I_Z$, with $a_1=i$ and $b_r=k$. Then the minimal resolution of $I_Z$ is $$
+	0\rightarrow \bigoplus_{j=1}^{r-1}\OO_{\PP^2}(-a_j-b_{j+1})\rightarrow \OO_{\PP^2}(-i)\oplus\bigoplus_{j=2}^{r-1}\OO_{\PP^2}(-a_j-b_j)\oplus\OO_{\PP^2}(-k)\rightarrow I_Z\rightarrow 0.
+	$$
+	It follows that $F^\bullet$ is quasi-isomorphic to the complex $$\bigoplus_{j=1}^{r-1}\OO_{\PP^2}(-a_j-b_{j+1})\rightarrow \bigoplus_{j=2}^{r-1}\OO_{\PP^2}(-a_j-b_j),$$ of locally free sheaves in degrees $-1$ and $0$. The derived dual complex is $$
+	G^\bullet = \bigoplus_{j=2}^{r-1}\OO_{\PP^2}(a_j+b_{j})\rightarrow \bigoplus_{j=1}^{r-1}\OO_{\PP^2}(a_j+b_{j+1}),
+	$$
+	in degrees $0$ and $1$. The matrix of the resolution of $I_Z$ is given by $$
+	\begin{bmatrix}
+	y^{b_2-b_1}&&&\\
+	-x^{a_1-a_2}&y^{b_3-b_2}&&\\
+	&-x^{a_2-a_3}&\ddots&\\
+	&&&&y^{b_r-b_{r-1}}\\
+	&&&&-x^{a_{r-1}-a_r}
+	\end{bmatrix},
+	$$
+	and the matrix of $G^\bullet$ is obtained by deleting the first and last rows and taking the transpose. If $Z'$ is the monomial scheme cut by the $(r-2)\times (r-2)$ minors of the matrix of $G^\bullet$, then $G^\bullet$ is quasi-isomorphic to $I_{Z'}(i+k)[-1]$.  	
+\end{proof}
+
+With these results we obtain that $\mu_{opt}(F)\geq\mu_{min}^\perp(F)$. Now we show the other inequality for rank $1$ monomial objects using the same idea as before, we construct a curve in the Hilbert scheme and show that there is no interpolation for smaller slopes.
+
+Let $I_Z$ be a rank $1$ monomial object. Correspondingly to $E\in P(\zeta_{opt}(I_Z))$, there is a divisor $$
+D_E=c_1(E)-\frac{r(E)}{2}B,
+$$
+on the Hilbert Scheme $Hilb^n(\PP^2)$ such that $Z$ is not in the stable base locus of $D_E$. Denote by $S^-\subset Hilb^n(\PP^2)$ the stable base locus of a divisor class $(\mu(E)-\epsilon)H-\frac{1}{2}B$, with $\epsilon>0$ small enough. If $\alpha$ is a curve on the Hilbert Scheme with $\alpha D_E=0$, then $\alpha\subset S^-$. To show that $\mu_{min}^\perp(I_Z)=\mu_{opt}(I_Z)$ is enough to show that $Z\in S^-$. 
+
+Suppose that $I_Z$ is destabilized by the following sequence $$
+0\rightarrow A(-j)\rightarrow I_{Z}\rightarrow B\rightarrow 0,
+$$
+where $A(-j)$ is a rank $1$ monomial object. Looking at other extensions $$
+0\rightarrow A(-j)\rightarrow I_{Z'}\rightarrow B\rightarrow 0,
+$$
+with $Z'$ not necessarily monomial, we can obtain a curve $\alpha$ in the Hilbert Scheme that passes through $Z$ and has $\alpha D_E=0$. Note that since $E\otimes A(-j)$ and $E\otimes B$ are acyclic, any such ideal sheaf has $E\otimes I_{Z'}$ acyclic, and thus $Z'$ is not in the stable base locus of $D_E$. We must check that there is a complete curve of such extension.
+
+Consider $D_Z$ the block diagram of $Z$. Since $\mu(I_Z)\geq \mu_{j+1}(I_Z)$, the $(j+1)$st row of $D_Z$ must be shorter than the $j$th row of $D_Z$. Then the block diagram of $Z_j$ has more full columns of length $j$ than the block diagram of $W_j$ has columns. It follows that there exists a monomial scheme $Z'$ whose block diagram is obtained from the block diagram of $Z$ by removing one box from each of the first $j$ rows. For any $[u:v]\in L=\PP^1$, let $Y_p\subset \PP^2$ be the scheme given by the complete intersection $$
+Y_p=jL\cap \{vx-uz=0  \}.
+$$
+For all $p\neq [0:1]$, the scheme $Z'\cup Y_p$ has degree $n$, and these schemes form a flat family over $L$ whose limit over $p=[0:1]$ is $Z$. As $p$ varies, the ideal sheaf $I_{(Z'\cup Y_p)\cap jL\subset jL}$ has constant isomorphism type since $I_{Y_p\subset jL}=\OO_{jL}(-1)$. Thus the ideal sheaf of each scheme $Z'\cup Y_p$ can be realized as an extension of $B$ by $A(-j)$, and we conclude that all these schemes lies in $S^-$. (?)
+
+
+
+The last thing to do is to show that this is the minimum for rank $0$ objects. Let $F=I_{Z\subset kL}$ be a rank $0$ monomial object. We show that no bundle $E$ with $\Delta(E)<\Delta_{opt}(F)$ satisfies interpolation for $F$. Consider the destabilizing sequence $$
+0\rightarrow A(-i)\rightarrow F\rightarrow B^\bullet\rightarrow0,
+$$	
+where $A$ is a rank $1$ monomial object and $B^\bullet$ is a rank $-1$. Suppose $E$ has $E\otimes F$ acyclic and $\Delta(E)<\Delta_{opt}(F)$, then $E$ is slope-semistable. We have $\chi(F\otimes E)=0$ and $\chi(A(-i)\otimes E)>0$ since the point $(\mu(E),\Delta(E))$ lies below the parabola $\chi(A(-i)\otimes E)=0$ in the $(\mu,\Delta)$-plane. If the derived dual of $B^\bullet$ is written as $I_Z'(i+k)[-1]$, then by Serre duality(?) $$
+R^{-1}\Gamma(B^\bullet \otimes^L E)=H^2(E^*\otimes I_{Z'}(i+k-3))^*.
+$$
+
+We claim that $\mu(E^*(i+k-3))>-3$, so that this cohomology group vanishes by semistability of $E$. We saw that $$
+\mu(E)=-s_0-\frac{3}{2}=\frac{n}{k}+\frac{k}{2}-\frac{3}{2}.
+$$
+Approximating
+$$
+n\le ik+w_i',
+$$
+we find that the inequality $\mu(E^*(i+k-3))>-3$ amounts to 
+$$
+w_i'\le\binom{k+2}{2}-1,$$
+so $H^2(E^*\otimes I_{Z'}(i+k-3))=0$. Likewise, another slope computation shows $H^2(A(-i)\otimes E)=0$, and from $\chi(A(-i)\otimes E)>0$, we deduce $h^0(A(-i)\otimes E)>0.$ In this case $h^0(F\otimes E)\neq 0$, contradicting the acyclicity of $F\otimes E$.\pagebreak
+
+
+\postextual
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% REFERÊNCIAS
+\bibliography{abntex2-modelo-references}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% GLOSSÁRIO
+% ----------------------------------------------------------
+\phantompart
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\glossaryname}
+\printglossaries
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% APÊNDICES
+\begin{apendicesenv}
+% Imprime uma página indicando o início dos apêndices
+\partapendices
+\include{apendices}
+\end{apendicesenv}
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+% ANEXOS
+\begin{anexosenv}
+% Imprime uma página indicando o início dos anexos
+\partanexos
+\include{anexos}
+\end{anexosenv}
+% ----------------------------------------------------------
+%-----------------------------------------------------------
+% INDICE REMISSIVO
+%-----------------------------------------------------------
+\phantompart
+\printindex
+%-----------------------------------------------------------
+% ---------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%% FIM DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIM DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -----------------------------------------------------------------------------------------------
+\end{document}

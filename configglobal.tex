@@ -1,0 +1,198 @@
+% As configurações gerais são colocadas aqui, como novos comandos para o corpo do texto,
+% informações de bookmark para o PDF, tamanho de parágrafos, entre outros.
+
+% ----------------------------------------------------------
+% Configurações do pacote BACKREF
+% ----------------------------------------------------------
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ----------------------------------------------------------
+% \theoremstyle{plain}
+
+
+\newtheorem{mthm}{Main Theorem}
+\numberwithin{mthm}{subsection}
+\newtheorem{teorema}{Theorem}
+\numberwithin{teorema}{subsection}
+%\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}
+\numberwithin{proposition}{subsection}
+\newtheorem{exer}{Exercise}
+\numberwithin{exer}{subsection}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{definition}[theorem]{Definition}
+\newtheorem{theoremint}{Theorem}
+\numberwithin{theoremint}{subsection}
+%\newtheorem{definitionint}[theoremint]{Definition}
+\newtheorem{conjecture}{Conjetura}
+\numberwithin{conjecture}{subsection}
+\newtheorem{cor}{Corollary}
+\numberwithin{cor}{subsection}
+\newtheorem{lema}{Lemma}
+\numberwithin{lema}{subsection}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\numberwithin{definition}{subsection}
+
+\newtheorem{Remark}{Observa\c{c}\~ao}
+\numberwithin{Remark}{subsection}
+%\newtheorem{Remarks}[theorem]{Remarks}
+%\newtheorem{Examples}[theorem]{Examples}
+%\newtheorem{Example}[theorem]{Example}
+
+\newcommand{\cc}{\c{c}}
+\newcommand{\Cc}{{\mathcal{C}}}
+\newcommand{\opn}{{\mathcal{O}_{\mathbb{P}^n}}}
+\newcommand{\pn}{{\mathbb{P}^n}}
+\newcommand{\pnk}{{\mathbb{P}^n_K}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\KK}{{\mathbb K}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\GG}{{\mathbb G}}
+\newcommand{\Aa}{{\mathbb A}}
+\newcommand{\HH}{{\mathcal H}}
+\newcommand{\UU}{{\mathcal U}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\xdownarrow}[1]{%
+	{\left\downarrow\vbox to #1{}\right.\kern-\nulldelimiterspace}
+}
+\newcommand{\A}{{\mathcal A}}
+\newcommand{\BB}{{\mathcal B}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\Sym}{{\mathcal S}}
+\newcommand{\gothm}{\mathfrak{m}}
+\newcommand{\Div}{\operatorname{Div}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\sing}{\operatorname{Sing}}
+\newcommand{\car}{\operatorname{char}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Seg}{\operatorname{Seg}}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\proj}{proj}
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
+\makeindex
+
+
+
+\setlength{\textwidth}{15.5cm}
+\setlength{\textheight}{21.5cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\topmargin}{0cm}
+
+\usetikzlibrary{decorations.markings}
+\tikzset{double line with arrow/.style args={#1,#2}{decorate,decoration={markings,%
+			mark=at position 0 with {\coordinate (ta-base-1) at (0,1pt);
+				\coordinate (ta-base-2) at (0,-1pt);},
+			mark=at position 1 with {\draw[#1] (ta-base-1) -- (0,1pt);
+				\draw[#2] (ta-base-2) -- (0,-1pt);
+}}}}
+
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Conjunto de configuracoes para o pacote 'listings'
+% ----------------------------------------------------------
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{verde}, 
+  commentstyle=\color{red}, 
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{green!10},
+  breakautoindent=true,
+  fontadjust=false
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Informações do PDF
+% ----------------------------------------------------------
+% Configurações de aparência do PDF final
+% ---
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+\definecolor{verde}{rgb}{0,0.5,0}
+% ---
+\makeatletter
+\hypersetup{
+  %pagebackref=true,
+  pdftitle={\@title},
+  pdfauthor={\@author},
+  pdfsubject={%
+    \imprimirtipotrabalho\ apresentada ao Instituto de Matemática, Estatística %
+    e Computação Científica da Universidade Estadual de Campinas como parte dos %
+    requisitos exigidos para a obtenção do título de \imprimirtitulacao\ em %
+    \imprimircurso.
+  },
+  pdfcreator={LaTeX with unicamp-abnTeX2},
+  pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
+  colorlinks=true,		% false: boxed links; true: colored links
+  linkcolor=blue,		% color of internal links
+  citecolor=blue,		% color of links to bibliography
+  filecolor=magenta,		% color of file links
+  urlcolor=blue,		% color of internet links
+  bookmarksdepth=4
+}
+\makeatother
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% COMANDOS GLOBAIS
+% ----------------------------------------------------------
+\everymath{\displaystyle}
+% ---
+\renewcommand{\sin}{\mathrm{sen}}
+\renewcommand{\tan}{\mathrm{tg}}
+\renewcommand{\csc}{\mathrm{cossec}}
+\renewcommand{\cot}{\mathrm{cotg}}
+% ---
+\DeclareMathOperator{\posto}{\mathrm{posto}}
+\DeclareMathOperator{\conv}{\mathrm{conv}}
+\DeclareMathOperator{\diag}{\mathrm{diag}}
+\DeclareMathOperator{\argmin}{\mathrm{arg}\min}
+\DeclareMathOperator{\argmax}{\mathrm{arg}\max}
+% ---
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{2.0cm}
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+% ---
+% Para que apareça o nome 'Capítulo X' antes do título de cada capítulo
+% \chapterstyle{default}
+% ----------------------------------------------------------
+\newsubfloat{figure}% Allow subfloats in figure environment
+\providecommand*{\subfigureautorefname}{Subfigura}
